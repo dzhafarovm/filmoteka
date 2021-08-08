@@ -1,14 +1,23 @@
 <header class="header">
-  <div class="logo">Filmoteka</div>
-
-  <ul classs="navigation-list">
-    <li><button class="btn-home" id="btn-home">HOME</button></li>
-    <li><button class="btn-library" id="btn-library">MY LIBRARY</button></li>
-  </ul>
+  <section class="section-nav">
+    <svg width="24" heigth="24">
+      <use href="../images/svg/sprite.svg#logo"></use>
+    </svg>
+    <div class="logo">Filmoteka</div>
+    
+    <ul classs="navigation-list">
+      <li class="navigation-list--btn"><button class="btn-home" id="btn-home">HOME</button></li>
+      <li class="navigation-list--btn"><button class="btn-library" id="btn-library">MY LIBRARY</button></li>
+    </ul>
+  </section>
 
   <form class="search-form" id="search-form">
     <input class="search-input" type="text" name="query" placeholder="Search films..." />
-    <button type="submit">Search</button>
+    <button type="submit">
+      <svg width="24" heigth="24">
+        <use href="../images/svg/sprite.svg#search"></use>
+      </svg>
+      Search</button>
   </form>
 
   <ul class="library-list is-hidden">
