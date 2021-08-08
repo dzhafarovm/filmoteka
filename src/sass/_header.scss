@@ -26,12 +26,33 @@ input {
   display: inline-block;
 }
 
+.svg-logo {
+  width: 24px;
+  height: 24px;
+  fill: #818181;
+  margin-right: 10px;
+}
+
+button {
+  background-color: transparent;
+}
+
+.svg-search {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
+  margin-left: 10px;
+}
+
+.svg-heart {
+  width: 14px;
+  height: 14px;
+  fill: #ff6b08;
+}
+
 .header-1 {
   background-image: url(../images/header320.png);
   height: 230px;
-  // min-width: 320px;
-  // background-color: rgb(46, 43, 43);
-  // object-fit: cover;
   background-repeat: no-repeat;
   margin-left: auto;
   margin-right: auto;
@@ -56,6 +77,36 @@ input {
     }
   }
 }
+
+.header-2 {
+  background-image: url(../images/headerhidden320.png);
+  height: 230px;
+
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    background-image: url('../images/headerhidden2x320.png');
+  }
+
+  @media screen and (max-width: 767px) {
+    max-width: 480px;
+    background-image: url(../images/headerhidden768.png);
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url('../images/headerhidden2x768.png');
+    }
+  }
+  @media (min-width: 768px) {
+    max-width: 1024px;
+    background-image: url(../images/headerhidden1200.png);
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url('../images/headerhidden2x1200.png');
+    }
+  }
+}
+
 .section-nav {
   display: flex;
   justify-content: space-between;
@@ -90,21 +141,23 @@ input {
     justify-content: flex-start;
     align-items: center;
     align-content: center;
-    // margin-top: 40px;
-    // margin-left: 100px;
   }
 }
-// .navigation-list {
-//   // display: flex;
-//   // align-content: center;
-//   // justify-content: flex-end;
-//   // align-items: center;
-// }
-
-.btn-home:hover,
-.btn-library:hover {
-  border-bottom: 1px solid #ff6b08;
+.navigation-list--btn {
   position: relative;
+  margin-right: 40px;
+}
+.btn-home:hover::after,
+.btn-library:hover::after,
+.current {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ff6b08;
+  border-radius: 2px;
 }
 
 .btn-home,
@@ -116,23 +169,8 @@ input {
   line-height: 1.16;
   color: #ffffff;
   background-color: transparent;
-  // margin-top: 60px;
-  // margin-right: 60px;
-  @media screen and (max-width: 767px) {
-    // margin-bottom: 40px;
-    // display: flex;
-    // justify-content: flex-end;
-    // align-items: center;
-    // align-content: center;
-    // margin-right: 40px;
-  }
-  @media (min-width: 768px) and (max-width: 1200px) {
-    // margin-right: 70px;
-  }
-}
-
-.btn-library {
-  margin-left: 40px;
+  padding-bottom: 5px;
+  cursor: pointer;
 }
 
 .search-form {
@@ -174,7 +212,7 @@ input {
   line-height: 1.33;
 
   text-transform: uppercase;
-
+  cursor: pointer;
   color: #ffffff;
   padding: 14px 38px;
   background-color: transparent;
@@ -195,59 +233,4 @@ input {
 
 .is-hidden {
   display: none;
-}
-
-.header-2 {
-  background-image: url(../images/headerhidden320.png);
-  height: 230px;
-  // min-width: 320px;
-  // background-color: rgb(46, 43, 43);
-  // object-fit: cover;
-  background-repeat: no-repeat;
-  margin-left: auto;
-  margin-right: auto;
-
-  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-    background-image: url('../images/headerhidden2x320.png');
-  }
-
-  @media screen and (max-width: 767px) {
-    max-width: 480px;
-    background-image: url(../images/headerhidden768.png);
-    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-      background-image: url('../images/headerhidden2x768.png');
-    }
-  }
-  @media (min-width: 768px) {
-    max-width: 1024px;
-    background-image: url(../images/headerhidden1200.png);
-
-    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-      background-image: url('../images/headerhidden2x1200.png');
-    }
-  }
-}
-
-.svg-logo {
-  width: 24px;
-  height: 24px;
-  fill: #818181;
-  margin-right: 10px;
-}
-
-button {
-  background-color: transparent;
-}
-
-.svg-search {
-  width: 24px;
-  height: 24px;
-  fill: #ffffff;
-  margin-left: 10px;
-}
-
-.svg-heart {
-  width: 14px;
-  height: 14px;
-  fill: #ff6b08;
 }
