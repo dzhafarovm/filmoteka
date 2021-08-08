@@ -138,7 +138,10 @@
 }
 .navigation-list--btn {
   position: relative;
-  margin-right: 40px;
+}
+
+.navigation-list--btn:not(:last-child) {
+  margin-right: 39px;
 }
 
 .btn-home::after,
