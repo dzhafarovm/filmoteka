@@ -16,6 +16,7 @@
 }
 
 .header--main {
+  min-width: 320px;
   background-image: url(../images/header320.png);
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -41,13 +42,14 @@
 }
 
 .header--lib {
+  min-width: 320px;
   background-image: url(../images/headerhidden320.png);
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     background-image: url('../images/headerhidden2x320.png');
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 768px) {
     min-width: 768px;
     background-image: url(../images/headerhidden768.png);
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
