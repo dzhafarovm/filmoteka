@@ -1,29 +1,10 @@
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-a {
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-ul,
-li,
-button,
-form,
-input {
-  margin: 0;
-  padding: 0;
+.navigation-list {
   list-style: none;
-  border: none;
-  outline: none;
-  display: inline-block;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  color: #ffffff;
 }
 
 .svg-logo {
@@ -31,10 +12,6 @@ input {
   height: 24px;
   fill: #818181;
   margin-right: 10px;
-}
-
-button {
-  background-color: transparent;
 }
 
 .svg-search {
@@ -50,26 +27,34 @@ button {
   fill: #ff6b08;
 }
 
-.header-1 {
-  background-image: url(../images/header320.png);
-  height: 230px;
-  background-repeat: no-repeat;
+.header {
   margin-left: auto;
   margin-right: auto;
+  height: 230px;
+  padding-left: 71px;
+  padding-right: 71px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.header--main {
+  background-image: url(../images/header320.png);
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     background-image: url('../images/header2x320.png');
   }
 
-  @media screen and (max-width: 767px) {
-    max-width: 480px;
+  @media screen and (min-width: 768px) {
+    min-width: 768px;
     background-image: url(../images/header768.png);
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
       background-image: url('../images/header7682x.png');
     }
   }
-  @media (min-width: 768px) {
-    max-width: 1024px;
+  @media (min-width: 1024px) {
+    min-width: 1024px;
+    max-width: 1600px;
     background-image: url(../images/header1200.png);
 
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -78,27 +63,23 @@ button {
   }
 }
 
-.header-2 {
+.header--lib {
   background-image: url(../images/headerhidden320.png);
-  height: 230px;
-
-  background-repeat: no-repeat;
-  margin-left: auto;
-  margin-right: auto;
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     background-image: url('../images/headerhidden2x320.png');
   }
 
-  @media screen and (max-width: 767px) {
-    max-width: 480px;
+  @media screen and (max-width: 768px) {
+    min-width: 768px;
     background-image: url(../images/headerhidden768.png);
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
       background-image: url('../images/headerhidden2x768.png');
     }
   }
-  @media (min-width: 768px) {
-    max-width: 1024px;
+  @media (min-width: 1024px) {
+    min-width: 1024px;
+    max-width: 1600px;
     background-image: url(../images/headerhidden1200.png);
 
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
