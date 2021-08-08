@@ -5,4 +5,4 @@ const e={Home:"header-1",Lib:"header-2",hidden:"is-hidden"},d=document.querySele
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/header");
 },{"./sass/main.scss":"clu1","./js/header":"cGsR"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka/src.7f7abf58.js.map
+//# sourceMappingURL=/filmoteka/src.30c40a95.js.map
