@@ -1,11 +1,10 @@
 const Head = {
-  Home: 'header-1',
-  Lib: 'header-2',
+  Home: 'header--main',
+  Lib: 'header--lib',
   hidden: 'is-hidden',
 };
 
 const header = document.querySelector('header');
-
 const libNav = document.querySelector('.js-lib-menu');
 const homeNav = document.querySelector('.js-home-menu');
 const formNav = document.querySelector('.search-form');
