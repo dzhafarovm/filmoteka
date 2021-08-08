@@ -10,9 +10,63 @@
       integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
   </head>
   <body>
-    <include src="./partials/filmoteka.html"></include>
+
+    <header class="header-1">
+      <nav class="section-nav">
+        
+        <a href="./index.html" class="logo ">
+            <svg class="svg-logo" width="24" heigth="24">
+            <use href="../src/images/svg/sprite.svg#logo"></use>
+          </svg>
+          <span class="logo-text">Filmoteka</span>
+        </a>
+    
+        <ul classs="navigation-list">
+          <li class="navigation-list--btn js-home-menu"><button class="btn-home" id="btn-home">HOME</button></li>
+          <li class="navigation-list--btn js-lib-menu"><button class="btn-library" id="btn-library">MY LIBRARY</button></li>
+        </ul>
+      </nav>
+    
+      <form class="search-form" id="search-form">
+        <input class="search-input" type="text" name="query" placeholder="Search films..." />
+        <button type="submit">
+          <svg class="svg-search" width="24" heigth="24">
+            <use href="../src/images/svg/sprite.svg#search"></use>
+          </svg>
+          
+        </button>
+      </form>
+    
+      <ul class="library-list is-hidden">
+        <li><button class="btn-watched" id="btn-watched">WATCHED</button></li>
+        <li><button class="btn-queue" id="btn-queue">QUEUE</button></li>
+      </ul>
+    </header>
+    
+
+
+    <main>
+      <div class="container"></div>
+      <div class="modal"></div>
+    </main>
+    
+
+
+    <footer class="footer">
+      <div class="developers">© 2021 | All Rights Reserved | Developed with 
+        <svg class="svg-heart" width="14" heigth="14">
+        <use href="../src/images/svg/sprite.svg#heart"></use>
+      </svg> by GoIT Students</div>
+      <div class="students"></div>
+    </footer>
+
+    <!-- <include src="./partials/filmoteka.html"></include> -->
 
     <script src="./index.js"></script>
   </body>
