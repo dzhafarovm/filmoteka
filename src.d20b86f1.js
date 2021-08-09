@@ -77,4 +77,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"./fetchMainCards":"GvWd","../hbs/sample-1.hbs":"Oy1E"}],"Focm":[function(require,module,exports) {
 "use strict";require("../node_modules/normalize.css/normalize.css"),require("./sass/main.scss"),require("./js/header"),require("./js/fetchMainCards"),require("./js/renderMainCards");
 },{"../node_modules/normalize.css/normalize.css":"DOAq","./sass/main.scss":"clu1","./js/header":"cGsR","./js/fetchMainCards":"GvWd","./js/renderMainCards":"Zlk5"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka/src.ecd33c4e.js.map
+//# sourceMappingURL=/filmoteka/src.d20b86f1.js.map
