@@ -37,10 +37,18 @@ function addFilmsCardMarkup({ results }) {
     return;
   }
   totalRenderedFilms += results.length;
-  filmsContainer.insertAdjacentHTML('beforeend', filmsCardTpl(results));
+
+  const data = results.map(result => {
+    return {
+      poster_path: result.poster_path,
+      overview: result.overview,
+      title: result.title,
+      genre_ids: result.genre_ids,
+      release_date: result.release_date.split('-')[0],
+    };
+  });
+  console.log('data', data);
+
+  filmsContainer.insertAdjacentHTML('beforeend', filmsCardTpl(data));
   Notify.success(`We found ${totalRenderedFilms} films for you.`);
 }
-
-//   const year = results.map(result => {
-//     result.release_date.split('-', [0]);
-//   });
