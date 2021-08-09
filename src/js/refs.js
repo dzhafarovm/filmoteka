@@ -6,4 +6,5 @@ export const refs = {
   libList: document.querySelector('.library-list'),
   btnHome: document.querySelector('#btn-home'),
   btnLib: document.querySelector('#btn-library'),
+  filmsContainer: document.querySelector('.container'),
 };
