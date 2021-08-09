@@ -1,0 +1,72 @@
+.galery {
+  display: block;
+  list-style-type: none;
+  list-style: none;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+}
+
+.galery__item:not(:last-of-type) {
+  margin-bottom: 20px;
+  //     @media screen and (max-width: 767px) {
+  //     margin-bottom: 20px;
+  // }
+}
+
+.galery__item {
+  @media screen and (mon-width: 768px) {
+    margin: 15px;
+  }
+}
+
+.card {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.card__thumb {
+  width: 280px;
+
+  @media screen and (min-width: 768px) {
+    width: 293px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 274px;
+  }
+}
+
+.card__image {
+  display: block;
+  width: 280px;
+  height: 402px;
+  object-fit: cover;
+
+  @media screen and (min-width: 768px) {
+    width: 293px;
+    height: 398px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 274px;
+    height: 398px;
+  }
+}
+
+.card__label {
+}
+
+.card__heading {
+}
+
+.card__link {
+}
+
+.card__year::before {
+}

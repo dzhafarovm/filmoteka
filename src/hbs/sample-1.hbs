@@ -1,0 +1,32 @@
+{{#each this}}
+<li class="galery__item">
+    <article class="card">
+        <div class="card__thumb">
+            <a href="" class="card__link"">
+            <img class=" card__img" src="{{ BASE_URL }}" loading="lazy" alt="{{title}}" title="{{title}}"
+                data-id="{{id}}" />
+            </a>
+        </div>
+
+
+        <div class="card__wrap">
+            <a href="">
+                <h2 class="card__heading">"{{title}}"</h2>
+            </a>
+        </div>
+        <div class="card__link">
+            <ul class="card__genres">
+                <li class="card__genre, card__text"><a href=""></a></li>
+                <li>
+                    <p class="card__year card__text">| "{{year}}"</p>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="card__trailer is__hidden">
+            <a href="">Trailler</a>
+        </div>
+    </article>
+</li>
+{{/each}}
