@@ -1,7 +1,7 @@
 .footer {
   font-family: Roboto, sans-serif;
-  font-size: 14px;
-  line-height: 1.14;
+  font-size: 16px;
+  line-height: 1.1;
   color: #545454;
   height: 100px;
   background: #f7f7f7;
@@ -28,4 +28,10 @@
   width: 14px;
   height: 13px;
   fill: #ff6b08;
+}
+
+br {
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
