@@ -7,4 +7,5 @@ export const refs = {
   btnHome: document.querySelector('#btn-home'),
   btnLib: document.querySelector('#btn-library'),
   filmsContainer: document.querySelector('.container'),
+  backdrop: document.querySelector('.backdrop'),
 };

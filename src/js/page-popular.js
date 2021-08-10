@@ -1,6 +1,7 @@
 import { fetchPopularCollection } from './fetch-popular.js';
 import collectionPopalarCardTpl from '../hbs/sample-1.hbs';
 import { refs } from './refs.js';
+import { openModalListener } from './modalCard.js';
 
 dataCollection();
 
@@ -16,16 +17,11 @@ function dataCollection() {
 
 // Рендер галереи
 function renderPopularCollection(data) {
-  const collectionPopFilm = data.results.map(result => {
-    return {
-      poster_path: result.poster_path,
-      overview: result.overview,
-      title: result.title,
-      genre_ids: result.genre_ids,
-      release_date: result.release_date.split('-')[0],
-    };
-  });
+  console.log(data);
+  const collectionPopFilm = data.results;
 
   const markup = collectionPopalarCardTpl(collectionPopFilm);
   refs.filmsContainer.innerHTML = markup;
+  openModalListener();
+
 }
