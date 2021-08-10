@@ -13,3 +13,4 @@ function toggleModal(e) {
   refs.backdrop.classList.remove('is-hidden');
   //   renderMovieModal();
 }
+
