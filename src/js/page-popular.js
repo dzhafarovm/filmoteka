@@ -1,6 +1,7 @@
 import { fetchPopularCollection } from './fetch-popular.js';
 import collectionPopalarCardTpl from '../hbs/sample-1.hbs';
 import { refs } from './refs.js';
+import { openModalListener } from './modalCard.js';
 
 dataCollection();
 
@@ -28,4 +29,5 @@ function renderPopularCollection(data) {
 
   const markup = collectionPopalarCardTpl(collectionPopFilm);
   refs.filmsContainer.innerHTML = markup;
+openModalListener();
 }

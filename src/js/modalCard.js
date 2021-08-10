@@ -1,14 +1,16 @@
-(() => {
-  const refs = {
-    openModalBtn: document.querySelector('[data-modal-open]'),
-    closeModalBtn: document.querySelector('[data-modal-close]'),
-    modal: document.querySelector('[data-modal]'),
-  };
+import { refs } from './refs.js';
+import modalTpl from '../hbs/sample-2.hbs';
 
-  refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
+// Поиск ссылки на крточку и назначение слушателя
+export function openModalListener() {
+  const cardLink = document.querySelector('.card-link');
+  cardLink.addEventListener('click', toggleModal);
+}
 
-  function toggleModal() {
-    refs.modal.classList.toggle('is-hidden');
-  }
-})();
+// Поведение по нажатю (слушатель)
+function toggleModal(e) {
+  e.preventDefault();
+  refs.backdrop.classList.remove('is-hidden');
+  //   renderMovieModal();
+}
+
