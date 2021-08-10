@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "basiclightbox": "^5.0.4",
     "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0.1",
     "notiflix": "^3.0.1"
