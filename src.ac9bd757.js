@@ -84,7 +84,9 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.fetchPopularCollection=i;var e=r(require("axios")),t=require("./key.js");function r(e){return e&&e.__esModule?e:{default:e}}const o="https://api.themoviedb.org/3/trending/movie/day";function i(){return e.default.get(`${o}?api_key=${t.KEY_API}`).then(e=>e.data)}
 },{"axios":"dZBD","./key.js":"Amgo"}],"mAQJ":[function(require,module,exports) {
 "use strict";var e=require("./fetch-popular.js"),t=s(require("../hbs/sample-1.hbs")),r=require("./refs.js");function s(e){return e&&e.__esModule?e:{default:e}}function i(){(0,e.fetchPopularCollection)().then(l).catch(e=>{console.log(e)})}function l(e){const s=e.results.map(e=>({poster_path:e.poster_path,overview:e.overview,title:e.title,genre_ids:e.genre_ids,release_date:e.release_date.split("-")[0]})),i=(0,t.default)(s);r.refs.filmsContainer.innerHTML=i}i();
-},{"./fetch-popular.js":"VlRc","../hbs/sample-1.hbs":"Oy1E","./refs.js":"VyiV"}],"Focm":[function(require,module,exports) {
-"use strict";require("../node_modules/normalize.css/normalize.css"),require("./sass/main.scss"),require("./js/header"),require("./js/fetchMainCards"),require("./js/renderMainCards"),require("./js/page-popular.js");
-},{"../node_modules/normalize.css/normalize.css":"DOAq","./sass/main.scss":"clu1","./js/header":"cGsR","./js/fetchMainCards":"GvWd","./js/renderMainCards":"Zlk5","./js/page-popular.js":"mAQJ"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka/src.97efb697.js.map
+},{"./fetch-popular.js":"VlRc","../hbs/sample-1.hbs":"Oy1E","./refs.js":"VyiV"}],"kE3q":[function(require,module,exports) {
+(()=>{const e={openModalBtn:document.querySelector("[data-modal-open]"),closeModalBtn:document.querySelector("[data-modal-close]"),modal:document.querySelector("[data-modal]")};function o(){e.modal.classList.toggle("is-hidden")}e.openModalBtn.addEventListener("click",o),e.closeModalBtn.addEventListener("click",o)})();
+},{}],"Focm":[function(require,module,exports) {
+"use strict";require("../node_modules/normalize.css/normalize.css"),require("./sass/main.scss"),require("./js/header"),require("./js/fetchMainCards"),require("./js/renderMainCards"),require("./js/page-popular.js"),require("./js/modalCard");
+},{"../node_modules/normalize.css/normalize.css":"DOAq","./sass/main.scss":"clu1","./js/header":"cGsR","./js/fetchMainCards":"GvWd","./js/renderMainCards":"Zlk5","./js/page-popular.js":"mAQJ","./js/modalCard":"kE3q"}]},{},["Focm"], null)
+//# sourceMappingURL=/filmoteka/src.ac9bd757.js.map
