@@ -17,6 +17,7 @@ function dataCollection() {
 
 // Рендер галереи
 function renderPopularCollection(data) {
+  console.log(data);
   const collectionPopFilm = data.results.map(result => {
     return {
       poster_path: result.poster_path,
@@ -29,5 +30,5 @@ function renderPopularCollection(data) {
 
   const markup = collectionPopalarCardTpl(collectionPopFilm);
   refs.filmsContainer.innerHTML = markup;
-openModalListener();
+  openModalListener();
 }
