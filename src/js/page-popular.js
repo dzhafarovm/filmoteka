@@ -2,6 +2,7 @@ import { fetchPopularCollection } from './fetch-popular.js';
 import collectionPopalarCardTpl from '../hbs/sample-1.hbs';
 import { refs } from './refs.js';
 import { openModalListener } from './modalCard.js';
+import { genres } from '../js/genre';
 
 dataCollection();
 
@@ -17,8 +18,32 @@ function dataCollection() {
 
 // Рендер галереи
 function renderPopularCollection(data) {
-  console.log(data);
+  const arr = data.results.map(genre => {
+    return genre.genre_ids;
+  });
+
+  const newArr = arr.map(el => {
+    return el.map(id => {
+      const x = genres.find(gen => gen.id === id);
+      return (id = x.name);
+    });
+  });
+
+  const genresName = newArr.map(id => {
+    if (id.length <= 2) {
+      return id;
+    }
+
+    if (id.length > 2) {
+      return [`${id[0]}, ${id[1]}, Other`];
+    }
+  });
+
   const collectionPopFilm = data.results.map(result => {
+    genresName.map(el => {
+      result.genre_ids = el;
+    });
+
     return {
       poster_path: result.poster_path,
       overview: result.overview,
