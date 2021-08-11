@@ -60,11 +60,13 @@ function addFilmsCardMarkup({ results }) {
     }
   });
 
-  const collectionPopFilm = results.map(result => {
-    genresName.map(el => {
-      result.genre_ids = el;
-    });
+  let index = 0;
+  results.forEach(el => {
+    el.genre_ids = genresName[index];
+    index += 1;
+  });
 
+  const collectionPopFilm = results.map(result => {
     return {
       poster_path: result.poster_path,
       overview: result.overview,
