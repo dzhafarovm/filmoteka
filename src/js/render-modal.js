@@ -1,24 +1,30 @@
-import modalTpl from '../hbs/sample-2.hbs';
-import { backdrop } from './refs';
+// import modalTpl from '../hbs/sample-2.hbs';
+// import { refs } from './refs';
 
 // Функция отрисовки модального окна по шаблону
-export default function renderMovieModal(data) {
-  const modalMarkup = modalTemplate(data);
-  backdrop.innerHTML = modalMarkup;
+// export function renderMovieModal(data) {
+//   const collectionIdFilm = data.results;
+//   console.log(collectionIdFilm);
 
-  backdrop.classList.add('is-open');
-  document.body.style.overflow = 'hidden';
+//   const modalMarkup = modalTpl(data);
+//   console.log(modalMarkup);
 
-  const backdrop = document.querySelector('.backdrop');
-  const closeButton = document.querySelector('[data-action="close-modal"]');
+//   refs.backdrop.innerHTML = modalMarkup;
 
-  backdrop.addEventListener('click', modalClose);
-  closeButton.addEventListener('click', modalClose);
-  window.addEventListener('keydown', modalCloseByEsc);
-}
-// Закрытие модалки по Escape
-function modalCloseByEsc(event) {
-  if (event.code === 'Escape') {
-    modalClose();
-  }
-}
+//   backdrop.classList.add('is-open');
+//   document.body.style.overflow = 'hidden';
+
+//   const backdrop = document.querySelector('.backdrop');
+//   const closeButton = document.querySelector('[data-action="close-modal"]');
+
+//   backdrop.addEventListener('click', modalClose);
+//   closeButton.addEventListener('click', modalClose);
+//   window.addEventListener('keydown', modalCloseByEsc);
+// }
+
+// // Закрытие модалки по Escape
+// function modalCloseByEsc(event) {
+//   if (event.code === 'Escape') {
+//     modalClose();
+//   }
+// }
