@@ -5,16 +5,27 @@ import KEY_API from './key';
 
 // Поиск ссылки на крточку и назначение слушателя
 export function openModalListener() {
-  const cardLink = document.querySelector('.card-link');
-  cardLink.addEventListener('click', toggleModal);
+  refs.filmsContainer.addEventListener('click', onPaletteContainerClick);
+}
+function onPaletteContainerClick(evt) {
+  if (!evt.target.classList.contains('film-image')) {
+    return;
+  }
+  refs.backdrop.classList.remove('is-hidden');
+  console.log(evt.target);
 }
 
+// export function openModalListener() {
+//   const cardLink = document.querySelector('.card-link');
+//   cardLink.addEventListener('click', toggleModal);
+// }
+
 // Поведение по нажатю (слушатель)
-function toggleModal(e) {
-  e.preventDefault();
-  refs.backdrop.classList.remove('is-hidden');
-  //   renderMovieModal();
-}
+// function toggleModal(e) {
+//   e.preventDefault();
+//   refs.backdrop.classList.remove('is-hidden');
+//   //   renderMovieModal();
+// }
 
 // Фетч фильма по  ID
 function fetchMovieById(movie_id) {
