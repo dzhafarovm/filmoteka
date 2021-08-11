@@ -58,7 +58,6 @@
     height: 568px;
     padding: 50px 30px 40px 30px;
   }
-
 }
 
 .image {
@@ -78,15 +77,12 @@
     max-width: 396px;
     height: 477.8px;
   }
-
 }
 
 .film__image {
-
   @media screen and (min-width: 768px) {
     margin-right: 30px;
   }
-
 }
 
 .film__information {
@@ -101,7 +97,6 @@
     font-size: 30px;
     line-height: 1.17;
   }
-
 }
 
 .film__item {
@@ -159,9 +154,7 @@
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
-
   &:focus {
-
     background-color: #ff6b08;
     color: #ffffff;
     border: 1px solid #ff6b08;
@@ -169,13 +162,11 @@
 
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     width: 125px;
-
   }
 
   @media screen and (min-width: 1024px) {
     width: 136px;
   }
-
 }
 
 .film__button:first-child {
@@ -237,7 +228,6 @@
     &__img {
       max-height: 44px;
     }
-
   }
 
   @media screen and (min-width: 1024px) {
