@@ -45,7 +45,7 @@ function renderMovieModal(data) {
   //   console.log(collectionIdFilm);
 
   const modalMarkup = modalTpl(data);
-  console.log(modalMarkup);
+  //   console.log(modalMarkup);
   refs.backdrop.innerHTML = modalMarkup;
 }
 
