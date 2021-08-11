@@ -1,41 +1,40 @@
 <div class="modal" data-action="{{id}}">
-    <button class="modal__close" data-modal-close></button>
-    <div class="modal__content">
-        <img class="modal__img" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" loading="lazy" />
-    </div>
+   <button class="modal__close" data-modal-close></button>
+   <div class="modal__content">
+      <img class="modal__img" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" loading="lazy" />
+   </div>
 
-    <div class="card-container">
-        <h2 class="card__title">{{title}}</h2>
-        <ul class="card__list">
-            <li class="card__item">
-                Vote / Votes 
-                <span class="card__item-average">{{vote_average}}</span>/
-                <span class="card__item-count">{{vote_count}}</span>
-            </li>
-            <li class="card__item">
-                Popularity
-                <span class="card__item-popularity">{{popularity}}</span>
-            </li>
-            <li class="card__item">
-                Original Title
-                <span class="card__item-original-title">{{original_title}}</span>
-                </li>
-            <li class="card__item">
-                Genre{{#each genres}}
-                <span>{{this.name}}</span>
-                {{/each}}
-            </li>
-        </ul>
+   <div class="card-container">
+      <h2 class="card__title">{{title}}</h2>
+      <ul class="card__list">
+         <li class="card__item">
+            Vote / Votes
+            <span class="card__item-average">{{vote_average}}</span>/
+            <span class="card__item-count">{{vote_count}}</span>
+         </li>
+         <li class="card__item">
+            Popularity
+            <span class="card__item-popularity">{{popularity}}</span>
+         </li>
+         <li class="card__item">
+            Original Title
+            <span class="card__item-original-title">{{original_title}}</span>
+         </li>
+         <li class="card__item">
+            Genre{{#each genres}}
+            <span>{{this.name}}</span>
+            {{/each}}
+         </li>
+      </ul>
 
-        <p class="card__description">About</p>
-        <p class="card__text">{{overview}}</p>
-        <div class="card__list-btn">
-            <button type="button" class="card__btn-watched">add to Watched</button>
-            <button type="button" class="card__btn-que">add to queue</button>
-            <button type="button" class="card__btn-que">trailer</button>
+      <p class="card__description">About</p>
+      <p class="card__text">{{overview}}</p>
+      <div class="card__list-btn">
+         <button type="button" class="card__btn-watched">add to Watched</button>
+         <button type="button" class="card__btn-que">add to queue</button>
+         <button type="button" class="card__btn-que">trailer</button>
 
-        </div>
-          
-        <button type="button" class="modal-close-btn" data-action="close-modal">Close</button>
-    </div>
+      </div>
+   </div>
+   <button type="button" class="modal-close-btn">Close</button>
 </div>
