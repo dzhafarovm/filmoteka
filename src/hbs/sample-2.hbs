@@ -3,7 +3,6 @@
    <div class="modal__content">
       <img class="modal__img" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" loading="lazy" />
    </div>
-
    <div class="card-container">
       <h2 class="card__title">{{title}}</h2>
       <ul class="card__list">
@@ -26,15 +25,13 @@
             {{/each}}
          </li>
       </ul>
-
       <p class="card__description">About</p>
       <p class="card__text">{{overview}}</p>
       <div class="card__list-btn">
          <button type="button" class="card__btn-watched">add to Watched</button>
          <button type="button" class="card__btn-que">add to queue</button>
-         <button type="button" class="card__btn-que">trailer</button>
-
+         <button type="button" class="card__btn-trailer">trailer</button>
       </div>
+      <button type="button" class="modal-close-btn">Close</button>
    </div>
-   <button type="button" class="modal-close-btn">Close</button>
 </div>

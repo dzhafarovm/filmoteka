@@ -11,8 +11,8 @@
     padding: 60px 75px;
   }
 
-  @media screen and (min-width: 1024px) {
-    max-width: 1024px;
+  @media screen and (min-width: 1200px) {
+    max-width: 1200px;
     padding: 60px 71px;
   }
 }
@@ -50,7 +50,7 @@
     }
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1200px) {
     flex-basis: calc((100% - 90px) / 3);
     margin-right: 30px;
     &:nth-child(3n) {
@@ -81,7 +81,7 @@
   @media screen and (min-width: 768px) {
     width: 294px;
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1200px) {
     width: 274px;
   }
 }

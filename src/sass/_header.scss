@@ -23,7 +23,7 @@
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     background-image: url(../images/header1200.png);
 
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -45,7 +45,7 @@
       background-image: url('../images/headerhidden2x768.png');
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     background-image: url(../images/headerhidden1200.png);
 
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -68,8 +68,8 @@
     padding-right: 72px;
   }
 
-  @media (min-width: 1024px) {
-    max-width: 1024px;
+  @media (min-width: 1200px) {
+    max-width: 1200px;
   }
 }
 
@@ -183,7 +183,7 @@
     height: 20px;
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1200px) {
     min-width: 340px;
   }
 }
