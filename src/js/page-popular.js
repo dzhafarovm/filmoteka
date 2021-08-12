@@ -47,6 +47,7 @@ function renderPopularCollection(data) {
 
   const collectionPopFilm = data.results.map(result => {
     return {
+      id: result.id,
       poster_path: result.poster_path,
       overview: result.overview,
       title: result.title,
