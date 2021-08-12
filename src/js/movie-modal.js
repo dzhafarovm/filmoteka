@@ -67,4 +67,6 @@ async function clickOnMovieHandler(e) {
     //   btnQueue.addEventListener('click', addQueueList);
     //   btnWatch.addEventListener('click', addWatchList);
   
-  }
+}
+  
+  
