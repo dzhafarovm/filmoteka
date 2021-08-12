@@ -16,6 +16,7 @@ function onPaletteContainerClick(evt) {
   }
   refs.backdrop.classList.remove('is-hidden');
   dataIdSearch(evt.target.closest('.card-link').dataset.id);
+  refs.body.classList.add('overhidden')
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -55,6 +56,7 @@ function renderMovieModal(data) {
 // Закрытие модалки
 function modalClose() {
   refs.backdrop.classList.add('is-hidden');
+   refs.body.classList.remove('overhidden')
 }
 
 // Закрытие модалки по Escape
@@ -71,3 +73,5 @@ function closeByButton() {
 
   modalCloseBtn.addEventListener('click', modalClose);
 }
+
+

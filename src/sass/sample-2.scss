@@ -136,6 +136,8 @@ p {
   padding: 1px 10px;
   background: #ff6b01;
   border-radius: 5px;
+  color: #ffffff;
+  text-transform: uppercase;
 }
 
 .card__item-count {
@@ -254,4 +256,8 @@ p {
 }
 .close:after {
   transform: rotate(-45deg);
+}
+
+.overhidden {
+  overflow: hidden;
 }
