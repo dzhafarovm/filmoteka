@@ -15,14 +15,14 @@ function onPaletteContainerClick(evt) {
     return;
   }
   refs.backdrop.classList.remove('is-hidden');
-  dataIdSearch();
+  dataIdSearch(evt.target.closest('.card-link').dataset.id);
 }
 
 //////////////////////////////////////////////////////////////////////////////
 //////// Фетч фильма по  ID
-function fetchId() {
+function fetchId(movie_id) {
   return axios
-    .get(`https://api.themoviedb.org/3/movie/${520763}?api_key=${KEY_API}`)
+    .get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${KEY_API}`)
     .then(response => {
       // console.log(response.data);
       return response.data;
@@ -30,8 +30,8 @@ function fetchId() {
 }
 
 // Данные - вызов
-function dataIdSearch() {
-  fetchId()
+function dataIdSearch(movie_id) {
+  fetchId(movie_id)
     .then(renderMovieModal)
     .catch(error => {
       console.log(error);
