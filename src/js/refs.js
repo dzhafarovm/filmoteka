@@ -8,4 +8,5 @@ export const refs = {
   btnLib: document.querySelector('#btn-library'),
   filmsContainer: document.querySelector('.container'),
   backdrop: document.querySelector('.backdrop'),
+  body: document.querySelector('.body'),
 };
