@@ -52,12 +52,16 @@ function addGenres(results) {
   });
 
   const genresName = newArr.map(id => {
-    if (id.length <= 2) {
+    if (id.length === 1) {
       return id;
     }
 
+    if (id.length === 2) {
+      return `${id[0]},  ${id[1]}`;
+    }
+
     if (id.length > 2) {
-      return [`${id[0]}, ${id[1]}, Other`];
+      return `${id[0]},  ${id[1]},  Other`;
     }
   });
 
