@@ -40,11 +40,12 @@ function renderPopularCollection(data) {
   });
 
   const collectionPopFilm = data.results.map(result => {
-    genresName.map(el => {
-      result.genre_ids = el;
-    });
+    //genresName.map(el => {
+    //  result.genre_ids = el;
+    //});
 
     return {
+      id: result.id,
       poster_path: result.poster_path,
       overview: result.overview,
       title: result.title,
