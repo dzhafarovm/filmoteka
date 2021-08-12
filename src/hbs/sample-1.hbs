@@ -1,6 +1,6 @@
 {{#each this}}
 <li class='gallery-item'>
-   <a href='' onclick="event.preventDefault()" class='card-link'>
+   <a href='' onclick="event.preventDefault()" class='card-link' data-id="{{id}}">
       <div class='film-page'>
          <img class='film-image' src='https://image.tmdb.org/t/p/w500{{poster_path}}' alt='{{overview}}'
             loading='lazy' />
