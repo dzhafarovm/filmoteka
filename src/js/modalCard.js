@@ -11,6 +11,7 @@ export function openModalListener() {
   refs.filmsContainer.addEventListener('click', onPaletteContainerClick);
 }
 
+
 // слушатель
 function onPaletteContainerClick(evt) {
   if (!evt.target.classList.contains('film-overlay-box')) {
@@ -18,7 +19,10 @@ function onPaletteContainerClick(evt) {
   }
   refs.backdrop.classList.remove('is-hidden');
   dataIdSearch(evt.target.closest('.card-link').dataset.id);
+  refs.body.classList.add('overhidden')
 }
+
+
 
 //////////////////////////////////////////////////////////////////////////////
 //////// Фетч фильма по  ID
@@ -58,6 +62,7 @@ function renderMovieModal(data) {
 // Закрытие модалки
 function modalClose() {
   refs.backdrop.classList.add('is-hidden');
+  refs.body.classList.remove('overhidden')
 }
 
 // Закрытие модалки по Escape
