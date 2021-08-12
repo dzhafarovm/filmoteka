@@ -2,6 +2,8 @@ import { refs } from './refs.js';
 import modalTpl from '../hbs/sample-2.hbs';
 import axios from 'axios';
 import { KEY_API } from './key';
+import { listenerAddsWatched } from './modal-btn';
+// console.log(listenerAddsWatched);
 
 //////////////////////////////////////////////////////////////////////////////
 ////// Окрытие модалки - нажатие на карточку и назначение слушателя
@@ -11,7 +13,7 @@ export function openModalListener() {
 
 // слушатель
 function onPaletteContainerClick(evt) {
-  if (!evt.target.classList.contains('film-image')) {
+  if (!evt.target.classList.contains('film-overlay-box')) {
     return;
   }
   refs.backdrop.classList.remove('is-hidden');
@@ -48,6 +50,7 @@ function renderMovieModal(data) {
   //   console.log(modalMarkup);
   refs.backdrop.innerHTML = modalMarkup;
   closeByButton();
+  listenerAddsWatched(data);
   //   modalCloseByEsc();
 }
 
