@@ -1,6 +1,6 @@
 {{#each this}}
-<li class='gallery-item'>
-   <a href='' onclick="event.preventDefault()" class='card-link' data-id="{{id}}">
+<li class='gallery-item '>
+   <a  href='' onclick="event.preventDefault()" class='card-link' data-id="{{id}}">
       <div class='film-page'>
          <img class='film-image' src='https://image.tmdb.org/t/p/w500{{poster_path}}' alt='{{overview}}'
             loading='lazy' />
@@ -8,7 +8,21 @@
             <p class='film-name'>{{title}}</p>
             <p class='film-genre'>{{genre_ids}} | {{release_date}}</p>
          </div>
+         <div class="film-overlay-box">
+            
+
+            <div class="review">
+               <span class="icon-container">{{vote_count}} <i class="fa fa-star"></i></span>
+               <div class="progress">
+                  <div class="progress-done" data-done="{{vote_average}}"></div>
+               </div>
+               <span class="percent">{{vote_average}}</span>
+            </div>
+
+
+         </div>
       </div>
+
    </a>
 </li>
 {{/each}}

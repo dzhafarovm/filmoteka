@@ -11,7 +11,7 @@ export function openModalListener() {
 
 // слушатель
 function onPaletteContainerClick(evt) {
-  if (!evt.target.classList.contains('film-image')) {
+  if (!evt.target.classList.contains('film-overlay-box')) {
     return;
   }
   refs.backdrop.classList.remove('is-hidden');
@@ -73,5 +73,10 @@ function closeByButton() {
 
   modalCloseBtn.addEventListener('click', modalClose);
 }
+
+
+///////////////////////////////////////////////////////////////////////
+
+// https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=<<api_key>>&language=en-US
 
 

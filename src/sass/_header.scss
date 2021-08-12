@@ -1,3 +1,11 @@
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  outline: none;
+  display: inline-block;
+}
 .header {
   height: 230px;
   margin-left: auto;
