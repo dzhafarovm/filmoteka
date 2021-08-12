@@ -40,13 +40,15 @@ function dataIdSearch(movie_id) {
 //////////////////////////////////////////////////////////////////////////////
 // рендеринг шаблона
 function renderMovieModal(data) {
-  console.log(data);
+  //   console.log(data);
   const collectionIdFilm = data;
   //   console.log(collectionIdFilm);
 
   const modalMarkup = modalTpl(data);
   //   console.log(modalMarkup);
   refs.backdrop.innerHTML = modalMarkup;
+  closeByButton();
+  //   modalCloseByEsc();
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -64,5 +66,8 @@ function modalCloseByEsc(event) {
 
 ///////////////////////////////////////////////////////////////////////////
 //
-const modalCloseBtn = document.querySelector('.backdrop');
-modalCloseBtn.addEventListener('click', modalClose);
+function closeByButton() {
+  const modalCloseBtn = document.querySelector('.modal-close-btn.close');
+
+  modalCloseBtn.addEventListener('click', modalClose);
+}
