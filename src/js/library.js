@@ -1,40 +1,42 @@
 import { refs } from './refs.js';
 
-// filmsContainer;
-
 refs.btnLib.addEventListener('click', opensLibraryddd);
 
+// По слущателю - очитска страници
 function opensLibraryddd() {
   refs.filmsContainer.innerHTML = '';
   renderPageLibrary();
 }
 
+// Рендар страници библиотеки
 function renderPageLibrary() {
-  console.log(localStorage.setItem('', JSON.stringify()));
-  localStorage.setItem('myDataStorage', JSON.stringify(myData));
-  //   var myData = localStorage.getItem('myDataStorage');
-  //   console.log(myData);
-  //   let values = [],
-  //     keys = Object.keys(localStorage),
-  //     i = keys.length;
-  //   while (i--) {
-  //     JSON.parse(values);
-  //     values.push(localStorage.getItem(keys[i]));
-  //   }
-  //   //   const movieSt = JSON.parse(values);
-  //   console.log(values);
-  //   return values;
+  console.log(localStorage);
 }
 
-//   const movieStorageData = JSON.parse(localStorage.getItem(idCard));
-// function allStorage() {
-//   var values = [],
-//     keys = Object.keys(localStorage),
-//     i = keys.length;
+//достаем из localStorage после перезагрузки страницы
+// forEachKey();
 
-//   while (i--) {
-//     values.push(localStorage.getItem(keys[i]));
-//   }
+//Перебирает хранилище
+function forEachKey(keyLs) {
+  for (var i = 0; i < localStorage.length; i++) {
+    keyLs(localStorage.key(i));
+  }
+}
 
-//   return values;
-// }
+var returnTask = JSON.parse(localStorage.getItem(727745));
+console.log(returnTask);
+
+allStorage();
+function allStorage() {
+  let archive = {},
+    keys = Object.keys(localStorage),
+    i = keys.length;
+
+  while (i--) {
+    archive[keys[i]] = JSON.parse(localStorage.getItem(keys[i]));
+  }
+  console.log(archive);
+  console.log(archive.keys);
+  //   console.log(JSON.parse(localStorage.getItem(archive)));
+  return archive;
+}

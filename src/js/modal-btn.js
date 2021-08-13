@@ -23,6 +23,7 @@ function searchLinks() {
 function updateStorage(datalocalStorage, keyStorage) {
   const dataStorage = [];
   dataStorage.push(datalocalStorage);
+  //   console.log(datalocalStorage);
   localStorage[keyStorage] = JSON.stringify(dataStorage);
 }
 
