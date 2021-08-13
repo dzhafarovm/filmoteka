@@ -97,8 +97,8 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"./fetch-popular.js":"VlRc","../hbs/sample-1.hbs":"Oy1E","./refs.js":"VyiV","./modalCard.js":"kE3q","../js/genre":"Sl3q"}],"Jbfp":[function(require,module,exports) {
 const e=document.querySelectorAll(".progress-done");e.forEach(e=>{e.style.width="10"*e.getAttribute("data-done")+"%"});
 },{}],"BfNj":[function(require,module,exports) {
-"use strict";var e=require("./refs.js");function o(){e.refs.filmsContainer.innerHTML="",l()}function l(){console.log(localStorage)}function t(e){for(var o=0;o<localStorage.length;o++)e(localStorage.key(o))}e.refs.btnLib.addEventListener("click",o);var r=JSON.parse(localStorage.getItem(727745));function n(){let e={},o=Object.keys(localStorage),l=o.length;for(;l--;)e[o[l]]=JSON.parse(localStorage.getItem(o[l]));return console.log(e),console.log(e.keys),e}console.log(r),n();
-},{"./refs.js":"VyiV"}],"Focm":[function(require,module,exports) {
+"use strict";var e=require("./refs.js"),r=t(require("../hbs/sample-1.hbs"));function t(e){return e&&e.__esModule?e:{default:e}}function n(){e.refs.filmsContainer.innerHTML="",s()}function s(){let t=[],n=Object.keys(localStorage),s=n.length;for(;s--;)t[n[s]]=JSON.parse(localStorage.getItem(n[s]));t.forEach(function(t){e.refs.filmsContainer.insertAdjacentHTML("beforeend",(0,r.default)(t))})}e.refs.btnLib.addEventListener("click",n);
+},{"./refs.js":"VyiV","../hbs/sample-1.hbs":"Oy1E"}],"Focm":[function(require,module,exports) {
 "use strict";require("../node_modules/normalize.css/normalize.css"),require("./sass/main.scss"),require("./js/header"),require("./js/fetchMainCards"),require("./js/renderMainCards"),require("./js/page-popular.js"),require("./js/modalCard"),require("./js/raiting-overfwiol"),require("./js/library");
 },{"../node_modules/normalize.css/normalize.css":"DOAq","./sass/main.scss":"clu1","./js/header":"cGsR","./js/fetchMainCards":"GvWd","./js/renderMainCards":"Zlk5","./js/page-popular.js":"mAQJ","./js/modalCard":"kE3q","./js/raiting-overfwiol":"Jbfp","./js/library":"BfNj"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka/src.875f8b46.js.map
+//# sourceMappingURL=/filmoteka/src.90653399.js.map
