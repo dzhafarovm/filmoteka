@@ -16,6 +16,7 @@ p {
 
 .modal__img {
   width: 240px;
+  border-radius: 5px;
 
   @media (min-width: 768px) {
     width: 264px;
@@ -264,8 +265,8 @@ p {
   position: relative;
 }
 
-.trailer-box {
-}
+// .trailer-box {
+// }
 
 .trailer-box--hidden {
   display: none;
