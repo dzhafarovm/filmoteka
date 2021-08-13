@@ -3,7 +3,6 @@ import modalTpl from '../hbs/sample-2.hbs';
 import axios from 'axios';
 import { KEY_API } from './key';
 import { listenerAddsWatched } from './modal-btn';
-// console.log(listenerAddsWatched);
 
 //////////////////////////////////////////////////////////////////////////////
 ////// Окрытие модалки - нажатие на карточку и назначение слушателя
@@ -36,6 +35,7 @@ function fetchId(movie_id) {
 function dataIdSearch(movie_id) {
   fetchId(movie_id)
     .then(renderMovieModal)
+    //  .then(dataId)
     .catch(error => {
       console.log(error);
     });
@@ -43,16 +43,10 @@ function dataIdSearch(movie_id) {
 //////////////////////////////////////////////////////////////////////////////
 // рендеринг шаблона
 function renderMovieModal(data) {
-  //   console.log(data);
-  const collectionIdFilm = data;
-  //   console.log(collectionIdFilm);
-
   const modalMarkup = modalTpl(data);
-  //   console.log(modalMarkup);
   refs.backdrop.innerHTML = modalMarkup;
   closeByButton();
-  listenerAddsWatched(data);
-  //   modalCloseByEsc();
+  listenerAddsWatched();
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -70,9 +64,8 @@ function modalCloseByEsc(event) {
 }
 
 ///////////////////////////////////////////////////////////////////////////
-//
+// Закрытие модалки по Кнопке
 function closeByButton() {
   const modalCloseBtn = document.querySelector('.modal-close-btn.close');
-
   modalCloseBtn.addEventListener('click', modalClose);
 }
