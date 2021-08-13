@@ -32,7 +32,7 @@ function fetchById(id) {
     .get(`http://api.themoviedb.org/3/movie/${id}/videos?api_key=${KEY_API}`)
     .then(response => response.data)
     .then(data => {
-      console.log('data.results', data.results);
+      // console.log('data.results', data.results);
       return data.results;
     });
 }
