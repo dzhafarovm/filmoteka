@@ -9,9 +9,12 @@ function updateStorage(datalocalStorage, keyStorage) {
   localStorage[keyStorage] = JSON.stringify(dataStorage);
 }
 // После рендеринга - устанавливает слушатель
-export function listenerAddsWatched() {
+export function listenerModalBtn() {
   const btnAddWatched = document.querySelector('.card__btn-watched');
   btnAddWatched.addEventListener('click', addsWatched);
+
+  const btnAddQueue = document.querySelector('.card__btn-que');
+  btnAddQueue.addEventListener('click', addsQueue);
 }
 
 function addsWatched() {
@@ -42,11 +45,6 @@ function addsWatched() {
 }
 
 //////////// Кнопка "add to queue" -  добавить в очередь
-export function listenerAddsQueue() {
-  const btnAddWatched = document.querySelector('.card__btn-watched');
-  btnAddWatched.addEventListener('click', addsQueue);
-}
-
 function addsQueue() {
   const dataId = document.querySelector('.modal');
   const dataImg = document.querySelector('.modal__img');
@@ -67,10 +65,11 @@ function addsQueue() {
     original_title: dataOriginal.textContent,
     genres: dataGenres.textContent,
     overview: dataOverview.textContent,
-    librarySection: Queue,
+    librarySection: queue,
   };
 
   const keyStorage = datalocalStorage.id;
+  console.log(keyStorage);
   updateStorage(datalocalStorage, keyStorage);
 }
 
