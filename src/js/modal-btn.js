@@ -1,13 +1,31 @@
-//////////// Кнопка "add to Watched"  добавить- к просмотренным
 const watched = 'Watched';
 const queue = 'Queue';
 
+////////////////////////////////////////////////
+//Поиск ссылок по карточке
+function searchLinks() {
+  return {
+    dataId: document.querySelector('.modal'),
+    dataImg: document.querySelector('.modal__img'),
+    dataAverage: document.querySelector('.card__item-average'),
+    dataCount: document.querySelector('.card__item-count'),
+    dataPopularity: document.querySelector('.card__item-count'),
+    dataOriginal: document.querySelector('.card__item-original-title'),
+    dataGenres: document.querySelector('.card__item-genres'),
+    dataOverview: document.querySelector('.card__text'),
+    btnWatched: document.querySelector('.card__btn-watched'),
+    btnQueue: document.querySelector('.card__btn-que'),
+  };
+}
+
+//////////// Кнопка "add to Watched"  добавить - к просмотренным
 // Добавляет в  localStorage
 function updateStorage(datalocalStorage, keyStorage) {
   const dataStorage = [];
   dataStorage.push(datalocalStorage);
   localStorage[keyStorage] = JSON.stringify(dataStorage);
 }
+
 // После рендеринга - устанавливает слушатель
 export function listenerModalBtn() {
   const btnAddWatched = document.querySelector('.card__btn-watched');
@@ -15,66 +33,101 @@ export function listenerModalBtn() {
 
   const btnAddQueue = document.querySelector('.card__btn-que');
   btnAddQueue.addEventListener('click', addsQueue);
+  storageСheckWatched();
+  storageСheckQueue();
 }
 
-function addsWatched() {
-  const dataId = document.querySelector('.modal');
-  const dataImg = document.querySelector('.modal__img');
-  const dataAverage = document.querySelector('.card__item-average');
-  const dataCount = document.querySelector('.card__item-count');
-  const dataPopularity = document.querySelector('.card__item-count');
-  const dataOriginal = document.querySelector('.card__item-original-title');
-  const dataGenres = document.querySelector('.card__item-genres');
-  const dataOverview = document.querySelector('.card__text');
+//Проверка статуса кнопок в зависимости от наличия в хранилище и зменение названия
+function storageСheckWatched() {
+  const linsk = searchLinks();
+  const idCard = linsk.dataId.getAttribute('data-action'); // id  в карточке
+  const movieStorageData = JSON.parse(localStorage.getItem(idCard)); // данние из хранилищя
+  if (movieStorageData === null) {
+    return;
+  }
+  if (movieStorageData[0].id === idCard && movieStorageData[0].librarySection === watched) {
+    linsk.btnWatched.textContent = 'removed from Watched';
+  } else {
+    linsk.btnWatched.textContent = 'add to Watched';
+  }
+}
 
+function storageСheckQueue() {
+  const linsk = searchLinks();
+  const idCard = linsk.dataId.getAttribute('data-action'); // id  в карточке
+  const movieStorageData = JSON.parse(localStorage.getItem(idCard)); // данние из хранилищя
+  if (movieStorageData === null) {
+    return;
+  }
+  if (movieStorageData[0].id === idCard && movieStorageData[0].librarySection === queue) {
+    linsk.btnQueue.textContent = 'removed from Queue';
+  } else {
+    linsk.btnQueue.textContent = 'add to Queue';
+  }
+}
+
+// Кнопка - работа с хранилищем (добавление)
+function addsWatched() {
+  const linsk = searchLinks();
   const datalocalStorage = {
-    id: dataId.getAttribute('data-action'),
-    title: dataImg.getAttribute('alt'),
-    poster_path: dataImg.getAttribute('src'),
-    vote_average: dataAverage.textContent,
-    vote_count: dataCount.textContent,
-    popularity: dataPopularity.textContent,
-    original_title: dataOriginal.textContent,
-    genres: dataGenres.textContent,
-    overview: dataOverview.textContent,
+    id: linsk.dataId.getAttribute('data-action'),
+    title: linsk.dataImg.getAttribute('alt'),
+    poster_path: linsk.dataImg.getAttribute('src'),
+    vote_average: linsk.dataAverage.textContent,
+    vote_count: linsk.dataCount.textContent,
+    popularity: linsk.dataPopularity.textContent,
+    original_title: linsk.dataOriginal.textContent,
+    genres: linsk.dataGenres.textContent,
+    overview: linsk.dataOverview.textContent,
     librarySection: watched,
   };
 
   const keyStorage = datalocalStorage.id;
-  updateStorage(datalocalStorage, keyStorage);
+  if (linsk.btnWatched.textContent != 'removed from Watched') {
+    updateStorage(datalocalStorage, keyStorage);
+  } else {
+    deleteStoragData();
+    linsk.btnWatched.textContent = 'add to Watched';
+  }
+  storageСheckWatched();
+  storageСheckQueue();
 }
 
 //////////// Кнопка "add to queue" -  добавить в очередь
 function addsQueue() {
-  const dataId = document.querySelector('.modal');
-  const dataImg = document.querySelector('.modal__img');
-  const dataAverage = document.querySelector('.card__item-average');
-  const dataCount = document.querySelector('.card__item-count');
-  const dataPopularity = document.querySelector('.card__item-count');
-  const dataOriginal = document.querySelector('.card__item-original-title');
-  const dataGenres = document.querySelector('.card__item-genres');
-  const dataOverview = document.querySelector('.card__text');
-
+  const linsk = searchLinks();
   const datalocalStorage = {
-    id: dataId.getAttribute('data-action'),
-    title: dataImg.getAttribute('alt'),
-    poster_path: dataImg.getAttribute('src'),
-    vote_average: dataAverage.textContent,
-    vote_count: dataCount.textContent,
-    popularity: dataPopularity.textContent,
-    original_title: dataOriginal.textContent,
-    genres: dataGenres.textContent,
-    overview: dataOverview.textContent,
+    id: linsk.dataId.getAttribute('data-action'),
+    title: linsk.dataImg.getAttribute('alt'),
+    poster_path: linsk.dataImg.getAttribute('src'),
+    vote_average: linsk.dataAverage.textContent,
+    vote_count: linsk.dataCount.textContent,
+    popularity: linsk.dataPopularity.textContent,
+    original_title: linsk.dataOriginal.textContent,
+    genres: linsk.dataGenres.textContent,
+    overview: linsk.dataOverview.textContent,
     librarySection: queue,
   };
 
   const keyStorage = datalocalStorage.id;
-  console.log(keyStorage);
-  updateStorage(datalocalStorage, keyStorage);
+  if (linsk.btnQueue.textContent != 'removed from Queue') {
+    updateStorage(datalocalStorage, keyStorage);
+  } else {
+    deleteStoragData();
+    linsk.btnQueue.textContent = 'add to Queue';
+  }
+  storageСheckQueue();
+  storageСheckWatched();
 }
 
-//   const qqqq = JSON.parse(localStorage.getItem(fqwe));
-
-//   console.log(typeof fqwe); // объект
-//   console.log(qqqq);
-//   console.log((fqwe1 = JSON.parse(localStorage.getItem('fqwe')))); // Объект {x: 12, y: 56}
+//////// Удаление из хранилища
+function deleteStoragData() {
+  const linsk = searchLinks();
+  const idCard = linsk.dataId.getAttribute('data-action'); // id  в карточке
+  if (
+    linsk.btnWatched.textContent === 'removed from Watched' ||
+    linsk.btnQueue.textContent === 'removed from Queue'
+  ) {
+    localStorage.removeItem(idCard);
+  }
+}
