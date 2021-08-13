@@ -1,44 +1,49 @@
 //////////// Кнопка "add to Watched"  добавить- к просмотренным
-export function listenerAddsWatched(data) {
+export function listenerAddsWatched() {
   const btnAddWatched = document.querySelector('.card__btn-watched');
   btnAddWatched.addEventListener('click', addsWatched);
 }
-// добавляет в Локальное хранилище
-function addsWatched(data) {
-  console.log(data);
 
-  const fqwe = {
-    id: 111,
-    y: 2,
-    z: 3,
+function addsWatched() {
+  const dataId = document.querySelector('.modal');
+  const dataImg = document.querySelector('.modal__img');
+  const dataAverage = document.querySelector('.card__item-average');
+  const dataCount = document.querySelector('.card__item-count');
+  const dataPopularity = document.querySelector('.card__item-count');
+  const dataOriginal = document.querySelector('.card__item-original-title');
+  const dataGenres = document.querySelector('.card__item-genres');
+  const dataOverview = document.querySelector('.card__text');
+
+  //   console.log(dataId.getAttribute('data-action')); //1
+  //   console.log(dataImg.getAttribute('alt')); //2
+  //   console.log(dataImg.getAttribute('src')); //3
+  //   console.log(dataAverage.textContent); //4
+  //   console.log(dataCount.textContent); //5
+  //   console.log(dataPopularity.textContent); //6
+  //   console.log(dataOriginal.textContent); //7
+  //   console.log(dataGenres.textContent); //8
+  //   console.log(dataOverview.textContent); //9
+
+  const datalocalStorage = {
+    id: dataId.getAttribute('data-action'),
+    title: dataImg.getAttribute('alt'),
+    poster_path: dataImg.getAttribute('src'),
+    vote_average: dataAverage.textContent,
+    vote_count: dataCount.textContent,
+    popularity: dataPopularity.textContent,
+    original_title: dataOriginal.textContent,
+    genres: dataGenres.textContent,
+    overview: dataOverview.textContent,
+    //
   };
-  console.log(fqwe);
+  console.log(datalocalStorage);
 
-  localStorage.setItem(fqwe, JSON.stringify(fqwe));
-  const qqqq = JSON.parse(localStorage.getItem(fqwe));
-
-  console.log(typeof fqwe); // объект
-  console.log(qqqq);
-  //   console.log((fqwe1 = JSON.parse(localStorage.getItem('fqwe')))); // Объект {x: 12, y: 56}
+  localStorage.setItem(datalocalStorage, JSON.stringify(datalocalStorage));
 }
 
 //////////// Кнопка "add to queue" -  добавить в очередь
+//   const qqqq = JSON.parse(localStorage.getItem(fqwe));
 
-// //Добавляем или изменяем значение:
-// localStorage.setItem('myKey', 'myValue'); //теперь у вас в localStorage хранится ключ "myKey" cо значением "myValue"
-
-// //Выводим его в консоль:
-// var localValue = localStorage.getItem('myKey');
-// console.log(localValue); //"myValue"
-
-// //удаляем:
-// localStorage.removeItem("myKey");
-
-// //очищаем все хранилище
-// localStorage.clear()
-
-// То же самое, только с квадратными скобками:
-
-// localStorage["Ключ"] = "Значение" //установка значения
-// localStorage["Ключ"] // Получение значения
-// delete localStorage["Ключ"] // Удаление значения
+//   console.log(typeof fqwe); // объект
+//   console.log(qqqq);
+//   console.log((fqwe1 = JSON.parse(localStorage.getItem('fqwe')))); // Объект {x: 12, y: 56}
