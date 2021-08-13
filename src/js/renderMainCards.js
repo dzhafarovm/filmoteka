@@ -4,6 +4,7 @@ import { Notify } from 'notiflix';
 import FilmsApiService from './fetchMainCards';
 import filmsCardTpl from '../hbs/sample-1.hbs';
 import { genres } from '../js/genre';
+import { openModalListener } from './modalCard.js';
 
 // const inputEl = document.querySelector('.search-input');
 const searchForm = document.querySelector('.search-form');
@@ -44,6 +45,7 @@ function addFilmsCardMarkup({ results }) {
 
   const collectionPopFilm = results.map(result => {
     return {
+      id: result.id,
       poster_path: result.poster_path,
       overview: result.overview,
       title: result.title,
@@ -53,6 +55,7 @@ function addFilmsCardMarkup({ results }) {
   });
 
   filmsContainer.insertAdjacentHTML('beforeend', filmsCardTpl(collectionPopFilm));
+  openModalListener();
   Notify.success(`We found ${totalRenderedFilms} films for you.`);
 }
 
@@ -106,7 +109,6 @@ function addDate(results) {
     if (el.release_date === undefined || el.release_date === '') {
       el.release_date = 'new here';
     }
-    console.log(el.release_date);
     return;
   });
 }

@@ -88,7 +88,6 @@ function addDate(results) {
     if (el.release_date === undefined || el.release_date === '') {
       el.release_date = 'new here';
     }
-    //  console.log(el.release_date);
     return;
   });
 }

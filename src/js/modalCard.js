@@ -3,6 +3,7 @@ import modalTpl from '../hbs/sample-2.hbs';
 import axios from 'axios';
 import { KEY_API } from './key';
 import { listenerModalBtn } from './modal-btn';
+import onTrailerClick from './trailer';
 
 //////////////////////////////////////////////////////////////////////////////
 ////// Окрытие модалки - нажатие на карточку и назначение слушателя
@@ -47,6 +48,7 @@ function renderMovieModal(data) {
   refs.backdrop.innerHTML = modalMarkup;
   closeByButton();
   listenerModalBtn();
+  onTrailerClick();
 }
 
 //////////////////////////////////////////////////////////////////////////////

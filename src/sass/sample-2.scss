@@ -255,3 +255,14 @@ p {
 .close:after {
   transform: rotate(-45deg);
 }
+
+.modal {
+  position: relative;
+}
+
+.trailer-box {
+}
+
+.trailer-box--hidden {
+  display: none;
+}
