@@ -5,6 +5,7 @@ import FilmsApiService from './fetchMainCards';
 import filmsCardTpl from '../hbs/sample-1.hbs';
 import { genres } from '../js/genre';
 import { openModalListener } from './modalCard.js';
+import onTrailerClick from './trailer';
 
 // const inputEl = document.querySelector('.search-input');
 const searchForm = document.querySelector('.search-form');
@@ -56,6 +57,7 @@ function addFilmsCardMarkup({ results }) {
 
   filmsContainer.insertAdjacentHTML('beforeend', filmsCardTpl(collectionPopFilm));
   openModalListener();
+  onTrailerClick();
   Notify.success(`We found ${totalRenderedFilms} films for you.`);
 }
 

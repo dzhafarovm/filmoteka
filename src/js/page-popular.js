@@ -3,6 +3,7 @@ import collectionPopalarCardTpl from '../hbs/sample-1.hbs';
 import { refs } from './refs.js';
 import { openModalListener } from './modalCard.js';
 import { genres } from '../js/genre';
+import onTrailerClick from './trailer';
 
 dataCollection();
 
@@ -36,6 +37,7 @@ function renderPopularCollection(data) {
   const markup = collectionPopalarCardTpl(collectionPopFilm);
   refs.filmsContainer.innerHTML = markup;
   openModalListener();
+  onTrailerClick();
 }
 
 // Подмена id на имя жанра и обрезка по длине строки

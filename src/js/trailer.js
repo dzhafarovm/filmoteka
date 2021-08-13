@@ -1,22 +1,17 @@
 import axios from 'axios';
 import { KEY_API } from './key';
+import { refs } from './refs.js';
 
 export default function onTrailerClick() {
-  const btnTrailer = document.querySelector('.card__btn-trailer');
-  const divModal = document.querySelector('.modal');
-
-  divModal.addEventListener('click', watchTrailer);
+  refs.filmsContainer.addEventListener('click', watchTrailer);
 }
 
 function watchTrailer(e) {
-  if (!e.target.classList.contains('card__btn-trailer')) {
+  if (!e.target.classList.contains('film-image')) {
     return;
   }
 
-  const videoEl = document.querySelector('.trailer-box');
-  videoEl.classList.remove('trailer-box--hidden');
-
-  dataIdSearch(e.currentTarget.dataset.action);
+  dataIdSearch(e.target.closest('.card-link').dataset.id);
 }
 
 function dataIdSearch(id) {
@@ -32,12 +27,18 @@ function fetchById(id) {
     .get(`http://api.themoviedb.org/3/movie/${id}/videos?api_key=${KEY_API}`)
     .then(response => response.data)
     .then(data => {
-      // console.log('data.results', data.results);
       return data.results;
     });
 }
 
-function renderTrailer() {
-  const videoEl = document.querySelector('.trailer-box');
-  videoEl.src = '';
+function renderTrailer(data) {
+  let key = '';
+  data.forEach(obj => {
+    if (obj.name.includes('Official')) {
+      key = obj.key;
+    }
+  });
+
+  const trailerLink = document.querySelector('.js-youtube-key');
+  trailerLink.href = `https://www.youtube.com/watch?v=${key}`;
 }
