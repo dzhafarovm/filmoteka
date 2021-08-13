@@ -1,7 +1,20 @@
 //////////// Кнопка "add to Watched"  добавить- к просмотренным
-export function listenerAddsWatched() {
+const watched = 'Watched';
+const queue = 'Queue';
+
+// Добавляет в  localStorage
+function updateStorage(datalocalStorage, keyStorage) {
+  const dataStorage = [];
+  dataStorage.push(datalocalStorage);
+  localStorage[keyStorage] = JSON.stringify(dataStorage);
+}
+// После рендеринга - устанавливает слушатель
+export function listenerModalBtn() {
   const btnAddWatched = document.querySelector('.card__btn-watched');
   btnAddWatched.addEventListener('click', addsWatched);
+
+  const btnAddQueue = document.querySelector('.card__btn-que');
+  btnAddQueue.addEventListener('click', addsQueue);
 }
 
 function addsWatched() {
@@ -14,15 +27,33 @@ function addsWatched() {
   const dataGenres = document.querySelector('.card__item-genres');
   const dataOverview = document.querySelector('.card__text');
 
-  //   console.log(dataId.getAttribute('data-action')); //1
-  //   console.log(dataImg.getAttribute('alt')); //2
-  //   console.log(dataImg.getAttribute('src')); //3
-  //   console.log(dataAverage.textContent); //4
-  //   console.log(dataCount.textContent); //5
-  //   console.log(dataPopularity.textContent); //6
-  //   console.log(dataOriginal.textContent); //7
-  //   console.log(dataGenres.textContent); //8
-  //   console.log(dataOverview.textContent); //9
+  const datalocalStorage = {
+    id: dataId.getAttribute('data-action'),
+    title: dataImg.getAttribute('alt'),
+    poster_path: dataImg.getAttribute('src'),
+    vote_average: dataAverage.textContent,
+    vote_count: dataCount.textContent,
+    popularity: dataPopularity.textContent,
+    original_title: dataOriginal.textContent,
+    genres: dataGenres.textContent,
+    overview: dataOverview.textContent,
+    librarySection: watched,
+  };
+
+  const keyStorage = datalocalStorage.id;
+  updateStorage(datalocalStorage, keyStorage);
+}
+
+//////////// Кнопка "add to queue" -  добавить в очередь
+function addsQueue() {
+  const dataId = document.querySelector('.modal');
+  const dataImg = document.querySelector('.modal__img');
+  const dataAverage = document.querySelector('.card__item-average');
+  const dataCount = document.querySelector('.card__item-count');
+  const dataPopularity = document.querySelector('.card__item-count');
+  const dataOriginal = document.querySelector('.card__item-original-title');
+  const dataGenres = document.querySelector('.card__item-genres');
+  const dataOverview = document.querySelector('.card__text');
 
   const datalocalStorage = {
     id: dataId.getAttribute('data-action'),
@@ -34,14 +65,14 @@ function addsWatched() {
     original_title: dataOriginal.textContent,
     genres: dataGenres.textContent,
     overview: dataOverview.textContent,
-    //
+    librarySection: queue,
   };
-  console.log(datalocalStorage);
 
-  localStorage.setItem(datalocalStorage, JSON.stringify(datalocalStorage));
+  const keyStorage = datalocalStorage.id;
+  console.log(keyStorage);
+  updateStorage(datalocalStorage, keyStorage);
 }
 
-//////////// Кнопка "add to queue" -  добавить в очередь
 //   const qqqq = JSON.parse(localStorage.getItem(fqwe));
 
 //   console.log(typeof fqwe); // объект
