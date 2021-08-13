@@ -53,6 +53,10 @@ function renderMovieModal(data) {
   const modalMarkup = modalTpl(data);
   //   console.log(modalMarkup);
   refs.backdrop.innerHTML = modalMarkup;
+  refs.backdrop.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+  window.addEventListener('keydown', modalCloseByEsc);
+  
   closeByButton();
   listenerAddsWatched(data);
   //   modalCloseByEsc();
