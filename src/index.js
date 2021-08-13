@@ -7,4 +7,3 @@ import './js/page-popular.js';
 import './js/modalCard';
 import './js/raiting-overfwiol';
 import './js/library.js';
-// import './js/trailer';
