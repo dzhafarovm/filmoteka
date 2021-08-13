@@ -45,6 +45,10 @@ function dataIdSearch(movie_id) {
 function renderMovieModal(data) {
   const modalMarkup = modalTpl(data);
   refs.backdrop.innerHTML = modalMarkup;
+  refs.backdrop.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+  window.addEventListener('keydown', modalCloseByEsc);
+  
   closeByButton();
   listenerModalBtn();
 }
