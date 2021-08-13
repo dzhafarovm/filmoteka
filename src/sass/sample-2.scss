@@ -16,6 +16,7 @@ p {
 
 .modal__img {
   width: 240px;
+  border-radius: 5px;
 
   @media (min-width: 768px) {
     width: 264px;
@@ -136,6 +137,8 @@ p {
   padding: 1px 10px;
   background: #ff6b01;
   border-radius: 5px;
+  color: #ffffff;
+  margin-right: 3px;
 }
 
 .card__item-count {
@@ -169,6 +172,7 @@ p {
   border: 1px solid #000000;
   border-radius: 5px;
   color: #000000;
+  cursor: pointer;
 
   margin-bottom: 10px;
   &:nth-child(3n) {
@@ -192,6 +196,7 @@ p {
 }
 
 .card__btn-que {
+  cursor: pointer;
   @media (min-width: 768px) and(max-width:1199px) {
     margin: 0;
   }
@@ -260,8 +265,8 @@ p {
   position: relative;
 }
 
-.trailer-box {
-}
+// .trailer-box {
+// }
 
 .trailer-box--hidden {
   display: none;
