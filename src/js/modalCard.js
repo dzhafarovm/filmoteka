@@ -4,6 +4,7 @@ import axios from 'axios';
 import { KEY_API } from './key';
 import { listenerModalBtn } from './modal-btn';
 import onTrailerClick from './trailer';
+import '../sass/sample-2.scss'
 
 //////////////////////////////////////////////////////////////////////////////
 ////// Окрытие модалки - нажатие на карточку и назначение слушателя
@@ -13,7 +14,7 @@ export function openModalListener() {
 
 // слушатель
 function onPaletteContainerClick(evt) {
-  if (!evt.target.classList.contains('film-overlay-box')) {
+  if (!evt.target.classList.contains('film-image')) {
     return;
   }
   refs.backdrop.classList.remove('is-hidden');
@@ -47,7 +48,7 @@ function renderMovieModal(data) {
   const modalMarkup = modalTpl(data);
   refs.backdrop.innerHTML = modalMarkup;
   refs.backdrop.classList.add('is-open');
-  document.body.style.overflow = 'hidden';
+  // document.body.style.overflow = 'hidden';
   window.addEventListener('keydown', modalCloseByEsc);
   
   closeByButton();
@@ -60,6 +61,7 @@ function renderMovieModal(data) {
 function modalClose() {
   refs.backdrop.classList.add('is-hidden');
   refs.body.classList.remove('overhidden');
+  // refs.body.classList.add('overskroll')
 }
 
 // Закрытие модалки по Escape
