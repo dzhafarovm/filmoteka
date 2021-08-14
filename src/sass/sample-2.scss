@@ -16,7 +16,7 @@ br {
   }
 
   @media (min-width: 1024px) {
-    width: 396px;
+    width: 440px;
   }
 }
 
@@ -27,13 +27,13 @@ br {
   object-fit: contain;
 
   @media (min-width: 768px) {
-    width: 264px;
+    width: 250px;
     height: 375px;
   }
 
   @media (min-width: 1024px) {
-    width: 396px;
-    height: 477px;
+    width: 318px;
+    height: 479px;
   }
 }
 
@@ -227,14 +227,11 @@ br {
 
 .card__btn-watched:hover,
 .card__btn-que:hover,
-.card__btn-trailer:hover,
-.card__btn-watched:focus,
-.card__btn-que:focus,
-.card__btn-trailer:focus {
+.card__btn-trailer:hover {
   color: #ffffff;
   background-color: #ff6b01;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) background-color 250ms
+    cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn {
@@ -283,4 +280,11 @@ br {
 
 .trailer-box--hidden {
   display: none;
+}
+
+.card__svg-youtube {
+  width: 32px;
+  height: 32px;
+  fill: red;
+  background-color: gray;
 }
