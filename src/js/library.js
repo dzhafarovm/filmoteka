@@ -1,5 +1,5 @@
 import { refs } from './refs.js';
-import collectionLibraryCardTpl from '../hbs/sample-1.hbs';
+import collectionLibraryCardTpl from '../hbs/sample-1-1.hbs';
 import { watched, queue } from './modal-btn';
 
 //Поиск ссылок по карточке
@@ -37,6 +37,7 @@ function allStorage() {
     //  console.log(item[0].genres.replace(/\n/g, ''));
     //  item[0].genres.replace(/\n/g, '');
     //  console.log(item[0].librarySection);
+    //  console.log(item[0].genres);
 
     refs.filmsContainer.insertAdjacentHTML('beforeend', collectionLibraryCardTpl(item));
   });
