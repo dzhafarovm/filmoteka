@@ -24,7 +24,7 @@ function dataIdSearch(id) {
 
 function fetchById(id) {
   return axios
-    .get(`http://api.themoviedb.org/3/movie/${id}/videos?api_key=${KEY_API}`)
+    .get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${KEY_API}`)
     .then(response => response.data)
     .then(data => {
       return data.results;
