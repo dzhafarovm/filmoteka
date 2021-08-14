@@ -7,13 +7,15 @@
   padding: 20px 20px 40px 20px;
 
   @media screen and (min-width: 768px) {
-    max-width: 768px;
-    padding: 60px 75px;
+    max-width: 658px;
+    padding-top: 60px;
+    // padding: 60px 75px;
   }
 
-  @media screen and (min-width: 1200px) {
-    max-width: 1200px;
-    padding: 60px 71px;
+  @media screen and (min-width: 1024px) {
+    max-width: 922px;
+
+    //   padding: 60px 71px;
   }
 }
 
@@ -29,10 +31,11 @@
     display: flex;
     // justify-content: space-around;
     flex-wrap: wrap;
-    @media (min-width: 1200px) {
-      margin-left: 100px;
-      margin-right: -100px;
-    }
+
+    // @media (min-width: 1024px) {
+    //   margin-left: 100px;
+    //   margin-right: -100px;
+    // }
   }
 
   // justify-content: center;
@@ -56,14 +59,14 @@
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1024px) {
     flex-basis: calc((100% - 90px) / 3);
-    margin-right: -30px;
-    &:nth-child(2n + 1) {
-      margin-right: -30px;
-    }
+    margin-right: 30px;
+    //   &:nth-child(2n + 1) {
+    //     margin-right: -30px;
+    //   }
     &:nth-child(3n) {
-      margin-right: -30px;
+      margin-right: 0;
     }
   }
 }
@@ -76,11 +79,11 @@
 
   &:hover,
   &:focus {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-      1px 4px 6px rgba(0, 0, 0, 0.16);
+    // box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    // 1px 4px 6px rgba(0, 0, 0, 0.16);
 
-    // box-shadow: 0px 1px 1px rgba(rgb(255, 107, 8), 0.12), 0px 4px 4px rgba(rgb(255, 107, 8), 0.06),
-    // 1px 4px 6px rgba(rgb(255, 107, 8), 0.16);
+    box-shadow: 0px 1px 1px rgba(rgb(255, 107, 8), 0.12), 0px 4px 4px rgba(rgb(255, 107, 8), 0.06),
+      1px 4px 6px rgba(rgb(255, 107, 8), 0.16);
   }
 }
 
@@ -92,7 +95,7 @@
   @media screen and (min-width: 768px) {
     width: 294px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1024px) {
     width: 274px;
   }
 }
@@ -102,6 +105,23 @@
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
+  position: relative;
+}
+
+.film-average {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 1px 10px;
+  background: #ff6b01;
+  border-radius: 5px;
+  color: #ffffff;
+  // margin-right: 3px;
 }
 
 .film-info {
@@ -212,7 +232,9 @@
 
 .percent {
   color: #333;
-} /////////////////////////////////////////////////////////////////////
+}
+
+/////////////////////////////////////////////////////////////////////
 .film-overlay-box-average {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
@@ -236,10 +258,6 @@
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-
-// .film-image:hover {
-//   transform: scale(1.2);
-// }
 
 .film-overlay-box-svg {
   width: 20px;

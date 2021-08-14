@@ -9,7 +9,7 @@ p {
     margin-left: 30px;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     width: 882px;
   }
 }
@@ -22,7 +22,7 @@ p {
     width: 264px;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     width: 396px;
   }
 }
@@ -41,7 +41,7 @@ p {
   @media (min-width: 767px) {
     padding-top: 0;
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     font-size: 30px;
     line-height: 1.16;
   }
@@ -63,7 +63,7 @@ p {
 
   float: left;
   width: 100%;
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     width: 49%;
   }
 }
@@ -75,7 +75,7 @@ p {
   float: right;
   width: 53%;
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     width: 49%;
   }
 }
@@ -188,7 +188,7 @@ p {
     }
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     &:nth-child(3n) {
       margin-top: 0;
     }
