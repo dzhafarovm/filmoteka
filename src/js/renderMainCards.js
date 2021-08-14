@@ -41,6 +41,7 @@ function addFilmsCardMarkup({ results }) {
     Notify.failure('Sorry, there are no films matching your search query. Please try again.');
     return;
   }
+
   totalRenderedFilms += results.length;
   addGenres(results);
   addPoster(results);
@@ -49,6 +50,7 @@ function addFilmsCardMarkup({ results }) {
   const collectionPopFilm = results.map(result => {
     return {
       id: result.id,
+      vote_average: result.vote_average,
       poster_path: result.poster_path,
       overview: result.overview,
       title: result.title,
