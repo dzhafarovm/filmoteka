@@ -3,9 +3,11 @@
     <a href='' onclick='event.preventDefault()' class='card-link' data-id='{{id}}'>
       <div class='film-page'>
         <img class='film-image' src='{{poster_path}}' alt='{{overview}}' loading='lazy' />
+        <span class='film-average'>{{vote_average}} </span>
         <div class='film-info'>
           <p class='film-name'>{{title}}</p>
           <p class='film-genre'>{{genre_ids}} | {{release_date}}</p>
+         
         </div>
         {{!-- <div class='film-overlay-box'>
 
