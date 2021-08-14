@@ -5,6 +5,12 @@ import { openModalListener } from './modalCard.js';
 import { genres } from '../js/genre';
 import onTrailerClick from './trailer';
 
+refs.btnHome.addEventListener('click', onDataCollection);
+
+function onDataCollection() {
+  dataCollection();
+}
+
 dataCollection();
 
 //// Вызов данных запроса
