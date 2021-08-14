@@ -97,9 +97,9 @@ function addsWatched() {
 //////////// Кнопка "add to queue" -  добавить в очередь
 function addsQueue() {
   const linsk = searchLinks();
-  let Lddd = linsk.dataGenres.textContent;
-  Lddd = Lddd.replace(/\s+/g, ' ');
-  console.log(Lddd);
+  let genresStrong = linsk.dataGenres.textContent;
+  genresStrong = Lddd.replace(/\s+/g, ' ');
+  //   console.log(Lddd);
 
   const datalocalStorage = {
     id: linsk.dataId.getAttribute('data-action'),
@@ -109,7 +109,7 @@ function addsQueue() {
     vote_count: linsk.dataCount.textContent,
     popularity: linsk.dataPopularity.textContent,
     original_title: linsk.dataOriginal.textContent,
-    genres: { name: Lddd },
+    genres: { name: genresStrong },
     overview: linsk.dataOverview.textContent,
     librarySection: queue,
   };
