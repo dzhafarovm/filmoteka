@@ -1,5 +1,5 @@
-const watched = 'Watched';
-const queue = 'Queue';
+export const watched = 'Watched';
+export const queue = 'Queue';
 
 ////////////////////////////////////////////////
 //Поиск ссылок по карточке
