@@ -3,16 +3,18 @@ import modalTpl from '../hbs/sample-2.hbs';
 import axios from 'axios';
 import { KEY_API } from './key';
 import { listenerModalBtn } from './modal-btn';
+// import { modalButtonStyles } from './modal-btn';
 import onTrailerClick from './trailer';
 import '../sass/sample-2.scss';
 
 //////////////////////////////////////////////////////////////////////////////
 ////// Окрытие модалки - нажатие на карточку и назначение слушателя
+// слушатель
 export function openModalListener() {
   refs.filmsContainer.addEventListener('click', onPaletteContainerClick);
 }
 
-// слушатель
+// слушатель клика и доп стилизация
 function onPaletteContainerClick(evt) {
   if (!evt.target.classList.contains('film-image')) {
     return;
@@ -54,6 +56,7 @@ function renderMovieModal(data) {
   closeByButton();
   listenerModalBtn();
   onTrailerClick();
+  //   modalButtonStyles();
 }
 
 //////////////////////////////////////////////////////////////////////////////
