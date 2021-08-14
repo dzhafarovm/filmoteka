@@ -74,7 +74,7 @@ function modalClose() {
 // Закрытие модалки по Escape
 function modalCloseByEsc(event) {
   if (event.code === 'Escape') {
-    modalClose();
+    //  modalClose();
   }
 }
 
