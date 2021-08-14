@@ -4,6 +4,8 @@ import axios from 'axios';
 import { KEY_API } from './key';
 import { listenerModalBtn } from './modal-btn';
 // import { modalButtonStyles } from './modal-btn';
+import { filtersWatched } from './library';
+import { filtersQueue } from './library';
 import onTrailerClick from './trailer';
 import '../sass/sample-2.scss';
 
@@ -65,6 +67,8 @@ function modalClose() {
   refs.backdrop.classList.add('is-hidden');
   refs.body.classList.remove('overhidden');
   // refs.body.classList.add('overskroll')
+  filtersWatched();
+  filtersQueue();
 }
 
 // Закрытие модалки по Escape
