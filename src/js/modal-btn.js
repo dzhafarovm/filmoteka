@@ -12,6 +12,7 @@ function searchLinks() {
     dataPopularity: document.querySelector('.card__item-count'),
     dataOriginal: document.querySelector('.card__item-original-title'),
     dataGenres: document.querySelector('.card__item-genres'),
+    //  dataGenres: document.querySelectorAll('.card__item-genre'),
     dataOverview: document.querySelector('.card__text'),
     btnWatched: document.querySelector('.card__btn-watched'),
     btnQueue: document.querySelector('.card__btn-que'),
@@ -70,6 +71,10 @@ function storageСheckQueue() {
 // Кнопка - работа с хранилищем (добавление)
 function addsWatched() {
   const linsk = searchLinks();
+  let genresStrong = linsk.dataGenres.textContent;
+
+  genresStrong = genresStrong.replace(/\s+/g, ' ').trim().split(' ').join(', ');
+
   const datalocalStorage = {
     id: linsk.dataId.getAttribute('data-action'),
     title: linsk.dataImg.getAttribute('alt'),
@@ -78,7 +83,7 @@ function addsWatched() {
     vote_count: linsk.dataCount.textContent,
     popularity: linsk.dataPopularity.textContent,
     original_title: linsk.dataOriginal.textContent,
-    genres: linsk.dataGenres.textContent,
+    genres: { name: genresStrong },
     overview: linsk.dataOverview.textContent,
     librarySection: watched,
   };
@@ -98,8 +103,9 @@ function addsWatched() {
 function addsQueue() {
   const linsk = searchLinks();
   let genresStrong = linsk.dataGenres.textContent;
-  genresStrong = Lddd.replace(/\s+/g, ' ');
-  //   console.log(Lddd);
+
+  genresStrong = genresStrong.replace(/\s+/g, ' ').trim().split(' ').join(', ');
+  //   console.log(genresStrong);
 
   const datalocalStorage = {
     id: linsk.dataId.getAttribute('data-action'),

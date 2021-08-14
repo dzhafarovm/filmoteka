@@ -37,7 +37,7 @@ function allStorage() {
     //  console.log(item[0].genres.replace(/\n/g, ''));
     //  item[0].genres.replace(/\n/g, '');
     //  console.log(item[0].librarySection);
-    console.log(item[0].genres);
+    //  console.log(item[0].genres);
 
     refs.filmsContainer.insertAdjacentHTML('beforeend', collectionLibraryCardTpl(item));
   });
