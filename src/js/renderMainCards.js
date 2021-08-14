@@ -41,6 +41,7 @@ function addFilmsCardMarkup({ results }) {
     Notify.failure('Sorry, there are no films matching your search query. Please try again.');
     return;
   }
+
   totalRenderedFilms += results.length;
   addGenres(results);
   addPoster(results);
