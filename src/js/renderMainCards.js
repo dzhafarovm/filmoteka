@@ -20,12 +20,13 @@ searchForm.addEventListener('submit', onSearchFormSubmit);
 
 function onSearchFormSubmit(e) {
   e.preventDefault();
-  filmsContainer.innerHTML = '';
+
   filmsApiService.query = e.currentTarget.elements.query.value;
   if (filmsApiService.query.trim() === '') {
-    filmsContainer.innerHTML = '';
     return;
   }
+
+  filmsContainer.innerHTML = '';
   // filmsApiService.resetPage();
   filmsApiService
     .fetchCards()
