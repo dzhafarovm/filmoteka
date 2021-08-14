@@ -46,6 +46,12 @@ p {
     line-height: 1.16;
   }
 }
+.card__list {
+  @media (min-width: 767px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 .card__item {
   font-family: 'Roboto', sans-serif;
@@ -66,6 +72,14 @@ p {
   @media (min-width: 1024px) {
     width: 49%;
   }
+}
+
+.card__item-average {
+  padding: 1px 10px;
+  background: #ff6b01;
+  border-radius: 5px;
+  color: #ffffff;
+  margin-right: 3px;
 }
 
 .card__item-vote,
@@ -110,6 +124,7 @@ p {
     line-height: 1.33;
   }
 }
+
 .card__description {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -131,14 +146,6 @@ p {
   line-height: 1.67;
   padding-bottom: 20px;
   color: #000000;
-}
-
-.card__item-average {
-  padding: 1px 10px;
-  background: #ff6b01;
-  border-radius: 5px;
-  color: #ffffff;
-  margin-right: 3px;
 }
 
 .card__item-count {
@@ -211,14 +218,7 @@ p {
   color: #ffffff;
   background-color: #ff6b01;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    bacground-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card__list {
-  @media (min-width: 767px) {
-    display: flex;
-    flex-direction: column;
-  }
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn {
@@ -227,7 +227,6 @@ p {
   right: 10px;
   width: 30px;
   height: 30px;
-  // border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   fill: #000000;
 }
@@ -240,7 +239,8 @@ p {
   height: 32px;
   opacity: 0.3;
 }
-.close:hover {
+.close:hover,
+.close:focus {
   opacity: 1;
 }
 .close:before,
@@ -264,9 +264,6 @@ p {
 .modal {
   position: relative;
 }
-
-// .trailer-box {
-// }
 
 .trailer-box--hidden {
   display: none;

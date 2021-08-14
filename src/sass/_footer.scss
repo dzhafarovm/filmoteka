@@ -1,32 +1,3 @@
-.footer {
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
-  line-height: 1.14;
-  color: #545454;
-  height: 100px;
-  background: #f7f7f7;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-  padding-left: 15px;
-  padding-right: 15px;
-  //   height: 10em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media (min-width: 768px) {
-    height: 80px;
-    font-size: 16px;
-    line-height: 1.18;
-  }
-}
-
-.svg-heart {
-  width: 14px;
-  height: 13px;
-  fill: #ff6b08;
-}
 li {
   margin: 0;
   padding: 0;
@@ -35,8 +6,9 @@ li {
   outline: none;
   display: inline-block;
 }
+
 .footer {
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.14;
   color: #545454;
@@ -63,12 +35,6 @@ li {
   width: 14px;
   height: 13px;
   fill: #ff6b08;
-}
-
-br {
-  @media (min-width: 768px) {
-    display: none;
-  }
 }
 
 br {

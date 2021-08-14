@@ -66,8 +66,7 @@ function renderMovieModal(data) {
 function modalClose() {
   refs.backdrop.classList.add('is-hidden');
   refs.body.classList.remove('overhidden');
-  // refs.body.classList.add('overskroll')
-  //   filtersWatched();
+    //   filtersWatched();
   //   filtersQueue();
 }
 
