@@ -50,6 +50,7 @@ function dataIdSearch(movie_id) {
 // рендеринг шаблона
 function renderMovieModal(data) {
   const modalMarkup = modalTpl(data);
+  console.log(data);
   refs.backdrop.innerHTML = modalMarkup;
   refs.backdrop.classList.add('is-open');
   // document.body.style.overflow = 'hidden';

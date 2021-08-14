@@ -1,0 +1,28 @@
+{{#each this}}
+<li class='gallery-item'>
+   <a href='' onclick='event.preventDefault()' class='card-link' data-id='{{id}}'>
+      <div class='film-page'>
+         <img class='film-image' src='{{poster_path}}' alt='{{overview}}' loading='lazy' />
+         <span class='film-average'>{{vote_average}} </span>
+         <div class='film-info'>
+            <p class='film-name'>{{title}}</p>
+            {{#each genres}}
+            <p class='film-genre'>{{this.name}} | {{release_date}}</p>
+            {{/each}}
+         </div>
+         {{!-- <div class='film-overlay-box'>
+
+            <div class='review'>
+               <span class='icon-container'>{{vote_count}} <i class='fa fa-star'></i></span>
+               <div class='progress'>
+                  <div class='progress-done' data-done='{{vote_average}}'></div>
+               </div>
+               <span class='percent'>{{vote_average}}</span>
+            </div>
+
+         </div> --}}
+      </div>
+
+   </a>
+</li>
+{{/each}}
