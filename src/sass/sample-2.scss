@@ -3,6 +3,12 @@ p {
   margin: 0;
 }
 
+br {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
 .card-container {
   @media (min-width: 768px) {
     width: 264px;
@@ -10,20 +16,24 @@ p {
   }
 
   @media (min-width: 1024px) {
-    width: 882px;
+    width: 396px;
   }
 }
 
 .modal__img {
   width: 240px;
   border-radius: 5px;
+  height: 356px;
+  object-fit: contain;
 
   @media (min-width: 768px) {
     width: 264px;
+    height: 375px;
   }
 
   @media (min-width: 1024px) {
     width: 396px;
+    height: 477px;
   }
 }
 
@@ -155,14 +165,34 @@ p {
 }
 
 .card__list-btn {
-  @media (min-width: 767px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  // @media (min-width: 767px) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  // }
+
+  &:nth-child(3n) {
+    margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    &:nth-child(3n) {
+      margin-top: 10px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &:nth-child(3n) {
+      margin-top: 0;
+    }
   }
 }
-
+.card__btn-watched {
+  @media (max-width: 767px) {
+    padding: 6px 20px;
+  }
+}
 .card__btn-watched,
 .card__btn-que,
 .card__btn-trailer {
@@ -182,32 +212,18 @@ p {
   cursor: pointer;
 
   margin-bottom: 10px;
+  margin-right: 15px;
   &:nth-child(3n) {
-    margin: 0;
-  }
-
-  @media (min-width: 768px) {
-    margin-bottom: 0;
-
-    margin-right: 15px;
-    &:nth-child(3n) {
-      margin-top: 10px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    &:nth-child(3n) {
-      margin-top: 0;
-    }
+    margin-right: 0;
   }
 }
 
-.card__btn-que {
-  cursor: pointer;
-  @media (min-width: 768px) and(max-width:1199px) {
-    margin: 0;
-  }
-}
+// .card__btn-que {
+//   cursor: pointer;
+//   // @media (min-width: 768px) and(max-width:1199px) {
+//   //   margin: 0;
+//   // }
+// }
 
 .card__btn-watched:hover,
 .card__btn-que:hover,
