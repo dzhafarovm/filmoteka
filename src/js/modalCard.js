@@ -3,16 +3,20 @@ import modalTpl from '../hbs/sample-2.hbs';
 import axios from 'axios';
 import { KEY_API } from './key';
 import { listenerModalBtn } from './modal-btn';
+// import { modalButtonStyles } from './modal-btn';
+import { filtersWatched } from './library';
+import { filtersQueue } from './library';
 import onTrailerClick from './trailer';
-import '../sass/sample-2.scss'
+import '../sass/sample-2.scss';
 
 //////////////////////////////////////////////////////////////////////////////
 ////// Окрытие модалки - нажатие на карточку и назначение слушателя
+// слушатель
 export function openModalListener() {
   refs.filmsContainer.addEventListener('click', onPaletteContainerClick);
 }
 
-// слушатель
+// слушатель клика и доп стилизация
 function onPaletteContainerClick(evt) {
   if (!evt.target.classList.contains('film-image')) {
     return;
@@ -50,10 +54,11 @@ function renderMovieModal(data) {
   refs.backdrop.classList.add('is-open');
   // document.body.style.overflow = 'hidden';
   window.addEventListener('keydown', modalCloseByEsc);
-  
+
   closeByButton();
   listenerModalBtn();
   onTrailerClick();
+  //   modalButtonStyles();
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -62,6 +67,8 @@ function modalClose() {
   refs.backdrop.classList.add('is-hidden');
   refs.body.classList.remove('overhidden');
   // refs.body.classList.add('overskroll')
+  filtersWatched();
+  filtersQueue();
 }
 
 // Закрытие модалки по Escape

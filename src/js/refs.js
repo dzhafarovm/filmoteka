@@ -9,4 +9,6 @@ export const refs = {
   filmsContainer: document.querySelector('.container'),
   backdrop: document.querySelector('.backdrop'),
   body: document.querySelector('.body'),
+  btnWatched: document.querySelector('.btn-watched'),
+  btnQueue: document.querySelector('.btn-queue'),
 };

@@ -52,7 +52,7 @@ function listenerBtnLib() {
 }
 
 // Кнопка - Watched
-function filtersWatched() {
+export function filtersWatched() {
   refs.filmsContainer.innerHTML = '';
   //   console.log('Wwww');
   let archive = [],
@@ -71,7 +71,7 @@ function filtersWatched() {
 }
 
 // Кнопка - Queue
-function filtersQueue() {
+export function filtersQueue() {
   //   console.log('QQQQ');
   refs.filmsContainer.innerHTML = '';
   let archive = [],
