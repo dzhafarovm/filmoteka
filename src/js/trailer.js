@@ -40,5 +40,5 @@ function renderTrailer(data) {
   });
 
   const trailerLink = document.querySelector('.js-youtube-key');
-  trailerLink.href = `https://www.youtube.com/watch?v=${key}`;
+  trailerLink.href = `http://www.youtube.com/watch?v=${key}`;
 }
