@@ -132,3 +132,9 @@ function deleteStoragData() {
     localStorage.removeItem(idCard);
   }
 }
+
+// Стилизация кнопок
+function modalButtonStyles() {
+  console.log('ddddd');
+  // body
+}

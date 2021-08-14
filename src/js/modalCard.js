@@ -4,7 +4,7 @@ import axios from 'axios';
 import { KEY_API } from './key';
 import { listenerModalBtn } from './modal-btn';
 import onTrailerClick from './trailer';
-import '../sass/sample-2.scss'
+import '../sass/sample-2.scss';
 
 //////////////////////////////////////////////////////////////////////////////
 ////// Окрытие модалки - нажатие на карточку и назначение слушателя
@@ -50,7 +50,7 @@ function renderMovieModal(data) {
   refs.backdrop.classList.add('is-open');
   // document.body.style.overflow = 'hidden';
   window.addEventListener('keydown', modalCloseByEsc);
-  
+
   closeByButton();
   listenerModalBtn();
   onTrailerClick();
