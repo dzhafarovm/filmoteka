@@ -26,6 +26,7 @@ function onSearchFormSubmit(e) {
     filmsContainer.innerHTML = '';
     return;
   }
+  // filmsApiService.resetPage();
   filmsApiService
     .fetchCards()
     .then(addFilmsCardMarkup)
@@ -75,6 +76,10 @@ function addGenres(results) {
   });
 
   const genresName = newArr.map(id => {
+    if (id.length === 0) {
+      return (id = 'Something interesting');
+    }
+
     if (id.length === 1) {
       return id;
     }
