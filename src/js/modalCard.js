@@ -67,8 +67,8 @@ function modalClose() {
   refs.backdrop.classList.add('is-hidden');
   refs.body.classList.remove('overhidden');
   // refs.body.classList.add('overskroll')
-  filtersWatched();
-  filtersQueue();
+  //   filtersWatched();
+  //   filtersQueue();
 }
 
 // Закрытие модалки по Escape
