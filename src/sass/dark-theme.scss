@@ -1,0 +1,32 @@
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: rgb(35, 32, 30);
+  }
+
+  .film-name {
+    color: #fff;
+  }
+  .backdrop {
+    background-color: rgba(0, 0, 0, 0.409);
+  }
+  .modal {
+    background-color: #534742;
+  }
+  li.card__item {
+    font-size: 13px;
+    color: #ffff;
+  }
+  .card-container .card__description {
+    color: #fff;
+  }
+  .card-container .card__text {
+    font-size: 15px;
+  }
+  .footer {
+    background: rgb(19, 16, 15);
+    color: rgb(223, 215, 211);
+  }
+  .students-modal {
+    color: rgb(223, 215, 211);
+  }
+}
