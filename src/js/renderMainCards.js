@@ -1,6 +1,4 @@
-// import debounce from 'lodash/debounce';
 import { Notify } from 'notiflix';
-
 import FilmsApiService from './fetchMainCards';
 import filmsCardTpl from '../hbs/sample-1.hbs';
 import { genres } from '../js/genre';
