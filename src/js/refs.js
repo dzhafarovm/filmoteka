@@ -1,4 +1,5 @@
 export const refs = {
+  body: document.querySelector('.body'),
   header: document.querySelector('header'),
   libNav: document.querySelector('.js-lib-menu'),
   homeNav: document.querySelector('.js-home-menu'),
@@ -8,8 +9,16 @@ export const refs = {
   btnLib: document.querySelector('#btn-library'),
   filmsContainer: document.querySelector('.container'),
   backdrop: document.querySelector('.backdrop'),
-  body: document.querySelector('.body'),
+
   btnWatched: document.querySelector('.btn-watched'),
   btnQueue: document.querySelector('.btn-queue'),
   devContainer: document.querySelector('.development-container'),
+  toggle: document.querySelector('#theme-switch-toggle'),
+  filmName: document.querySelector('.film-name'),
+  modal: document.querySelector('.modal'),
+  cardItem: document.querySelector('.card__item'),
+  cardDescription: document.querySelector('.card__description'),
+  cardText: document.querySelector('.card__text'),
+  backdrop: document.querySelector('.backdrop'),
+  footer: document.querySelector('.footer'),
 };
