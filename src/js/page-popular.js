@@ -14,14 +14,15 @@ function onDataCollection() {
   dataCollection();
 }
 let page = 1;
+let totalPages = '';
 
-// dataCollection();
+dataCollection();
 
 //// Вызов данных запроса
 export function dataCollection() {
   fetchPopularCollection(page)
     .then(renderPopularCollection)
-    //  .then(pagination(page))
+    //  .then(pagination())
     .catch(error => {
       console.log(error);
     });
@@ -29,8 +30,8 @@ export function dataCollection() {
 
 // Рендер галереи
 export function renderPopularCollection(data) {
-  //   const totalPages = data.total_pages;
-  //   refs.filmsContainer.setAttribute('dataPage', totalPages);
+  const totalPages = data.total_pages;
+  refs.filmsContainer.setAttribute('dataPage', totalPages);
   addGenres(data.results);
   addPoster(data.results);
   addDate(data.results);
@@ -48,11 +49,16 @@ export function renderPopularCollection(data) {
 
   const markup = collectionPopalarCardTpl(collectionPopFilm);
   refs.filmsContainer.innerHTML = markup;
-  //   dataPages(totalPages);
   openModalListener();
   onTrailerClick();
+  //   dataPages();
 }
 //
+// export function dataPages() {
+//   // const totalPages =
+//   refs.filmsContainer.getAttribute('dataPage');
+//   console.log(totalPages);
+// }
 
 // Подмена id на имя жанра и обрезка по длине строки
 function addGenres(results) {

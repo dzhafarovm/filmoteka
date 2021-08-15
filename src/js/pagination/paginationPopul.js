@@ -7,25 +7,47 @@ import PaginationItem from '@material-ui/lab/PaginationItem';
 import { refs } from '../refs';
 import { fetchPopularCollection } from '../fetch-popular.js';
 import { renderPopularCollection } from '../page-popular.js';
+import { dataCollection } from '../page-popular.js';
 
-// export function dataPages(totalPages) {
-//   //   const totalPages = refs.filmsContainer.getAttribute('dataPage');
-//   //   const aaa = totalPages;
-//   console.log(aaa);
+// let totalPages = '';
+// console.log(totalPages);
+
+// export function dataPages() {
+//   const totalPages = refs.filmsContainer.getAttribute('dataPage');
+//   console.log(totalPages);
 //   return totalPages;
 // }
+// console.log(totalPages);
 
-const aaa = 500;
+const aaa = 400;
 
 export default function PaginationLink() {
+  //   const fff = setTimeout(dataPages(), 5000);
+  //   console.log(fff);
   return (
     <MemoryRouter initialEntries={['/inbox']} initialIndex={0}>
       <Route>
         {({ location }) => {
           const query = new URLSearchParams(location.search);
           const page = parseInt(query.get('page') || '1', 10);
-          //  fetchPopularCollection(page).then(renderPopularCollection);
+          //  const totalPages = function () {
+          //    const Pages = refs.filmsContainer.getAttribute('dataPage');
+          //    console.log(Pages);
+          //    return totalPages;
+          //  };
+          //  console.log(totalPages);
+          //  dataCollection(page);
+
           fetchPopularCollection(page).then(renderPopularCollection);
+
+          //  function ddd() {
+          //    const totalPages = refs.filmsContainer.getAttribute('dataPage');
+          //    console.log(totalPages);
+          //    return totalPages;
+          //  }
+          //  let dsdd = ddd();
+          //  console.log(dsdd);
+
           return (
             <Pagination
               page={page}
