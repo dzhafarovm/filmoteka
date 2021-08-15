@@ -24,7 +24,7 @@ function dataCollection() {
 }
 
 // Рендер галереи
-function renderPopularCollection(data) {
+export function renderPopularCollection(data) {
   addGenres(data.results);
   addPoster(data.results);
   addDate(data.results);

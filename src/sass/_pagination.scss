@@ -1,0 +1,31 @@
+.MuiButtonBase-root.MuiPaginationItem-root.MuiPaginationItem-page.MuiPaginationItem-textPrimary.Mui-selected {
+  background-color: #ff6b08;
+}
+
+.MuiPaginationItem-root.MuiPaginationItem-ellipsis {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.pagination.navigation {
+  align-items: center;
+  //   margin-left: auto;
+  //   margin-right: auto;
+}
+
+// .MuiPagination-ul {
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+
+// .muibuttonbase-root.muipaginationitem-root.muipaginationitem-page.muipaginationitem-rounded.muipaginationitem-textprimary
+//   :last-child {
+//   display: none;
+
+//   @media (min-width: 768px) {
+//     display: inline-flex;
+//   }
+// }
