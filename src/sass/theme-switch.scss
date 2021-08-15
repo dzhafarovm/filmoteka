@@ -4,9 +4,57 @@
 body.light-theme {
   background-color: #fff;
 }
+.film-name.light-theme {
+  color: #000000;
+}
+.backdrop.light-theme {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.modal.light-theme {
+  background-color: #ffffff;
+}
+li.card__item.light-theme {
+  color: #8c8c8c;
+}
+.card-container .card__description.light-theme {
+  color: #000000;
+}
+.card-container .card__text.light-theme {
+  font-size: 12px;
+}
+.footer.light-theme {
+  background: #f7f7f7;
+  color: #545454;
+}
 
 body.dark-theme {
   background-color: rgb(35, 32, 30);
+}
+.film-name.dark-theme {
+  color: #fff;
+}
+.backdrop.dark-theme {
+  background-color: rgba(0, 0, 0, 0.409);
+}
+.modal.dark-theme {
+  background-color: #534742;
+}
+li.card__item.dark-theme {
+  font-size: 13px;
+  color: #ffff;
+}
+.card-container .card__description.dark-theme {
+  color: #fff;
+}
+.card-container .card__text.dark-theme {
+  font-size: 15px;
+}
+.footer.dark-theme {
+  background: rgb(19, 16, 15);
+  color: rgb(223, 215, 211);
+}
+.students-modal.dark-theme {
+  color: rgb(223, 215, 211);
 }
 
 .toolbar {
@@ -22,9 +70,8 @@ body.dark-theme {
 }
 
 .theme-switch__icon {
-  color: currentColor;
-  height: 24px;
-  width: 24px;
+  height: 20px;
+  width: 20px;
   margin-right: 8px;
   margin-left: 8px;
 }
@@ -34,9 +81,10 @@ body.dark-theme {
   align-items: center;
   flex-shrink: 0;
   position: relative;
-  width: 64px;
-  height: 32px;
+  width: 50px;
+  height: 18px;
   border-radius: 50em;
+  border-color: #ff6b08;
   padding: 3px 0;
 }
 
@@ -49,6 +97,8 @@ body.dark-theme {
   opacity: 0;
   height: 0;
   width: 0;
+
+  border-color: #ff6b08;
   pointer-events: none;
 }
 
@@ -62,6 +112,7 @@ body.dark-theme {
   user-select: none;
   background-color: #333;
   border-radius: inherit;
+  border-color: #ff6b08;
   z-index: 1;
   cursor: pointer;
 }
@@ -69,13 +120,13 @@ body.dark-theme {
 .theme-switch__marker {
   position: relative;
   background-color: #fff;
-  width: 26px;
-  height: 26px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   z-index: 2;
   pointer-events: none;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-  transform: translateX(3px);
+  // transform: translateX(1px);
   transition: transform 250ms var(--timing-function);
 }
 
@@ -84,10 +135,10 @@ body.dark-theme {
 }
 
 .theme-switch__toggle:checked ~ .theme-switch__marker {
-  transform: translateX(35px);
+  transform: translateX(30px);
 }
 
 .theme-switch__toggle:focus + .theme-switch__track,
 .theme-switch__toggle:active + .theme-switch__track {
-  box-shadow: 0 0 0 3px #2196f3;
+  box-shadow: 0 0 0 3px #ff6b08;
 }
