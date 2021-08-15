@@ -216,6 +216,10 @@ br {
   &:nth-child(3n) {
     margin-right: 0;
   }
+
+  @media (max-width: 767px) {
+    padding: 14px 17px;
+  }
 }
 
 // .card__btn-que {
@@ -283,8 +287,7 @@ br {
 }
 
 .card__svg-youtube {
-  width: 32px;
-  height: 32px;
-  fill: red;
-  background-color: gray;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
 }
