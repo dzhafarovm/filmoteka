@@ -67,6 +67,7 @@ function renderMovieModal(data) {
 function modalClose() {
   refs.backdrop.classList.add('is-hidden');
   refs.body.classList.remove('overhidden');
+  refs.backdrop.innerHTML = '';
     //   filtersWatched();
   //   filtersQueue();
 }
