@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import Pagination from '@material-ui/lab/Pagination';
 import PaginationItem from '@material-ui/lab/PaginationItem';
 
-import { refs } from '../refs';
+// import { refs } from '../refs';
 import { fetchPopularCollection } from '../fetch-popular.js';
 import { renderPopularCollection } from '../page-popular.js';
-import { dataCollection } from '../page-popular.js';
+// import { dataCollection } from '../page-popular.js';
 
 // let totalPages = '';
 // console.log(totalPages);

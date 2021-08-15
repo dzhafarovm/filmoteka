@@ -1,7 +1,7 @@
 import { refs } from './refs.js';
 import collectionLibraryCardTpl from '../hbs/sample-1-1.hbs';
 import { watched, queue } from './modal-btn';
-import { paginationLib } from './pagination/start-pagination';
+// import { paginationLib } from './pagination/start-pagination';
 
 //Поиск ссылок по карточке
 function searchLinksLib() {
@@ -42,7 +42,7 @@ function allStorage() {
 
     refs.filmsContainer.insertAdjacentHTML('beforeend', collectionLibraryCardTpl(item));
   });
-  paginationLib();
+  //   paginationLib();
 }
 
 ///////////////////////////////////////////////

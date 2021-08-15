@@ -19,10 +19,10 @@ let totalPages = '';
 dataCollection();
 
 //// Вызов данных запроса
-export function dataCollection() {
+function dataCollection() {
   fetchPopularCollection(page)
     .then(renderPopularCollection)
-    //  .then(pagination())
+    .then(pagination())
     .catch(error => {
       console.log(error);
     });
@@ -49,9 +49,11 @@ export function renderPopularCollection(data) {
 
   const markup = collectionPopalarCardTpl(collectionPopFilm);
   refs.filmsContainer.innerHTML = markup;
+  refs.filmsContainer.getAttribute('dataPage');
   openModalListener();
   onTrailerClick();
   //   dataPages();
+  //   return refs.filmsContainer.getAttribute('dataPage');
 }
 //
 // export function dataPages() {
