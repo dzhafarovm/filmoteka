@@ -2,8 +2,9 @@ import { fetchPopularCollection } from './fetch-popular.js';
 import collectionPopalarCardTpl from '../hbs/sample-1.hbs';
 import { refs } from './refs.js';
 import { openModalListener } from './modalCard.js';
-// import { pagination } from './pagination/start-pagination';
+import { pagination } from './pagination/start-pagination';
 import { genres } from '../js/genre';
+// import { dataPages } from '../js/pagination/pagination';
 
 import onTrailerClick from './trailer';
 
@@ -12,14 +13,15 @@ refs.btnHome.addEventListener('click', onDataCollection);
 function onDataCollection() {
   dataCollection();
 }
+let page = 1;
 
 // dataCollection();
 
 //// Вызов данных запроса
 export function dataCollection() {
-  fetchPopularCollection()
+  fetchPopularCollection(page)
     .then(renderPopularCollection)
-    //  .then(pagination)
+    //  .then(pagination(page))
     .catch(error => {
       console.log(error);
     });
@@ -27,10 +29,11 @@ export function dataCollection() {
 
 // Рендер галереи
 export function renderPopularCollection(data) {
+  //   const totalPages = data.total_pages;
+  //   refs.filmsContainer.setAttribute('dataPage', totalPages);
   addGenres(data.results);
   addPoster(data.results);
   addDate(data.results);
-
   const collectionPopFilm = data.results.map(result => {
     return {
       id: result.id,
@@ -45,9 +48,11 @@ export function renderPopularCollection(data) {
 
   const markup = collectionPopalarCardTpl(collectionPopFilm);
   refs.filmsContainer.innerHTML = markup;
+  //   dataPages(totalPages);
   openModalListener();
   onTrailerClick();
 }
+//
 
 // Подмена id на имя жанра и обрезка по длине строки
 function addGenres(results) {

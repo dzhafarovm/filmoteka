@@ -1,6 +1,11 @@
 export const watched = 'Watched';
 export const queue = 'Queue';
 
+const buttonLabelWatchedAdd = 'add to Watched';
+const buttonLabelWatchedRemove = 'remove from Watched';
+const buttonLabelQueuedAdd = 'add to Queue';
+const buttonLabelQueueRemove = 'remove from Queue';
+
 ////////////////////////////////////////////////
 //Поиск ссылок по карточке
 function searchLinks() {
@@ -48,9 +53,9 @@ function storageСheckWatched() {
     return;
   }
   if (movieStorageData[0].id === idCard && movieStorageData[0].librarySection === watched) {
-    linsk.btnWatched.textContent = 'removed from Watched';
+    linsk.btnWatched.textContent = buttonLabelWatchedRemove;
   } else {
-    linsk.btnWatched.textContent = 'add to Watched';
+    linsk.btnWatched.textContent = buttonLabelWatchedAdd;
   }
 }
 
@@ -62,9 +67,9 @@ function storageСheckQueue() {
     return;
   }
   if (movieStorageData[0].id === idCard && movieStorageData[0].librarySection === queue) {
-    linsk.btnQueue.textContent = 'removed from Queue';
+    linsk.btnQueue.textContent = buttonLabelQueueRemove;
   } else {
-    linsk.btnQueue.textContent = 'add to Queue';
+    linsk.btnQueue.textContent = buttonLabelQueuedAdd;
   }
 }
 
@@ -89,11 +94,11 @@ function addsWatched() {
   };
 
   const keyStorage = datalocalStorage.id;
-  if (linsk.btnWatched.textContent != 'removed from Watched') {
+  if (linsk.btnWatched.textContent != buttonLabelWatchedRemove) {
     updateStorage(datalocalStorage, keyStorage);
   } else {
     deleteStoragData();
-    linsk.btnWatched.textContent = 'add to Watched';
+    linsk.btnWatched.textContent = buttonLabelWatchedAdd;
   }
   storageСheckWatched();
   storageСheckQueue();
@@ -121,11 +126,11 @@ function addsQueue() {
   };
 
   const keyStorage = datalocalStorage.id;
-  if (linsk.btnQueue.textContent != 'removed from Queue') {
+  if (linsk.btnQueue.textContent != buttonLabelQueueRemove) {
     updateStorage(datalocalStorage, keyStorage);
   } else {
     deleteStoragData();
-    linsk.btnQueue.textContent = 'add to Queue';
+    linsk.btnQueue.textContent = buttonLabelQueuedAdd;
   }
   storageСheckQueue();
   storageСheckWatched();
@@ -136,8 +141,8 @@ function deleteStoragData() {
   const linsk = searchLinks();
   const idCard = linsk.dataId.getAttribute('data-action'); // id  в карточке
   if (
-    linsk.btnWatched.textContent === 'removed from Watched' ||
-    linsk.btnQueue.textContent === 'removed from Queue'
+    linsk.btnWatched.textContent === buttonLabelWatchedRemove ||
+    linsk.btnQueue.textContent === buttonLabelQueueRemove
   ) {
     localStorage.removeItem(idCard);
   }
@@ -149,8 +154,8 @@ function deleteStoragData() {
 //   const linkTextWatched = linsk.btnWatched.textContent;
 //   const linkTextQueue = linsk.btnQueue.textContent;
 
-//   if (linkTextWatched === 'removed from Watched' || linkTextQueue === 'removed from Queue') {
-//     console.log(linkTextWatched === 'removed from Watched');
+//   if (linkTextWatched === buttonLabelWatchedRemove || linkTextQueue === buttonLabelQueueRemove) {
+//     console.log(linkTextWatched === buttonLabelWatchedRemove);
 //     linsk.btnWatched.classList.add('js-btn-watched');
 //     linsk.btnQueue.classList.add('js-btn-watched');
 //   } else {

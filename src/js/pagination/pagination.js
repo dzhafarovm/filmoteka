@@ -4,10 +4,18 @@ import { Link } from 'react-router-dom';
 import Pagination from '@material-ui/lab/Pagination';
 import PaginationItem from '@material-ui/lab/PaginationItem';
 
+import { refs } from '../refs';
 import { fetchPopularCollection } from '../fetch-popular.js';
 import { renderPopularCollection } from '../page-popular.js';
 
-const aaa = 1000;
+// export function dataPages(totalPages) {
+//   //   const totalPages = refs.filmsContainer.getAttribute('dataPage');
+//   //   const aaa = totalPages;
+//   console.log(aaa);
+//   return totalPages;
+// }
+
+const aaa = 500;
 
 export default function PaginationLink() {
   return (
@@ -16,6 +24,7 @@ export default function PaginationLink() {
         {({ location }) => {
           const query = new URLSearchParams(location.search);
           const page = parseInt(query.get('page') || '1', 10);
+          //  fetchPopularCollection(page).then(renderPopularCollection);
           fetchPopularCollection(page).then(renderPopularCollection);
           return (
             <Pagination
