@@ -1,4 +1,4 @@
-import { Notify } from 'notiflix';
+import Notiflix from 'notiflix';
 import FilmsApiService from './fetchMainCards';
 import filmsCardTpl from '../hbs/sample-1.hbs';
 import { genres } from '../js/genre';
@@ -19,6 +19,8 @@ searchForm.addEventListener('submit', onSearchFormSubmit);
 function onSearchFormSubmit(e) {
   e.preventDefault();
 
+  Notiflix.Loading.standard('Please wait...');
+
   filmsApiService.query = e.currentTarget.elements.query.value;
   if (filmsApiService.query.trim() === '') {
     return;
@@ -30,13 +32,17 @@ function onSearchFormSubmit(e) {
     .fetchCards()
     .then(addFilmsCardMarkup)
     .catch(error => {
-      Notify.failure('Sorry, there are no films matching your search query. Please try again.');
+      Notiflix.Notify.failure(
+        'Sorry, there are no films matching your search query. Please try again.',
+      );
     });
 }
 
 function addFilmsCardMarkup({ results }) {
   if (results.length === 0) {
-    Notify.failure('Sorry, there are no films matching your search query. Please try again.');
+    Notiflix.Notify.failure(
+      'Sorry, there are no films matching your search query. Please try again.',
+    );
     return;
   }
 
@@ -58,9 +64,10 @@ function addFilmsCardMarkup({ results }) {
   });
 
   filmsContainer.insertAdjacentHTML('beforeend', filmsCardTpl(collectionPopFilm));
+  Notiflix.Loading.remove();
   openModalListener();
   onTrailerClick();
-  Notify.success(`We found ${totalRenderedFilms} films for you.`);
+  Notiflix.Notify.success(`We found ${totalRenderedFilms} films for you.`);
 }
 
 // Подмена id на имя жанра и обрезка по длине строки
