@@ -2,7 +2,9 @@ import { fetchPopularCollection } from './fetch-popular.js';
 import collectionPopalarCardTpl from '../hbs/sample-1.hbs';
 import { refs } from './refs.js';
 import { openModalListener } from './modalCard.js';
+// import { pagination } from './pagination/start-pagination';
 import { genres } from '../js/genre';
+
 import onTrailerClick from './trailer';
 
 refs.btnHome.addEventListener('click', onDataCollection);
@@ -11,13 +13,13 @@ function onDataCollection() {
   dataCollection();
 }
 
-dataCollection();
+// dataCollection();
 
 //// Вызов данных запроса
-function dataCollection() {
+export function dataCollection() {
   fetchPopularCollection()
     .then(renderPopularCollection)
-    //  .then(paginA)
+    //  .then(pagination)
     .catch(error => {
       console.log(error);
     });
