@@ -26,6 +26,7 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
     "axios": "^0.21.1",
     "basiclightbox": "^5.0.4",
     "lodash.debounce": "^4.0.8",
