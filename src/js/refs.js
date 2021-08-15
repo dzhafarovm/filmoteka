@@ -11,4 +11,5 @@ export const refs = {
   body: document.querySelector('.body'),
   btnWatched: document.querySelector('.btn-watched'),
   btnQueue: document.querySelector('.btn-queue'),
+  devContainer: document.querySelector('.development-container'),
 };

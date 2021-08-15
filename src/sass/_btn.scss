@@ -1,0 +1,24 @@
+.back_to_top {
+  position: fixed;
+  padding: 12px;
+  bottom: 80px;
+  right: 50px;
+  z-index: 9999;
+  fill: #ff6b08;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid #ff6b08;
+  border-radius: 50%;
+  display: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back_to_top:hover {
+  background-color: #ff6b08;
+  fill: #ffffff;
+}
+
+.back_to_top-show {
+  display: block;
+}

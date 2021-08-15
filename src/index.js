@@ -9,3 +9,5 @@ import './js/raiting-overfwiol';
 import './js/library';
 
 import './js/pagination/start-pagination';
+import './js/developers';
+import './js/btn';
