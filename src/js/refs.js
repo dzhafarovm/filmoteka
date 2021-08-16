@@ -1,23 +1,32 @@
 export const refs = {
   body: document.querySelector('.body'),
-  header: document.querySelector('header'),
-  libNav: document.querySelector('.js-lib-menu'),
-  homeNav: document.querySelector('.js-home-menu'),
-  formNav: document.querySelector('.search-form'),
-  libList: document.querySelector('.library-list'),
-  btnHome: document.querySelector('#btn-home'),
-  btnLib: document.querySelector('#btn-library'),
-  filmsContainer: document.querySelector('.container'),
-  backdrop: document.querySelector('.backdrop'),
 
+  // header
+  header: document.querySelector('header'),
+  homeNav: document.querySelector('.js-home-menu'),
+  btnHome: document.querySelector('#btn-home'),
+  libNav: document.querySelector('.js-lib-menu'),
+  btnLib: document.querySelector('#btn-library'),
+  formNav: document.querySelector('.search-form'),
+
+  toggle: document.querySelector('#theme-switch-toggle'),
+
+  libList: document.querySelector('.library-list'),
   btnWatched: document.querySelector('.btn-watched'),
   btnQueue: document.querySelector('.btn-queue'),
-  devContainer: document.querySelector('.development-container'),
-  toggle: document.querySelector('#theme-switch-toggle'),
-  filmName: document.querySelector('.film-name'),
+
+  // main
+  filmsContainer: document.querySelector('.js-container'),
+  devContainer: document.querySelector('.developer-container'),
+  backdrop: document.querySelector('.backdrop'),
+
+  // footer
+  footer: document.querySelector('.footer'),
+
+  // modal
   modal: document.querySelector('.modal'),
   cardItem: document.querySelector('.card__item'),
   cardDescription: document.querySelector('.card__description'),
+  filmName: document.querySelector('.film-name'),
   cardText: document.querySelector('.card__text'),
-  footer: document.querySelector('.footer'),
 };
