@@ -68,6 +68,8 @@ function addFilmsCardMarkup({ results }) {
   openModalListener();
   onTrailerClick();
   Notiflix.Notify.success(`We found ${totalRenderedFilms} films for you.`);
+  const refsPagin = document.querySelector('#root_futer');
+  refsPagin.innerHTML = '';
 }
 
 // Подмена id на имя жанра и обрезка по длине строки
