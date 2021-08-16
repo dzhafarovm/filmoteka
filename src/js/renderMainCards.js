@@ -1,5 +1,7 @@
 import Notiflix from 'notiflix';
 import FilmsApiService from './fetchMainCards';
+import { refs } from './refs.js';
+
 import filmsCardTpl from '../hbs/sample-1.hbs';
 import { genres } from '../js/genre';
 import { openModalListener } from './modalCard.js';

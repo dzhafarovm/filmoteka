@@ -5,10 +5,10 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-themeAfterPageReload();
+// themeAfterPageReload();
 
 refs.toggle.addEventListener('change', onInputChange);
-function onInputChange() {
+export function onInputChange() {
   if (refs.toggle.checked) {
     refs.body.classList.add(Theme.DARK);
     refs.filmName.classList.add(Theme.DARK);
@@ -48,7 +48,7 @@ function onInputChange() {
   }
 }
 
-function themeAfterPageReload() {
+export function themeAfterPageReload() {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === null) {
     refs.body.classList.add(Theme.LIGHT);
