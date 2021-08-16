@@ -24,6 +24,7 @@ function onPaletteContainerClick(evt) {
   refs.backdrop.classList.remove('is-hidden');
   dataIdSearch(evt.target.closest('.card-link').dataset.id);
   refs.body.classList.add('overhidden');
+  refs.backdrop.addEventListener('click', backdropClick);
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -65,11 +66,20 @@ function renderMovieModal(data) {
 //////////////////////////////////////////////////////////////////////////////
 // Закрытие модалки
 function modalClose() {
+  window.removeEventListener('keydown', modalCloseByEsc);
   refs.backdrop.classList.add('is-hidden');
   refs.body.classList.remove('overhidden');
   refs.backdrop.innerHTML = '';
   //   filtersWatched();
   //   filtersQueue();
+  
+}
+
+// Закрытие по клику бекдроп
+function backdropClick(event) {
+  if (event.currentTarget === event.target) {
+    modalClose();
+  }
 }
 
 // Закрытие модалки по Escape
