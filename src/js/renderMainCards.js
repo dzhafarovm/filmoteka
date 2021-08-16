@@ -8,17 +8,15 @@ import onTrailerClick from './trailer';
 import { onInputChange, themeAfterPageReload } from './theme-switch';
 
 // const DEBOUNCE_DELAY = 300;
+
 let totalRenderedFilms = 0;
 
 const filmsApiService = new FilmsApiService();
 
 refs.formNav.addEventListener('submit', onSearchFormSubmit);
-
 function onSearchFormSubmit(e) {
   e.preventDefault();
-
   Notiflix.Loading.standard('Please wait...');
-
   filmsApiService.query = e.currentTarget.elements.query.value;
   if (filmsApiService.query.trim() === '') {
     return;
@@ -35,9 +33,7 @@ function onSearchFormSubmit(e) {
       );
     });
 }
-themeAfterPageReload();
-refs.toggle.addEventListener('change', onInputChange);
-onInputChange();
+
 function addFilmsCardMarkup({ results }) {
   if (results.length === 0) {
     Notiflix.Notify.failure(
@@ -69,7 +65,10 @@ function addFilmsCardMarkup({ results }) {
   onTrailerClick();
   Notiflix.Notify.success(`We found ${totalRenderedFilms} films for you.`);
   onInputChange();
+  themeAfterPageReload();
 }
+// onInputChange();
+// themeAfterPageReload();
 // Подмена id на имя жанра и обрезка по длине строки
 function addGenres(results) {
   const arr = results.map(genre => {

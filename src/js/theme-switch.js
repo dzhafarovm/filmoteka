@@ -5,8 +5,6 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-// themeAfterPageReload();
-
 refs.toggle.addEventListener('change', onInputChange);
 export function onInputChange() {
   if (refs.toggle.checked) {
@@ -17,6 +15,7 @@ export function onInputChange() {
     refs.cardItem.classList.add(Theme.DARK);
     refs.cardDescription.classList.add(Theme.DARK);
     refs.cardText.classList.add(Theme.DARK);
+    refs.footer.classList.add(Theme.DARK);
 
     refs.body.classList.remove(Theme.LIGHT);
     refs.filmName.classList.remove(Theme.LIGHT);
@@ -25,6 +24,7 @@ export function onInputChange() {
     refs.cardItem.classList.remove(Theme.LIGHT);
     refs.cardDescription.classList.remove(Theme.LIGHT);
     refs.cardText.classList.remove(Theme.LIGHT);
+    refs.footer.classList.remove(Theme.LIGHT);
 
     localStorage.setItem('theme', Theme.DARK);
   } else {
@@ -35,6 +35,7 @@ export function onInputChange() {
     refs.cardItem.classList.add(Theme.LIGHT);
     refs.cardDescription.classList.add(Theme.LIGHT);
     refs.cardText.classList.add(Theme.LIGHT);
+    refs.footer.classList.add(Theme.LIGHT);
 
     refs.body.classList.remove(Theme.DARK);
     refs.filmName.classList.remove(Theme.DARK);
@@ -43,6 +44,7 @@ export function onInputChange() {
     refs.cardItem.classList.remove(Theme.DARK);
     refs.cardDescription.classList.remove(Theme.DARK);
     refs.cardText.classList.remove(Theme.DARK);
+    refs.footer.classList.remove(Theme.DARK);
 
     localStorage.setItem('theme', Theme.LIGHT);
   }
@@ -58,6 +60,7 @@ export function themeAfterPageReload() {
     refs.cardItem.classList.add(Theme.LIGHT);
     refs.cardDescription.classList.add(Theme.LIGHT);
     refs.cardText.classList.add(Theme.LIGHT);
+    refs.footer.classList.add(Theme.LIGHT);
 
     localStorage.setItem('theme', Theme.LIGHT);
   } else if (savedTheme === Theme.LIGHT) {
@@ -68,6 +71,7 @@ export function themeAfterPageReload() {
     refs.cardItem.classList.add(Theme.LIGHT);
     refs.cardDescription.classList.add(Theme.LIGHT);
     refs.cardText.classList.add(Theme.LIGHT);
+    refs.footer.classList.add(Theme.LIGHT);
 
     refs.body.classList.remove(Theme.DARK);
     refs.filmName.classList.remove(Theme.DARK);
@@ -76,6 +80,7 @@ export function themeAfterPageReload() {
     refs.cardItem.classList.remove(Theme.DARK);
     refs.cardDescription.classList.remove(Theme.DARK);
     refs.cardText.classList.remove(Theme.DARK);
+    refs.footer.classList.remove(Theme.DARK);
   } else if (savedTheme === Theme.DARK) {
     refs.body.classList.add(Theme.DARK);
     refs.filmName.classList.add(Theme.DARK);
@@ -84,6 +89,7 @@ export function themeAfterPageReload() {
     refs.cardItem.classList.add(Theme.DARK);
     refs.cardDescription.classList.add(Theme.DARK);
     refs.cardText.classList.add(Theme.DARK);
+    refs.footer.classList.add(Theme.DARK);
 
     refs.body.classList.remove(Theme.LIGHT);
     refs.filmName.classList.remove(Theme.LIGHT);
@@ -92,6 +98,7 @@ export function themeAfterPageReload() {
     refs.cardItem.classList.remove(Theme.LIGHT);
     refs.cardDescription.classList.remove(Theme.LIGHT);
     refs.cardText.classList.remove(Theme.LIGHT);
+    refs.footer.classList.remove(Theme.LIGHT);
     refs.toggle.checked = true;
   }
 }
