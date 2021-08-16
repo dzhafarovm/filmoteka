@@ -27,7 +27,7 @@ function onPaletteContainerClick(evt) {
 }
 
 //////////////////////////////////////////////////////////////////////////////
-//////// Фетч фильма по  ID
+//////// Фетч фильма по ID
 function fetchId(movie_id) {
   return axios
     .get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${KEY_API}`)
@@ -68,7 +68,7 @@ function modalClose() {
   refs.backdrop.classList.add('is-hidden');
   refs.body.classList.remove('overhidden');
   refs.backdrop.innerHTML = '';
-    //   filtersWatched();
+  //   filtersWatched();
   //   filtersQueue();
 }
 

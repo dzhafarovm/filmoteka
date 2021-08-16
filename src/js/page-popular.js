@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 import { fetchPopularCollection } from './fetch-popular.js';
 import collectionPopalarCardTpl from '../hbs/sample-1.hbs';
 import { refs } from './refs.js';
@@ -16,6 +17,7 @@ function onDataCollection() {
 let page = 1;
 let totalPages = '';
 
+Notiflix.Loading.dots('Please wait...');
 dataCollection();
 
 //// Вызов данных запроса
@@ -32,9 +34,11 @@ function dataCollection() {
 export function renderPopularCollection(data) {
   const totalPages = data.total_pages;
   refs.filmsContainer.setAttribute('dataPage', totalPages);
+
   addGenres(data.results);
   addPoster(data.results);
   addDate(data.results);
+
   const collectionPopFilm = data.results.map(result => {
     return {
       id: result.id,
@@ -47,6 +51,7 @@ export function renderPopularCollection(data) {
     };
   });
 
+  Notiflix.Loading.remove();
   const markup = collectionPopalarCardTpl(collectionPopFilm);
   refs.filmsContainer.innerHTML = markup;
   refs.filmsContainer.getAttribute('dataPage');
@@ -119,3 +124,12 @@ function addDate(results) {
     return;
   });
 }
+
+Notiflix.Loading.init({ svgColor: '#ff6b08', messageColor: '#ff6b08' });
+
+Notiflix.Notify.init({
+  success: {
+    background: 'rgba(255, 107, 8, 0.8)',
+    notiflixIconColor: 'rgba(0,0,0,0.4)',
+  },
+});

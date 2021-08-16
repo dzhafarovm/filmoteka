@@ -18,15 +18,14 @@ refs.formNav.addEventListener('submit', onSearchFormSubmit);
 function onSearchFormSubmit(e) {
   e.preventDefault();
 
-  Notiflix.Loading.dots('Please wait...');
-
   filmsApiService.query = e.currentTarget.elements.query.value;
   if (filmsApiService.query.trim() === '') {
     return;
   }
 
   refs.filmsContainer.innerHTML = '';
-  // filmsApiService.resetPage();
+  Notiflix.Loading.dots('Please wait...');
+
   filmsApiService
     .fetchCards()
     .then(addFilmsCardMarkup)
@@ -133,6 +132,7 @@ function addDate(results) {
 }
 
 Notiflix.Loading.init({ svgColor: '#ff6b08', messageColor: '#ff6b08' });
+
 Notiflix.Notify.init({
   success: {
     background: 'rgba(255, 107, 8, 0.8)',
