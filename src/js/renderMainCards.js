@@ -16,7 +16,9 @@ const filmsApiService = new FilmsApiService();
 refs.formNav.addEventListener('submit', onSearchFormSubmit);
 function onSearchFormSubmit(e) {
   e.preventDefault();
-  Notiflix.Loading.standard('Please wait...');
+  
+  Notiflix.Loading.dots('Please wait...');
+
   filmsApiService.query = e.currentTarget.elements.query.value;
   if (filmsApiService.query.trim() === '') {
     return;
@@ -35,6 +37,7 @@ function onSearchFormSubmit(e) {
 }
 
 function addFilmsCardMarkup({ results }) {
+  Notiflix.Loading.remove();
   if (results.length === 0) {
     Notiflix.Notify.failure(
       'Sorry, there are no films matching your search query. Please try again.',
@@ -59,13 +62,12 @@ function addFilmsCardMarkup({ results }) {
     };
   });
 
-  refs.filmsContainer.insertAdjacentHTML('beforeend', filmsCardTpl(collectionPopFilm));
-  Notiflix.Loading.remove();
+  filmsContainer.insertAdjacentHTML('beforeend', filmsCardTpl(collectionPopFilm));
   openModalListener();
   onTrailerClick();
   Notiflix.Notify.success(`We found ${totalRenderedFilms} films for you.`);
-  onInputChange();
-  themeAfterPageReload();
+  const refsPagin = document.querySelector('#root_futer');
+  refsPagin.innerHTML = '';
 }
 // onInputChange();
 // themeAfterPageReload();
@@ -126,3 +128,11 @@ function addDate(results) {
     return;
   });
 }
+
+Notiflix.Loading.init({ svgColor: '#ff6b08', messageColor: '#ff6b08' });
+Notiflix.Notify.init({
+  success: {
+    background: 'rgba(255, 107, 8, 0.8)',
+    notiflixIconColor: 'rgba(0,0,0,0.4)',
+  },
+});

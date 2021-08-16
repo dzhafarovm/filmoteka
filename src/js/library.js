@@ -1,14 +1,15 @@
 import { refs } from './refs.js';
 import collectionLibraryCardTpl from '../hbs/sample-1-1.hbs';
 import { watched, queue } from './modal-btn';
+// import { closePagin } from './pagination/start-pagination';
 // import { paginationLib } from './pagination/start-pagination';
 
 //Поиск ссылок по карточке
-function searchLinksLib() {
-  return {
-    listItemLib: document.querySelector('.gallery-item'),
-  };
-}
+// function searchLinksLib() {
+//   return {
+//     listItemLib: document.querySelector('.gallery-item'),
+//   };
+// }
 
 // Слушатели
 refs.btnLib.addEventListener('click', opensLibraryddd);
@@ -19,6 +20,9 @@ function opensLibraryddd() {
   refs.filmsContainer.innerHTML = '';
   allStorage();
   listenerBtnLib();
+  //   closePagin();
+  const refsPagin = document.querySelector('#root_futer');
+  refsPagin.innerHTML = '';
 }
 
 // Вызов из хранилищя, переборы и рендеринг
