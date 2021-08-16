@@ -5,7 +5,6 @@ import { refs } from './refs.js';
 import { openModalListener } from './modalCard.js';
 import { pagination } from './pagination/start-pagination';
 import { genres } from '../js/genre';
-// import { dataPages } from '../js/pagination/pagination';
 
 import onTrailerClick from './trailer';
 
@@ -15,16 +14,16 @@ function onDataCollection() {
   dataCollection();
 }
 let page = 1;
-let totalPages = '';
 
 Notiflix.Loading.dots('Please wait...');
+
 dataCollection();
 
 //// Вызов данных запроса
 function dataCollection() {
   fetchPopularCollection(page)
     .then(renderPopularCollection)
-    .then(pagination())
+    .then(pagination)
     .catch(error => {
       console.log(error);
     });
@@ -57,15 +56,7 @@ export function renderPopularCollection(data) {
   refs.filmsContainer.getAttribute('dataPage');
   openModalListener();
   onTrailerClick();
-  //   dataPages();
-  //   return refs.filmsContainer.getAttribute('dataPage');
 }
-//
-// export function dataPages() {
-//   // const totalPages =
-//   refs.filmsContainer.getAttribute('dataPage');
-//   console.log(totalPages);
-// }
 
 // Подмена id на имя жанра и обрезка по длине строки
 function addGenres(results) {
