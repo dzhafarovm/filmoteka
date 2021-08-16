@@ -35,7 +35,8 @@ function onSearchFormSubmit(e) {
     });
 }
 
-function addFilmsCardMarkup({ results }) {
+function addFilmsCardMarkup({ results, total_pages }) {
+  console.log(results);
   Notiflix.Loading.remove();
   if (results.length === 0) {
     Notiflix.Notify.failure(
@@ -44,7 +45,7 @@ function addFilmsCardMarkup({ results }) {
     return;
   }
 
-  totalRenderedFilms += results.length;
+  totalRenderedFilms = results.length * total_pages;
   addGenres(results);
   addPoster(results);
   addDate(results);
