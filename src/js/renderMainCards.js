@@ -1,20 +1,18 @@
 import Notiflix from 'notiflix';
+import { refs } from './refs';
 import FilmsApiService from './fetchMainCards';
 import filmsCardTpl from '../hbs/sample-1.hbs';
 import { genres } from '../js/genre';
 import { openModalListener } from './modalCard.js';
 import onTrailerClick from './trailer';
-
-// const inputEl = document.querySelector('.search-input');
-const searchForm = document.querySelector('.search-form');
-const filmsContainer = document.querySelector('.container');
+import { onInputChange, themeAfterPageReload } from './theme-switch';
 
 // const DEBOUNCE_DELAY = 300;
 let totalRenderedFilms = 0;
 
 const filmsApiService = new FilmsApiService();
 
-searchForm.addEventListener('submit', onSearchFormSubmit);
+refs.formNav.addEventListener('submit', onSearchFormSubmit);
 
 function onSearchFormSubmit(e) {
   e.preventDefault();
@@ -26,7 +24,7 @@ function onSearchFormSubmit(e) {
     return;
   }
 
-  filmsContainer.innerHTML = '';
+  refs.filmsContainer.innerHTML = '';
   // filmsApiService.resetPage();
   filmsApiService
     .fetchCards()
@@ -37,7 +35,9 @@ function onSearchFormSubmit(e) {
       );
     });
 }
-
+themeAfterPageReload();
+refs.toggle.addEventListener('change', onInputChange);
+onInputChange();
 function addFilmsCardMarkup({ results }) {
   if (results.length === 0) {
     Notiflix.Notify.failure(
@@ -63,13 +63,13 @@ function addFilmsCardMarkup({ results }) {
     };
   });
 
-  filmsContainer.insertAdjacentHTML('beforeend', filmsCardTpl(collectionPopFilm));
+  refs.filmsContainer.insertAdjacentHTML('beforeend', filmsCardTpl(collectionPopFilm));
   Notiflix.Loading.remove();
   openModalListener();
   onTrailerClick();
   Notiflix.Notify.success(`We found ${totalRenderedFilms} films for you.`);
+  onInputChange();
 }
-
 // Подмена id на имя жанра и обрезка по длине строки
 function addGenres(results) {
   const arr = results.map(genre => {
