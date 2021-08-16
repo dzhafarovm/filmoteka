@@ -8,6 +8,7 @@ import { filtersWatched } from './library';
 import { filtersQueue } from './library';
 import onTrailerClick from './trailer';
 import '../sass/sample-2.scss';
+import allStorage from './library';
 
 //////////////////////////////////////////////////////////////////////////////
 ////// Окрытие модалки - нажатие на карточку и назначение слушателя
@@ -72,7 +73,14 @@ function modalClose() {
   refs.backdrop.innerHTML = '';
   //   filtersWatched();
   //   filtersQueue();
-  
+  if (sessionStorage.getItem('libopen') === null) {
+    return;
+  }
+
+  if (sessionStorage.getItem('libopen') === 'libopen') {
+    refs.filmsContainer.innerHTML = '';
+    allStorage();
+  }
 }
 
 // Закрытие по клику бекдроп

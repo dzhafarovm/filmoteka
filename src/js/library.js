@@ -26,7 +26,7 @@ function opensLibraryddd() {
 }
 
 // Вызов из хранилищя, переборы и рендеринг
-function allStorage() {
+export default function allStorage() {
   let archive = [],
     keys = Object.keys(localStorage),
     i = keys.length;
