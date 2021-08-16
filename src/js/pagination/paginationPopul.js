@@ -19,7 +19,7 @@ import { renderPopularCollection } from '../page-popular.js';
 // }
 // console.log(totalPages);
 
-const aaa = 400;
+const totalPages = 1000;
 
 export default function PaginationLink() {
   //   const fff = setTimeout(dataPages(), 5000);
@@ -51,7 +51,7 @@ export default function PaginationLink() {
           return (
             <Pagination
               page={page}
-              count={aaa}
+              count={totalPages}
               defaultPage={6}
               siblingCount={2}
               boundaryCount={1}

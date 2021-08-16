@@ -10,12 +10,11 @@
   }
 }
 
-.pagination.navigation {
-  align-items: center;
+.MuiPagination-root .MuiPagination-ul {
   //   margin-left: auto;
   //   margin-right: auto;
+  justify-content: center;
 }
-
 // .MuiPagination-ul {
 //   margin-left: auto;
 //   margin-right: auto;
