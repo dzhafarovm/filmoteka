@@ -19,6 +19,5 @@ export const refs = {
   cardItem: document.querySelector('.card__item'),
   cardDescription: document.querySelector('.card__description'),
   cardText: document.querySelector('.card__text'),
-  backdrop: document.querySelector('.backdrop'),
   footer: document.querySelector('.footer'),
 };
