@@ -15,7 +15,7 @@ function onDataCollection() {
 }
 let page = 1;
 
-Notiflix.Loading.dots('Please wait...');
+// Notiflix.Loading.dots('Please wait...');
 
 dataCollection();
 

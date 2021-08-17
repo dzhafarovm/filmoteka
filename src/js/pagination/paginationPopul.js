@@ -29,7 +29,6 @@ export default function PaginationLink() {
             filmsApi.fetchCards(page, value).then(addFilmsCardMarkup);
           }
 
-          //  'body'.scrollTop(0);
           //  window.scrollTo(0, 0);
 
           function dataPages() {
