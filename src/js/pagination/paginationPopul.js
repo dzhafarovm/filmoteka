@@ -34,14 +34,12 @@ export default function PaginationLink() {
 
           function dataPages() {
             const totalPages = refs.filmsContainer.getAttribute('dataPage');
-            // console.log(totalPages);
+
             return totalPages;
           }
           let pagesStr = dataPages();
-          //  console.log(typeof pagesStr);
 
           let pagesNumbar = Number(pagesStr);
-          //  console.log(typeof pagesNumbar);
 
           return (
             <Pagination
