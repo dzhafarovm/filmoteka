@@ -27,4 +27,5 @@ function homePageOn() {
   refs.libList.classList.add(Head.hidden);
   refs.btnHome.classList.add(Head.current);
   refs.btnLib.classList.remove(Head.current);
+  refs.inputEl.value = '';
 }
