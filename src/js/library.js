@@ -11,9 +11,9 @@ function opensLibrary() {
   refs.filmsContainer.innerHTML = '';
   allStorage();
   listenerBtnLib();
-  const refsPaginH = document.querySelector('#root_header');
+  //   const refsPaginH = document.querySelector('#root_header');
   const refsPaginF = document.querySelector('#root_futer');
-  refsPaginH.innerHTML = '';
+  //   refsPaginH.innerHTML = '';
   refsPaginF.innerHTML = '';
 }
 
@@ -29,6 +29,7 @@ export default function allStorage() {
   archive.forEach(function (item) {
     refs.filmsContainer.insertAdjacentHTML('beforeend', collectionLibraryCardTpl(item));
   });
+  filtersWatched();
 }
 
 ///////////////////////////////////////////////
@@ -39,7 +40,7 @@ function listenerBtnLib() {
   refs.btnQueue.addEventListener('click', filtersQueue);
 }
 
-// Кнопка - Watched
+// Кнопка - Watched (фильтрация)
 export function filtersWatched() {
   refs.filmsContainer.innerHTML = '';
   let archive = [],

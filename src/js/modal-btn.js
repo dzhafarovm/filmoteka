@@ -118,7 +118,7 @@ function addsQueue() {
   //   console.log(genresStrong);
 
   const yearData = linsk.dataRelease.getAttribute('data-year').split('-')[0];
-  console.log(yearData);
+  //   console.log(yearData);
 
   const datalocalStorage = {
     id: linsk.dataId.getAttribute('data-action'),
