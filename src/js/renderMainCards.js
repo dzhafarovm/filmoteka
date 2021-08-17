@@ -9,6 +9,15 @@ import onTrailerClick from './trailer';
 
 import { pagination } from './pagination/start-pagination';
 
+Notiflix.Loading.init({ svgColor: '#ff6b08', messageColor: '#ff6b08' });
+
+Notiflix.Notify.init({
+  success: {
+    background: 'rgba(255, 107, 8, 0.8)',
+    notiflixIconColor: 'rgba(0,0,0,0.4)',
+  },
+});
+
 // const DEBOUNCE_DELAY = 300;
 let totalRenderedFilms = 0;
 let page = 1;
@@ -72,9 +81,9 @@ export function addFilmsCardMarkup(data) {
 
   openModalListener();
   onTrailerClick();
-  Notiflix.Notify.success(`We found ${totalRenderedFilms} films for you.`);
-  //   const refsPagin = document.querySelector('#root_futer');
-  //   refsPagin.innerHTML = '';
+
+  // const refsPagin = document.querySelector('#root_futer');
+  // refsPagin.innerHTML = '';
   // onInputChange();
   // themeAfterPageReload();
 }
@@ -136,12 +145,3 @@ function addDate(results) {
     return;
   });
 }
-
-Notiflix.Loading.init({ svgColor: '#ff6b08', messageColor: '#ff6b08' });
-
-Notiflix.Notify.init({
-  success: {
-    background: 'rgba(255, 107, 8, 0.8)',
-    notiflixIconColor: 'rgba(0,0,0,0.4)',
-  },
-});
