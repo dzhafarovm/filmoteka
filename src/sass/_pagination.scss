@@ -11,20 +11,13 @@
 }
 
 .MuiPagination-root .MuiPagination-ul {
-  //   margin-left: auto;
-  //   margin-right: auto;
   justify-content: center;
 }
-// .MuiPagination-ul {
-//   margin-left: auto;
-//   margin-right: auto;
-// }
 
-// .muibuttonbase-root.muipaginationitem-root.muipaginationitem-page.muipaginationitem-rounded.muipaginationitem-textprimary
-//   :last-child {
-//   display: none;
+#root_futer {
+  margin-top: 50px;
+}
 
-//   @media (min-width: 768px) {
-//     display: inline-flex;
-//   }
-// }
+#root_header {
+  margin-top: 50px;
+}

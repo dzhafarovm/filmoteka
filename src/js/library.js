@@ -12,17 +12,18 @@ import { watched, queue } from './modal-btn';
 // }
 
 // Слушатели
-refs.btnLib.addEventListener('click', opensLibraryddd);
+refs.btnLib.addEventListener('click', opensLibrary);
 
 //////////////////////////////////////////////
 // По слущателю - очитска страници
-function opensLibraryddd() {
+function opensLibrary() {
   refs.filmsContainer.innerHTML = '';
   allStorage();
   listenerBtnLib();
-  //   closePagin();
-  const refsPagin = document.querySelector('#root_futer');
-  refsPagin.innerHTML = '';
+  const refsPaginH = document.querySelector('#root_header');
+  const refsPaginF = document.querySelector('#root_futer');
+  refsPaginH.innerHTML = '';
+  refsPaginF.innerHTML = '';
 }
 
 // Вызов из хранилищя, переборы и рендеринг

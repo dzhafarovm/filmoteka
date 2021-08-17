@@ -8,7 +8,10 @@ import { refs } from '../refs';
 import { fetchPopularCollection } from '../fetch-popular.js';
 import { renderPopularCollection } from '../page-popular.js';
 
-// const totalPages = 1000;
+import FilmsApiService from '../fetchMainCards';
+import { addFilmsCardMarkup } from '../renderMainCards';
+
+const filmsApi = new FilmsApiService();
 
 export default function PaginationLink() {
   return (
@@ -18,18 +21,25 @@ export default function PaginationLink() {
           const query = new URLSearchParams(location.search);
           const page = parseInt(query.get('page') || '1', 10);
 
-          fetchPopularCollection(page).then(renderPopularCollection);
+          let value = document.getElementsByTagName('input')[0].value;
+
+          if (value === '') {
+            fetchPopularCollection(page).then(renderPopularCollection);
+          } else {
+            filmsApi.fetchCards(page, value).then(addFilmsCardMarkup);
+          }
+
+          //  'body'.scrollTop(0);
+          window.scrollTo(0, 0);
 
           function dataPages() {
             const totalPages = refs.filmsContainer.getAttribute('dataPage');
-            // console.log(totalPages);
+
             return totalPages;
           }
           let pagesStr = dataPages();
-          //  console.log(typeof pagesStr);
 
           let pagesNumbar = Number(pagesStr);
-          //  console.log(typeof pagesNumbar);
 
           return (
             <Pagination
