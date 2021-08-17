@@ -6,10 +6,12 @@ import filmsCardTpl from '../hbs/sample-1.hbs';
 import { genres } from '../js/genre';
 import { openModalListener } from './modalCard.js';
 import onTrailerClick from './trailer';
-// import { onInputChange, themeAfterPageReload } from './theme-switch';
+
+import { pagination } from './pagination/start-pagination';
 
 // const DEBOUNCE_DELAY = 300;
 let totalRenderedFilms = 0;
+let page = 1;
 
 const filmsApiService = new FilmsApiService();
 
@@ -18,8 +20,9 @@ refs.formNav.addEventListener('submit', onSearchFormSubmit);
 function onSearchFormSubmit(e) {
   e.preventDefault();
 
-  filmsApiService.query = e.currentTarget.elements.query.value;
-  if (filmsApiService.query.trim() === '') {
+  let value = e.currentTarget.elements.query.value;
+
+  if (value.trim() === '') {
     return;
   }
 
@@ -27,29 +30,32 @@ function onSearchFormSubmit(e) {
   Notiflix.Loading.dots('Please wait...');
 
   filmsApiService
-    .fetchCards()
+    .fetchCards(page, value)
     .then(addFilmsCardMarkup)
+    .then(pagination)
     .catch(error => {
       console.log(error);
     });
 }
 
-function addFilmsCardMarkup({ results, total_pages }) {
-  console.log(results);
+export function addFilmsCardMarkup(data) {
+  const totalPages = data.total_pages;
+  refs.filmsContainer.setAttribute('dataPage', totalPages);
+
   Notiflix.Loading.remove();
-  if (results.length === 0) {
+  if (data.results.length === 0) {
     Notiflix.Notify.failure(
       'Sorry, there are no films matching your search query. Please try again.',
     );
     return;
   }
 
-  totalRenderedFilms = results.length * total_pages;
-  addGenres(results);
-  addPoster(results);
-  addDate(results);
+  totalRenderedFilms = data.results.length * data.total_pages;
+  addGenres(data.results);
+  addPoster(data.results);
+  addDate(data.results);
 
-  const collectionPopFilm = results.map(result => {
+  const collectionPopFilm = data.results.map(result => {
     return {
       id: result.id,
       vote_average: result.vote_average,
@@ -61,12 +67,14 @@ function addFilmsCardMarkup({ results, total_pages }) {
     };
   });
 
-  refs.filmsContainer.insertAdjacentHTML('beforeend', filmsCardTpl(collectionPopFilm));
+  const markup = filmsCardTpl(collectionPopFilm);
+  refs.filmsContainer.innerHTML = markup;
+
   openModalListener();
   onTrailerClick();
   Notiflix.Notify.success(`We found ${totalRenderedFilms} films for you.`);
-  const refsPagin = document.querySelector('#root_futer');
-  refsPagin.innerHTML = '';
+  //   const refsPagin = document.querySelector('#root_futer');
+  //   refsPagin.innerHTML = '';
   // onInputChange();
   // themeAfterPageReload();
 }

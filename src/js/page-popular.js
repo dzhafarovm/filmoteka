@@ -11,7 +11,6 @@ import onTrailerClick from './trailer';
 refs.btnHome.addEventListener('click', onDataCollection);
 
 function onDataCollection() {
-  // dataCollection();
   location.reload();
 }
 let page = 1;

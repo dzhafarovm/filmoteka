@@ -1,29 +1,27 @@
 import axios from 'axios';
+import { KEY_API } from './key.js';
+
 export default class FilmsApiService {
   constructor() {
-    this.query = '';
-    this.page = 1;
+    this.value = '';
   }
 
-  fetchCards() {
-    const API_KEY = '93ab5af0b6f3bcde1224ca161062db06';
+  fetchCards(page, value) {
     return axios
       .get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${this.query}&page=${this.page}`,
+        `https://api.themoviedb.org/3/search/movie?api_key=${KEY_API}&query=${value}&page=${page}`,
       )
-      .then(response => response.data)
-      .then(({ results, total_pages }) => {
-        this.page += 1;
-        return { results, total_pages };
+      .then(response => {
+        return response.data;
       });
   }
   get searchQuery() {
-    return this.query;
+    return this.value;
   }
   set searchQuery(newQuery) {
-    this.query = newQuery;
+    this.value = newQuery;
   }
   resetPage() {
-    this.page = 1;
+    this.page = page;
   }
 }
