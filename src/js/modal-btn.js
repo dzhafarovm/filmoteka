@@ -11,6 +11,7 @@ const buttonLabelQueueRemove = 'remove from Queue';
 function searchLinks() {
   return {
     dataId: document.querySelector('.modal'),
+    dataRelease: document.querySelector('.modal'),
     dataImg: document.querySelector('.modal__img'),
     dataAverage: document.querySelector('.card__item-average'),
     dataCount: document.querySelector('.card__item-count'),
@@ -25,6 +26,7 @@ function searchLinks() {
 }
 
 //////////// Кнопка "add to Watched"  добавить - к просмотренным
+
 // Добавляет в  localStorage
 function updateStorage(datalocalStorage, keyStorage) {
   const dataStorage = [];
@@ -77,11 +79,15 @@ function storageСheckQueue() {
 function addsWatched() {
   const linsk = searchLinks();
   let genresStrong = linsk.dataGenres.textContent;
-
   genresStrong = genresStrong.replace(/\s+/g, ' ').trim().split(' ').join(', ');
+  //   console.log(genresStrong);
+
+  const yearData = linsk.dataRelease.getAttribute('data-year').split('-')[0];
+  console.log(yearData);
 
   const datalocalStorage = {
     id: linsk.dataId.getAttribute('data-action'),
+    release_date: yearData,
     title: linsk.dataImg.getAttribute('alt'),
     poster_path: linsk.dataImg.getAttribute('src'),
     vote_average: linsk.dataAverage.textContent,
@@ -108,12 +114,15 @@ function addsWatched() {
 function addsQueue() {
   const linsk = searchLinks();
   let genresStrong = linsk.dataGenres.textContent;
-
   genresStrong = genresStrong.replace(/\s+/g, ' ').trim().split(' ').join(', ');
   //   console.log(genresStrong);
 
+  const yearData = linsk.dataRelease.getAttribute('data-year').split('-')[0];
+  console.log(yearData);
+
   const datalocalStorage = {
     id: linsk.dataId.getAttribute('data-action'),
+    release_date: yearData,
     title: linsk.dataImg.getAttribute('alt'),
     poster_path: linsk.dataImg.getAttribute('src'),
     vote_average: linsk.dataAverage.textContent,

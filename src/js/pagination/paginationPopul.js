@@ -30,7 +30,7 @@ export default function PaginationLink() {
           }
 
           //  'body'.scrollTop(0);
-          window.scrollTo(0, 0);
+          //  window.scrollTo(0, 0);
 
           function dataPages() {
             const totalPages = refs.filmsContainer.getAttribute('dataPage');
