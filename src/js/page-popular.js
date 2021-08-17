@@ -5,8 +5,16 @@ import { refs } from './refs.js';
 import { openModalListener } from './modalCard.js';
 import { pagination } from './pagination/start-pagination';
 import { genres } from '../js/genre';
-
 import onTrailerClick from './trailer';
+
+Notiflix.Loading.init({ svgColor: '#ff6b08', messageColor: '#ff6b08' });
+
+Notiflix.Notify.init({
+  success: {
+    background: 'rgba(255, 107, 8, 0.8)',
+    notiflixIconColor: 'rgba(0,0,0,0.4)',
+  },
+});
 
 refs.btnHome.addEventListener('click', onDataCollection);
 
@@ -116,12 +124,3 @@ function addDate(results) {
     return;
   });
 }
-
-Notiflix.Loading.init({ svgColor: '#ff6b08', messageColor: '#ff6b08' });
-
-Notiflix.Notify.init({
-  success: {
-    background: 'rgba(255, 107, 8, 0.8)',
-    notiflixIconColor: 'rgba(0,0,0,0.4)',
-  },
-});
