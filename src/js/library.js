@@ -1,15 +1,6 @@
 import { refs } from './refs.js';
 import collectionLibraryCardTpl from '../hbs/sample-1-1.hbs';
 import { watched, queue } from './modal-btn';
-// import { closePagin } from './pagination/start-pagination';
-// import { paginationLib } from './pagination/start-pagination';
-
-//Поиск ссылок по карточке
-// function searchLinksLib() {
-//   return {
-//     listItemLib: document.querySelector('.gallery-item'),
-//   };
-// }
 
 // Слушатели
 refs.btnLib.addEventListener('click', opensLibrary);
@@ -36,22 +27,11 @@ export default function allStorage() {
   }
   //   console.log(archive);
   archive.forEach(function (item) {
-    //  console.log(item);
-    //  console.log(item[0].librarySection);
-    //   librarySection;
-    //   console.log(item[0].genres);
-    //  console.log(item[0].genres.replace(/\n/g, ''));
-    //  item[0].genres.replace(/\n/g, '');
-    //  console.log(item[0].librarySection);
-    //  console.log(item[0].genres);
-
     refs.filmsContainer.insertAdjacentHTML('beforeend', collectionLibraryCardTpl(item));
   });
-  //   paginationLib();
 }
 
 ///////////////////////////////////////////////
-// filtersWatched();
 //////Кнопки Библиотеки
 //CСлушатели
 function listenerBtnLib() {
@@ -62,7 +42,6 @@ function listenerBtnLib() {
 // Кнопка - Watched
 export function filtersWatched() {
   refs.filmsContainer.innerHTML = '';
-  //   console.log('Wwww');
   let archive = [],
     keys = Object.keys(localStorage),
     i = keys.length;
@@ -80,7 +59,6 @@ export function filtersWatched() {
 
 // Кнопка - Queue
 export function filtersQueue() {
-  //   console.log('QQQQ');
   refs.filmsContainer.innerHTML = '';
   let archive = [],
     keys = Object.keys(localStorage),
