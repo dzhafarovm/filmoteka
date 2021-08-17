@@ -30,4 +30,7 @@ export const refs = {
   cardDescription: document.querySelector('.card__description'),
   filmName: document.querySelector('.film-name'),
   cardText: document.querySelector('.card__text'),
+
+  //pagination
+  pagination: document.querySelector('#root_futer'),
 };
