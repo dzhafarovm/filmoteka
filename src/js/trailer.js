@@ -1,3 +1,6 @@
+import * as basicLightbox from 'basiclightbox';
+import 'basiclightbox/dist/basicLightbox.min.css';
+
 import axios from 'axios';
 import { KEY_API } from './key';
 import { refs } from './refs.js';
@@ -39,6 +42,15 @@ function renderTrailer(data) {
     }
   });
 
-  const trailerLink = document.querySelector('.js-youtube-key');
-  trailerLink.href = `https://www.youtube.com/watch?v=${key}`;
+  const trailer = basicLightbox.create(`
+  <iframe width="450" height="320" src='https://www.youtube.com/embed/${key}'frameborder="0" allowfullscreen class="trailer_video"></iframe>
+`);
+
+  // const trailerLink = document.querySelector('.js-youtube-key');
+  const trailerbtn = document.querySelector('.card__btn-trailer');
+  trailerbtn.addEventListener('click', watchTrailer);
+
+  function watchTrailer() {
+    trailer.show();
+  }
 }
