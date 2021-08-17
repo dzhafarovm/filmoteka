@@ -8,6 +8,7 @@ export const refs = {
   libNav: document.querySelector('.js-lib-menu'),
   btnLib: document.querySelector('#btn-library'),
   formNav: document.querySelector('.search-form'),
+  inputEl: document.querySelector('.search-input'),
 
   toggle: document.querySelector('#theme-switch-toggle'),
 

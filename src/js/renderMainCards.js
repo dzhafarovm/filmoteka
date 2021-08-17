@@ -6,7 +6,7 @@ import filmsCardTpl from '../hbs/sample-1.hbs';
 import { genres } from '../js/genre';
 import { openModalListener } from './modalCard.js';
 import onTrailerClick from './trailer';
-import { onInputChange, themeAfterPageReload } from './theme-switch';
+// import { onInputChange, themeAfterPageReload } from './theme-switch';
 
 // const DEBOUNCE_DELAY = 300;
 let totalRenderedFilms = 0;
@@ -30,9 +30,7 @@ function onSearchFormSubmit(e) {
     .fetchCards()
     .then(addFilmsCardMarkup)
     .catch(error => {
-      Notiflix.Notify.failure(
-        'Sorry, there are no films matching your search query. Please try again.',
-      );
+      console.log(error);
     });
 }
 
@@ -69,8 +67,8 @@ function addFilmsCardMarkup({ results, total_pages }) {
   Notiflix.Notify.success(`We found ${totalRenderedFilms} films for you.`);
   const refsPagin = document.querySelector('#root_futer');
   refsPagin.innerHTML = '';
-  onInputChange();
-  themeAfterPageReload();
+  // onInputChange();
+  // themeAfterPageReload();
 }
 
 // Подмена id на имя жанра и обрезка по длине строки
