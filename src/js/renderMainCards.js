@@ -30,9 +30,7 @@ function onSearchFormSubmit(e) {
     .fetchCards()
     .then(addFilmsCardMarkup)
     .catch(error => {
-      Notiflix.Notify.failure(
-        'Sorry, there are no films matching your search query. Please try again.',
-      );
+      console.log(error);
     });
 }
 
