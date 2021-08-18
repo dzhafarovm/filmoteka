@@ -43,6 +43,8 @@ function listenerBtnLib() {
 // Кнопка - Watched (фильтрация)
 export function filtersWatched() {
   sessionStorage.setItem('libopen', 'libopenWatched');
+  refs.btnWatched.classList.add('accent-color-btn');
+  refs.btnQueue.classList.remove('accent-color-btn');
 
   refs.filmsContainer.innerHTML = '';
   let archive = [],
@@ -63,6 +65,8 @@ export function filtersWatched() {
 // Кнопка - Queue
 export function filtersQueue() {
   sessionStorage.setItem('libopen', 'libopenQueue');
+  refs.btnQueue.classList.add('accent-color-btn');
+  refs.btnWatched.classList.remove('accent-color-btn');
 
   refs.filmsContainer.innerHTML = '';
   let archive = [],
