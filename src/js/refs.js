@@ -39,5 +39,4 @@ export const refs = {
   closeModalBtn: document.querySelector('[data-action="close-modal"]'),
   backdrop: document.querySelector('.js-backdrop'),
   team: document.querySelector('.dev-set'),
-
 };

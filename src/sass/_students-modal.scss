@@ -1,0 +1,130 @@
+.backdrop {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  // padding: 93px 15px;
+  overflow-y: scroll;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 960px;
+  text-align: center;
+  align-items: center;
+
+  background-color: #ffffff;
+  overflow-y: auto;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7f7f7;
+
+  @media (min-width: 768px) {
+    display: flex;
+    width: 600px;
+    padding: 20px 20px;
+  }
+}
+
+.developer-container {
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 768px) {
+    flex-wrap: wrap;
+  }
+}
+
+.dev-set {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 900px;
+}
+
+.devcont-item {
+  list-style: none;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  justify-content: space-between;
+  margin: 0 80px;
+  flex-wrap: wrap;
+
+  &:not(:last-child) {
+  }
+
+  @media (min-width: 768px) {
+    display: block;
+    margin: 80px 80px;
+  }
+}
+
+.social-network-link {
+  color: #000;
+}
+
+.social-network-item {
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+
+.devcont-img {
+  border-radius: 50%;
+  margin-bottom: 25px;
+  height: 134px;
+  transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 50px #ff6b08;
+  }
+}
+
+.devcont-description {
+  text-align: center;
+  transform: scale(1.1);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.devcont-name {
+  margin-bottom: 10px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+}
+
+.devcont-position {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ff6b08;
+}
+
+.social-network-box {
+  align-items: center;
+}
+.social-network-item {
+  padding-right: 10px;
+  align-items: center;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
