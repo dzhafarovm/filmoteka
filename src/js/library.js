@@ -10,17 +10,13 @@ refs.btnLib.addEventListener('click', opensLibrary);
 function opensLibrary() {
   refs.filmsContainer.innerHTML = '';
   const linkRootPopul = document.querySelector('#root_futer');
-  //   console.log(linkRootPopul);
   const linkRootInput = document.querySelector('#root_futer-input');
-  //   console.log(linkRootInput);
 
   linkRootPopul.classList.add('js-active');
   linkRootInput.classList.add('js-active');
   allStorage();
   listenerBtnLib();
 }
-
-console.log(Object.keys(localStorage));
 
 // Вызов из хранилищя, переборы и рендеринг
 export default function allStorage() {
@@ -31,8 +27,7 @@ export default function allStorage() {
     console.log(keys[i]);
     archive[keys[i]] = JSON.parse(localStorage.getItem(keys[i]));
   }
-  //   console.log(keys);
-  //   console.log(archive);
+
   archive.forEach(function (item) {
     refs.filmsContainer.insertAdjacentHTML('beforeend', collectionLibraryCardTpl(item));
   });
