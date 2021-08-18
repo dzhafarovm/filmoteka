@@ -7,7 +7,7 @@ import { genres } from '../js/genre';
 import { openModalListener } from './modalCard.js';
 import onTrailerClick from './trailer';
 
-import { pagination } from './pagination/start-pagination';
+import { pagiInp } from './pagination/start-pagination';
 
 Notiflix.Loading.init({ svgColor: '#ff6b08', messageColor: '#ff6b08' });
 
@@ -41,7 +41,7 @@ function onSearchFormSubmit(e) {
   filmsApiService
     .fetchCards(page, value)
     .then(addFilmsCardMarkup)
-    .then(pagination)
+    .then(pagiInp)
     .catch(error => {
       console.log(error);
     });

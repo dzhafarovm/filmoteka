@@ -14,10 +14,14 @@
   justify-content: center;
 }
 
-#root_futer {
-  margin-top: 50px;
-}
+// #root_futer {
+//   margin-top: 50px;
+// }
 
-#root_header {
-  margin-top: 50px;
+// #root_header {
+//   margin-top: 50px;
+// }
+
+#root_futer.js-active {
+  display: none;
 }
