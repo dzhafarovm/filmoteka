@@ -94,7 +94,7 @@ function renderMovieModal(data) {
       refsId.cardDescription.classList.remove(Theme.LIGHT);
       refsId.cardText.classList.remove(Theme.LIGHT);
 
-      localStorage.setItem('theme', Theme.DARK);
+      // localStorage.setItem('theme', Theme.DARK);
     } else {
       refsId.modal.classList.add(Theme.LIGHT);
       refsId.cardItem.classList.add(Theme.LIGHT);
@@ -106,7 +106,7 @@ function renderMovieModal(data) {
       refsId.cardDescription.classList.remove(Theme.DARK);
       refsId.cardText.classList.remove(Theme.DARK);
 
-      localStorage.setItem('theme', Theme.LIGHT);
+      // localStorage.setItem('theme', Theme.LIGHT);
     }
   }
   function themeModalAfterPageReload() {
@@ -117,7 +117,7 @@ function renderMovieModal(data) {
       refsId.cardDescription.classList.add(Theme.LIGHT);
       refsId.cardText.classList.add(Theme.LIGHT);
 
-      localStorage.setItem('theme', Theme.LIGHT);
+      // localStorage.setItem('theme', Theme.LIGHT);
     } else if (savedTheme === Theme.LIGHT) {
       refsId.modal.classList.add(Theme.LIGHT);
       refsId.cardItem.classList.add(Theme.LIGHT);
