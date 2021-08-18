@@ -1,6 +1,10 @@
 .back_to_top {
+  width: 40px;
+  height: 40px;
+  text-align: center;
   position: fixed;
-  padding: 12px;
+  //   padding: 12px;
+  padding-top: 8px;
   bottom: 80px;
   right: 50px;
   z-index: 9999;
