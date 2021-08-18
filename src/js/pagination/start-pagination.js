@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import PaginPopal from './paginationPopul';
 import PaginInput from './paginationInput';
 
+pagination();
 export function pagination() {
   ReactDOM.render(<PaginPopal />, document.querySelector('#root_futer'));
 }

@@ -8,11 +8,6 @@ import { refs } from '../refs';
 import { fetchPopularCollection } from '../fetch-popular.js';
 import { renderPopularCollection } from '../page-popular.js';
 
-// import FilmsApiService from '../fetchMainCards';
-// import { addFilmsCardMarkup } from '../renderMainCards';
-
-// const filmsApi = new FilmsApiService();
-
 export default function PaginationLink() {
   return (
     <MemoryRouter initialEntries={['/inbox']} initialIndex={0}>
@@ -26,12 +21,9 @@ export default function PaginationLink() {
           if (value === '') {
             fetchPopularCollection(page).then(renderPopularCollection);
           } else {
-            //  filmsApi.fetchCards(page, value).then(addFilmsCardMarkup);
             return;
           }
-
           //  window.scrollTo(0, 0);
-
           function dataPages() {
             const totalPages = refs.filmsContainer.getAttribute('dataPage');
 
@@ -44,7 +36,7 @@ export default function PaginationLink() {
           return (
             <Pagination
               page={page}
-              count={pagesNumbar}
+              count={1000}
               defaultPage={6}
               siblingCount={2}
               boundaryCount={1}

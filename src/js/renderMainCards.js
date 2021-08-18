@@ -52,12 +52,12 @@ export function addFilmsCardMarkup(data) {
   refs.filmsContainer.setAttribute('dataPage', totalPages);
 
   Notiflix.Loading.remove();
-  if (data.results.length === 0) {
-    Notiflix.Notify.failure(
-      'Sorry, there are no films matching your search query. Please try again.',
-    );
-    return;
-  }
+  //   if (data.results.length === 0) {
+  //     Notiflix.Notify.failure(
+  //       'Sorry, there are no films matching your search query. Please try again.',
+  //     );
+  //     return;
+  //   }
 
   totalRenderedFilms = data.results.length * data.total_pages;
   addGenres(data.results);
