@@ -15,6 +15,7 @@ export default function PaginationLink() {
         {({ location }) => {
           const query = new URLSearchParams(location.search);
           const page = parseInt(query.get('page') || '1', 10);
+          sessionStorage.removeItem('libopen');
 
           let value = document.getElementsByTagName('input')[0].value;
 
