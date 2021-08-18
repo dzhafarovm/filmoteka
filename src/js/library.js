@@ -9,12 +9,19 @@ refs.btnLib.addEventListener('click', opensLibrary);
 // По слущателю - очитска страници
 function opensLibrary() {
   refs.filmsContainer.innerHTML = '';
+  const linkRootPopul = document.querySelector('#root_futer');
+  console.log(linkRootPopul);
+  const linkRootInput = document.querySelector('#root_futer-input');
+  console.log(linkRootInput);
+
+  linkRootPopul.classList.add('js-active');
+  linkRootInput.classList.add('js-active');
   allStorage();
   listenerBtnLib();
   //   const refsPaginH = document.querySelector('#root_header');
-  const refsPaginF = document.querySelector('#root_futer');
+  //   const refsPaginF = document.querySelector('#root_futer');
   //   refsPaginH.innerHTML = '';
-  refsPaginF.innerHTML = '';
+  // refsPaginF.innerHTML = '';
 }
 
 // Вызов из хранилищя, переборы и рендеринг
