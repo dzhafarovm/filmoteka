@@ -50,20 +50,20 @@ function dataIdSearch(movie_id) {
 }
 
 ///////Для смены темы/////
-const Theme = {
-  LIGHT: 'light-theme',
-  DARK: 'dark-theme',
-};
+// const Theme = {
+//   LIGHT: 'light-theme',
+//   DARK: 'dark-theme',
+// };
 
-// Поиск рефов по карточке
-function getRefsId() {
-  return {
-    modal: document.querySelector('.modal'),
-    cardItem: document.querySelector('.card__item'),
-    cardDescription: document.querySelector('.card__description'),
-    cardText: document.querySelector('.card__text'),
-  };
-}
+// // Поиск рефов по карточке
+// function getRefsId() {
+//   return {
+//     modal: document.querySelector('.modal'),
+//     cardItem: document.querySelector('.card__item'),
+//     cardDescription: document.querySelector('.card__description'),
+//     cardText: document.querySelector('.card__text'),
+//   };
+// }
 //////////////////////////////////////////////////////////////////////////////
 // рендеринг шаблона
 function renderMovieModal(data) {
@@ -79,68 +79,68 @@ function renderMovieModal(data) {
   onTrailerClick();
   //   modalButtonStyles();
   /////Для смены темы//////
-  const refsId = getRefsId();
-  refs.toggle.addEventListener('change', onInputChangeModal);
-  themeModalAfterPageReload();
-  function onInputChangeModal() {
-    if (refs.toggle.checked) {
-      refsId.modal.classList.add(Theme.DARK);
-      refsId.cardItem.classList.add(Theme.DARK);
-      refsId.cardDescription.classList.add(Theme.DARK);
-      refsId.cardText.classList.add(Theme.DARK);
+  // const refsId = getRefsId();
+  // refs.toggle.addEventListener('change', onInputChangeModal);
+  // themeModalAfterPageReload();
+  // function onInputChangeModal() {
+  //   if (refs.toggle.checked) {
+  //     refsId.modal.classList.add(Theme.DARK);
+  //     refsId.cardItem.classList.add(Theme.DARK);
+  //     refsId.cardDescription.classList.add(Theme.DARK);
+  //     refsId.cardText.classList.add(Theme.DARK);
 
-      refsId.modal.classList.remove(Theme.LIGHT);
-      refsId.cardItem.classList.remove(Theme.LIGHT);
-      refsId.cardDescription.classList.remove(Theme.LIGHT);
-      refsId.cardText.classList.remove(Theme.LIGHT);
+  //     refsId.modal.classList.remove(Theme.LIGHT);
+  //     refsId.cardItem.classList.remove(Theme.LIGHT);
+  //     refsId.cardDescription.classList.remove(Theme.LIGHT);
+  //     refsId.cardText.classList.remove(Theme.LIGHT);
 
-      // localStorage.setItem('theme', Theme.DARK);
-    } else {
-      refsId.modal.classList.add(Theme.LIGHT);
-      refsId.cardItem.classList.add(Theme.LIGHT);
-      refsId.cardDescription.classList.add(Theme.LIGHT);
-      refsId.cardText.classList.add(Theme.LIGHT);
+  //     // localStorage.setItem('theme', Theme.DARK);
+  //   } else {
+  //     refsId.modal.classList.add(Theme.LIGHT);
+  //     refsId.cardItem.classList.add(Theme.LIGHT);
+  //     refsId.cardDescription.classList.add(Theme.LIGHT);
+  //     refsId.cardText.classList.add(Theme.LIGHT);
 
-      refsId.modal.classList.remove(Theme.DARK);
-      refsId.cardItem.classList.remove(Theme.DARK);
-      refsId.cardDescription.classList.remove(Theme.DARK);
-      refsId.cardText.classList.remove(Theme.DARK);
+  //     refsId.modal.classList.remove(Theme.DARK);
+  //     refsId.cardItem.classList.remove(Theme.DARK);
+  //     refsId.cardDescription.classList.remove(Theme.DARK);
+  //     refsId.cardText.classList.remove(Theme.DARK);
 
-      // localStorage.setItem('theme', Theme.LIGHT);
-    }
-  }
-  function themeModalAfterPageReload() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === null) {
-      refsId.modal.classList.add(Theme.LIGHT);
-      refsId.cardItem.classList.add(Theme.LIGHT);
-      refsId.cardDescription.classList.add(Theme.LIGHT);
-      refsId.cardText.classList.add(Theme.LIGHT);
+  //     // localStorage.setItem('theme', Theme.LIGHT);
+  //   }
+  // }
+  // function themeModalAfterPageReload() {
+  //   const savedTheme = localStorage.getItem('theme');
+  //   if (savedTheme === null) {
+  //     refsId.modal.classList.add(Theme.LIGHT);
+  //     refsId.cardItem.classList.add(Theme.LIGHT);
+  //     refsId.cardDescription.classList.add(Theme.LIGHT);
+  //     refsId.cardText.classList.add(Theme.LIGHT);
 
-      // localStorage.setItem('theme', Theme.LIGHT);
-    } else if (savedTheme === Theme.LIGHT) {
-      refsId.modal.classList.add(Theme.LIGHT);
-      refsId.cardItem.classList.add(Theme.LIGHT);
-      refsId.cardDescription.classList.add(Theme.LIGHT);
-      refsId.cardText.classList.add(Theme.LIGHT);
+  //     // localStorage.setItem('theme', Theme.LIGHT);
+  //   } else if (savedTheme === Theme.LIGHT) {
+  //     refsId.modal.classList.add(Theme.LIGHT);
+  //     refsId.cardItem.classList.add(Theme.LIGHT);
+  //     refsId.cardDescription.classList.add(Theme.LIGHT);
+  //     refsId.cardText.classList.add(Theme.LIGHT);
 
-      refsId.modal.classList.remove(Theme.DARK);
-      refsId.cardItem.classList.remove(Theme.DARK);
-      refsId.cardDescription.classList.remove(Theme.DARK);
-      refsId.cardText.classList.remove(Theme.DARK);
-    } else if (savedTheme === Theme.DARK) {
-      refsId.modal.classList.add(Theme.DARK);
-      refsId.cardItem.classList.add(Theme.DARK);
-      refsId.cardDescription.classList.add(Theme.DARK);
-      refsId.cardText.classList.add(Theme.DARK);
+  //     refsId.modal.classList.remove(Theme.DARK);
+  //     refsId.cardItem.classList.remove(Theme.DARK);
+  //     refsId.cardDescription.classList.remove(Theme.DARK);
+  //     refsId.cardText.classList.remove(Theme.DARK);
+  //   } else if (savedTheme === Theme.DARK) {
+  //     refsId.modal.classList.add(Theme.DARK);
+  //     refsId.cardItem.classList.add(Theme.DARK);
+  //     refsId.cardDescription.classList.add(Theme.DARK);
+  //     refsId.cardText.classList.add(Theme.DARK);
 
-      refsId.modal.classList.remove(Theme.LIGHT);
-      refsId.cardItem.classList.remove(Theme.LIGHT);
-      refsId.cardDescription.classList.remove(Theme.LIGHT);
-      refsId.cardText.classList.remove(Theme.LIGHT);
-      refs.toggle.checked = true;
-    }
-  }
+  //     refsId.modal.classList.remove(Theme.LIGHT);
+  //     refsId.cardItem.classList.remove(Theme.LIGHT);
+  //     refsId.cardDescription.classList.remove(Theme.LIGHT);
+  //     refsId.cardText.classList.remove(Theme.LIGHT);
+  //     refs.toggle.checked = true;
+  //   }
+  // }
 }
 
 //////////////////////////////////////////////////////////////////////////////
