@@ -1,4 +1,5 @@
 import Notiflix from 'notiflix';
+import debounce from 'lodash/debounce';
 import FilmsApiService from './fetchMainCards';
 import { refs } from './refs.js';
 
@@ -23,10 +24,10 @@ Notiflix.Notify.init({
 let totalRenderedFilms = 0;
 let page = 1;
 
-refs.inputEl.addEventListener('blur', resstartPage);
+refs.inputEl.addEventListener('input', debounce(restartPage, 300));
 
-function resstartPage() {
-  if (refs.inputEl.value === '') {
+function restartPage() {
+  if (refs.inputEl.value.trim() === '') {
     pagination();
   }
   return;
