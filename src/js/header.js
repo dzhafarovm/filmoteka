@@ -17,7 +17,6 @@ function libPageOn() {
   refs.libList.classList.remove(Head.hidden);
   refs.btnLib.classList.add(Head.current);
   refs.btnHome.classList.remove(Head.current);
-  sessionStorage.setItem('libopen', 'libopen');
 }
 
 function homePageOn() {

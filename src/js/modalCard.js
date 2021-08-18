@@ -77,9 +77,14 @@ function modalClose() {
     return;
   }
 
-  if (sessionStorage.getItem('libopen') === 'libopen') {
+  if (sessionStorage.getItem('libopen') === 'libopenQueue') {
     refs.filmsContainer.innerHTML = '';
-    allStorage();
+    filtersQueue();
+  }
+
+  if (sessionStorage.getItem('libopen') === 'libopenWatched') {
+    refs.filmsContainer.innerHTML = '';
+    filtersWatched();
   }
 }
 

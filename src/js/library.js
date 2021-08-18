@@ -42,6 +42,8 @@ function listenerBtnLib() {
 
 // Кнопка - Watched (фильтрация)
 export function filtersWatched() {
+  sessionStorage.setItem('libopen', 'libopenWatched');
+
   refs.filmsContainer.innerHTML = '';
   let archive = [],
     keys = Object.keys(localStorage),
@@ -60,6 +62,8 @@ export function filtersWatched() {
 
 // Кнопка - Queue
 export function filtersQueue() {
+  sessionStorage.setItem('libopen', 'libopenQueue');
+
   refs.filmsContainer.innerHTML = '';
   let archive = [],
     keys = Object.keys(localStorage),

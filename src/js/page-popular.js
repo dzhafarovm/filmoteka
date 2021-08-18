@@ -30,6 +30,7 @@ dataCollection();
 //// Вызов данных запроса
 function dataCollection() {
   sessionStorage.removeItem('libopen');
+
   fetchPopularCollection(page)
     .then(renderPopularCollection)
     .then(pagination)
