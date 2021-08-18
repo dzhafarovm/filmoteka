@@ -26,7 +26,7 @@ let page = 1;
 
 Notiflix.Loading.dots('Please wait...');
 
-dataCollection();
+// dataCollection();
 
 //// Вызов данных запроса
 function dataCollection() {
@@ -34,7 +34,7 @@ function dataCollection() {
 
   fetchPopularCollection(page)
     .then(renderPopularCollection)
-    .then(pagination)
+    //  .then(pagination)
     .catch(error => {
       console.log(error);
     });

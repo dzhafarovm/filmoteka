@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import Pagination from '@material-ui/lab/Pagination';
 import PaginationItem from '@material-ui/lab/PaginationItem';
 
+import Notiflix from 'notiflix';
+
 import { refs } from '../refs';
-// import { fetchPopularCollection } from '../fetch-popular.js';
-// import { renderPopularCollection } from '../page-popular.js';
 
 import FilmsApiService from '../fetchMainCards';
 import { addFilmsCardMarkup } from '../renderMainCards';
@@ -25,9 +25,7 @@ export default function PaginationLink() {
 
           if (value != '') {
             filmsApi.fetchCards(page, value).then(addFilmsCardMarkup);
-            // fetchPopularCollection(page).then(renderPopularCollection);
           } else {
-            // filmsApi.fetchCards(page, value).then(addFilmsCardMarkup);
             return;
           }
 
@@ -35,13 +33,18 @@ export default function PaginationLink() {
 
           function dataPages() {
             const totalPages = refs.filmsContainer.getAttribute('dataPage');
-
             return totalPages;
           }
           let pagesStr = dataPages();
 
           let pagesNumbar = Number(pagesStr);
+          //  console.log(pagesNumbar);
 
+          if (pagesNumbar === 0) {
+            Notiflix.Notify.failure(
+              'Sorry, there are no films matching your search query. Please try again.',
+            );
+          }
           return (
             <Pagination
               page={page}
