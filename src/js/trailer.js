@@ -43,7 +43,7 @@ function renderTrailer(data) {
   });
 
   const trailer = basicLightbox.create(`
-  <iframe width="450" height="320" src='https://www.youtube.com/embed/${key}'frameborder="0" allowfullscreen class="trailer_video"></iframe>
+  <iframe src='https://www.youtube.com/embed/${key}'frameborder="0" allowfullscreen class="trailer_video"></iframe>
 `);
 
   const trailerbtn = document.querySelector('.card__btn-trailer');

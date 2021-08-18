@@ -1,0 +1,14 @@
+.basicLightbox__placeholder iframe {
+  height: 240px;
+  min-width: 320px;
+
+  @media screen and (min-width: 768px) {
+    height: 480px;
+    width: 640px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    height: 768px;
+    width: 1024px;
+  }
+}
