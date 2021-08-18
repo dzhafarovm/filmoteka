@@ -30,7 +30,7 @@ Notiflix.Loading.dots('Please wait...');
 
 //// Вызов данных запроса
 function dataCollection() {
-  sessionStorage.removeItem('libopen');
+  //   sessionStorage.removeItem('libopen');
 
   fetchPopularCollection(page)
     .then(renderPopularCollection)
