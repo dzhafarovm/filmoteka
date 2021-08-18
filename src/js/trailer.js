@@ -46,7 +46,6 @@ function renderTrailer(data) {
   <iframe width="450" height="320" src='https://www.youtube.com/embed/${key}'frameborder="0" allowfullscreen class="trailer_video"></iframe>
 `);
 
-  // const trailerLink = document.querySelector('.js-youtube-key');
   const trailerbtn = document.querySelector('.card__btn-trailer');
   trailerbtn.addEventListener('click', watchTrailer);
 

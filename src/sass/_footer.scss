@@ -8,18 +8,19 @@ li {
 }
 
 .footer {
+  margin-top: -100px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.14;
   color: #545454;
   height: 100px;
   background: #f7f7f7;
-  margin-right: auto;
-  margin-left: auto;
   text-align: center;
-  padding-left: 15px;
-  padding-right: 15px;
-  //   height: 10em;
   display: flex;
   align-items: center;
   justify-content: center;
