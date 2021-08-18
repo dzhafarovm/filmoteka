@@ -10,19 +10,17 @@ refs.btnLib.addEventListener('click', opensLibrary);
 function opensLibrary() {
   refs.filmsContainer.innerHTML = '';
   const linkRootPopul = document.querySelector('#root_futer');
-  console.log(linkRootPopul);
+  //   console.log(linkRootPopul);
   const linkRootInput = document.querySelector('#root_futer-input');
-  console.log(linkRootInput);
+  //   console.log(linkRootInput);
 
   linkRootPopul.classList.add('js-active');
   linkRootInput.classList.add('js-active');
   allStorage();
   listenerBtnLib();
-  //   const refsPaginH = document.querySelector('#root_header');
-  //   const refsPaginF = document.querySelector('#root_futer');
-  //   refsPaginH.innerHTML = '';
-  // refsPaginF.innerHTML = '';
 }
+
+console.log(Object.keys(localStorage));
 
 // Вызов из хранилищя, переборы и рендеринг
 export default function allStorage() {
@@ -30,8 +28,10 @@ export default function allStorage() {
     keys = Object.keys(localStorage),
     i = keys.length;
   while (i--) {
+    console.log(keys[i]);
     archive[keys[i]] = JSON.parse(localStorage.getItem(keys[i]));
   }
+  //   console.log(keys);
   //   console.log(archive);
   archive.forEach(function (item) {
     refs.filmsContainer.insertAdjacentHTML('beforeend', collectionLibraryCardTpl(item));

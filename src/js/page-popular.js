@@ -105,7 +105,7 @@ export function renderPopularCollection(data) {
       refs.backdrop.classList.remove(Theme.LIGHT);
       refs.footer.classList.remove(Theme.LIGHT);
 
-      localStorage.setItem('theme', Theme.DARK);
+      // localStorage.setItem('theme', Theme.DARK);
     } else {
       refs.body.classList.add(Theme.LIGHT);
       refs.backdrop.classList.add(Theme.LIGHT);
@@ -115,7 +115,7 @@ export function renderPopularCollection(data) {
       refs.backdrop.classList.remove(Theme.DARK);
       refs.footer.classList.remove(Theme.DARK);
 
-      localStorage.setItem('theme', Theme.LIGHT);
+      // localStorage.setItem('theme', Theme.LIGHT);
     }
   }
   function onInputChangeCards() {
@@ -123,12 +123,12 @@ export function renderPopularCollection(data) {
       refsId.filmName.forEach(el => el.classList.add(Theme.DARK));
       refsId.filmName.forEach(el => el.classList.remove(Theme.LIGHT));
 
-      localStorage.setItem('theme', Theme.DARK);
+      // localStorage.setItem('theme', Theme.DARK);
     } else {
       refsId.filmName.forEach(el => el.classList.add(Theme.LIGHT));
       refsId.filmName.forEach(el => el.classList.remove(Theme.DARK));
 
-      localStorage.setItem('theme', Theme.LIGHT);
+      // localStorage.setItem('theme', Theme.LIGHT);
     }
   }
   function themeAfterPageReload() {
@@ -138,7 +138,7 @@ export function renderPopularCollection(data) {
       refs.backdrop.classList.add(Theme.LIGHT);
       refs.footer.classList.add(Theme.LIGHT);
 
-      localStorage.setItem('theme', Theme.LIGHT);
+      // localStorage.setItem('theme', Theme.LIGHT);
     } else if (savedTheme === Theme.LIGHT) {
       refs.body.classList.add(Theme.LIGHT);
       refs.backdrop.classList.add(Theme.LIGHT);
@@ -159,12 +159,12 @@ export function renderPopularCollection(data) {
     }
   }
   function themeCardsAfterPageReload() {
-    console.log(refsId.filmName);
-    const savedTheme = localStorage.getItem('theme');
+    //  console.log(refsId.filmName);
+    //  const savedTheme = localStorage.getItem('theme');
     if (savedTheme === null) {
       refsId.filmName.forEach(e => e.classList.add(Theme.LIGHT));
 
-      localStorage.setItem('theme', Theme.LIGHT);
+      // localStorage.setItem('theme', Theme.LIGHT);
     } else if (savedTheme === Theme.LIGHT) {
       refsId.filmName.forEach(e => e.classList.add(Theme.LIGHT));
       refsId.filmName.forEach(e => e.classList.remove(Theme.DARK));
