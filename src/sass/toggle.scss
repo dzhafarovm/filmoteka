@@ -11,8 +11,8 @@
 }
 
 .theme-switch__icon {
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   margin-right: 8px;
   margin-left: 8px;
 }
@@ -23,10 +23,10 @@
   flex-shrink: 0;
   position: relative;
   width: 50px;
-  height: 18px;
+  height: 5px;
   border-radius: 50em;
   border-color: #ff6b08;
-  padding: 3px 0;
+  // padding: 3px 0;
 }
 
 .theme-switch__toggle {
@@ -61,8 +61,8 @@
 .theme-switch__marker {
   position: relative;
   background-color: #fff;
-  width: 18px;
-  height: 18px;
+  width: 9px;
+  height: 10px;
   border-radius: 50%;
   z-index: 2;
   pointer-events: none;
@@ -76,7 +76,7 @@
 }
 
 .theme-switch__toggle:checked ~ .theme-switch__marker {
-  transform: translateX(30px);
+  transform: translateX(39px);
 }
 
 .theme-switch__toggle:focus + .theme-switch__track,
