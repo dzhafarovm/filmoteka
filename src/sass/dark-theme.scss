@@ -12,6 +12,14 @@
   .modal {
     background-color: #534742;
   }
+  //
+  .modal-close-btn.close:before,
+  .modal-close-btn.close:after {
+    background-color: #ff6b01;
+  }
+  .card__title {
+    text-shadow: 1px 1px 3px #f7f7f7, 0 0 1em rgb(255 118 0);
+  }
   li.card__item {
     font-size: 13px;
     color: #ffff;
@@ -19,8 +27,19 @@
   .card-container .card__description {
     color: #fff;
   }
+  li .card__item-popularity,
+  li .card__item-original-title,
+  li .card__item-genre {
+    color: #e3cbbac4;
+  }
   .card-container .card__text {
     font-size: 15px;
+    color: #dbd7d1;
+  }
+  .card__btn-watched,
+  .card__btn-que,
+  .card__btn-trailer {
+    background-color: #e3cbbac4;
   }
   .footer {
     background: rgb(19, 16, 15);
