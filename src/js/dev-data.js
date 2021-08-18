@@ -1,7 +1,7 @@
-export const devolopers = [
+export const developers = [
   {
     name: 'Maksym Dzhafarov',
-    img: './images/cat1.jpg',
+    img: 'https://avatars.githubusercontent.com/u/76589055?v=4',
     position: 'Team Leader',
     telegram: 'https://t.me/dzhafarovm',
     instagram: 'https://www.instagram.com/dzhafarovm',
@@ -11,7 +11,7 @@ export const devolopers = [
 
   {
     name: 'Kostyantyn Kolomiets',
-    img: './images/cat2.jpg',
+    img: 'https://avatars.githubusercontent.com/u/77701872?v=4',
     position: 'Scrum Master',
     telegram: 'https://t.me/KKolomiec',
     instagram: 'https://www.instagram.com',
@@ -21,41 +21,31 @@ export const devolopers = [
 
   {
     name: 'Anna Bondarenko',
-    img: './images/cat3.jpg',
+    img: 'https://avatars.githubusercontent.com/u/77537022?v=4',
     position: 'Developer',
-    telegram: 'https://t.me/dzhafarovm',
-    instagram: 'https://www.instagram.com/dzhafarovm',
-    github: 'https://github.com/dzhafarovm',
-    linkedin: 'https://www.linkedin.com/',
+    telegram: 'https://t.me/BondAnna',
+    instagram: 'https://www.instagram.com/bondarenko_a.i',
+    github: 'https://github.com/Bond-Anna',
+    linkedin: 'https://www.linkedin.com/in/anna-bondarenko-49aa82209/',
   },
 
   {
     name: 'Anna Storozhuk',
-    img: './images/cat4.jpg',
+    img: 'https://avatars.githubusercontent.com/u/76903556?v=4',
     position: 'Developer',
-    telegram: 'https://t.me/dzhafarovm',
-    instagram: 'https://www.instagram.com/dzhafarovm',
-    github: 'https://github.com/dzhafarovm',
-    linkedin: 'https://www.linkedin.com/',
+    telegram: 'https://t.me/StSoul1',
+    instagram: 'https://www.instagram.com/annastorozhuk',
+    github: 'https://github.com/AnnaStorozhuk',
+    linkedin: 'https://www.linkedin.com/AnnaStorozhuk',
   },
 
   {
-    name: 'Olena Avdyunina',
-    img: './images/cat5.jpg',
+    name: 'Olena Avdiunina',
+    img: 'https://avatars.githubusercontent.com/u/76729809?v=4',
     position: 'Developer',
-    telegram: 'https://t.me/dzhafarovm',
-    instagram: 'https://www.instagram.com/dzhafarovm',
-    github: 'https://github.com/dzhafarovm',
+    telegram: 'https://t.me/olena_avdiunina',
+    instagram: 'https://www.instagram.com/avdiunina1503',
+    github: 'https://github.com/OlenaAwd',
     linkedin: 'https://www.linkedin.com/',
-  },
-
-  {
-    name: 'Viacheslav Baleskov',
-    img: './images/cat6.jpg',
-    position: 'Developer',
-    telegram: 'https://t.me/dzhafarovm',
-    instagram: 'https://www.instagram.com/dzhafarovm',
-    github: 'https://github.com/dzhafarovm',
-    linkedin: 'https://www.linkedin.com/',
-  },
-];
+  }
+]

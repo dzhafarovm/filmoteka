@@ -64,7 +64,7 @@
             </ul>
 
             <!-- Разметка переключателя темы -->
-            <div class="toolbar">
+            <!-- <div class="toolbar">
               <div class="theme-switch">
                 <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
                   <use href="./images/svg/theme-switcher.svg#sun"></use>
@@ -87,7 +87,7 @@
                   <use href="./images/svg/theme-switcher.svg#moon"></use>
                 </svg>
               </div>
-            </div>
+            </div> -->
           </div>
         </header>
 
@@ -114,7 +114,6 @@
           </svg>
         </a>
 
-        <div class="backdrop is-hidden"></div>
       </div>
     </div>
 
@@ -125,9 +124,20 @@
         <svg class="svg-heart" width="14" heigth="14">
           <use href="../src/images/svg/sprite.svg#heart"></use>
         </svg>
-        by <button class="students-modal">GoIT Students</button>
+        by <button class="students-modal" data-action="open-modal">GoIT Students</button>
       </div>
     </footer>
+
+    <div class="backdrop is-hidden"></div>
+    <div class="backdrop js-backdrop is-hidden">
+      <div class="modal">
+        <div class="developer-container">
+          <!-- <div class="team-cont"> -->
+          <ul class="dev-set js-dev-set"></ul>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
 
     <script src="./index.js"></script>
   </body>
