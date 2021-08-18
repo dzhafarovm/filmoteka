@@ -14,6 +14,7 @@ body {
 
 body {
   font-family: Roboto, sans-serif;
+  width: calc(100vw - 12px);
 }
 
 img {
@@ -40,4 +41,16 @@ input {
 
 button {
   background-color: transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ff6b08;
 }
