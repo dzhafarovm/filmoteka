@@ -8,6 +8,7 @@ import { openModalListener } from './modalCard.js';
 import onTrailerClick from './trailer';
 
 import { pagiInp } from './pagination/start-pagination';
+import { pagination } from './pagination/start-pagination';
 
 Notiflix.Loading.init({ svgColor: '#ff6b08', messageColor: '#ff6b08' });
 
@@ -21,6 +22,15 @@ Notiflix.Notify.init({
 // const DEBOUNCE_DELAY = 300;
 let totalRenderedFilms = 0;
 let page = 1;
+
+refs.inputEl.addEventListener('blur', resstartPage);
+
+function resstartPage() {
+  if (refs.inputEl.value === '') {
+    pagination();
+  }
+  return;
+}
 
 const filmsApiService = new FilmsApiService();
 
