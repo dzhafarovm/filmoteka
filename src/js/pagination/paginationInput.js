@@ -5,13 +5,13 @@ import Pagination from '@material-ui/lab/Pagination';
 import PaginationItem from '@material-ui/lab/PaginationItem';
 
 import { refs } from '../refs';
-import { fetchPopularCollection } from '../fetch-popular.js';
-import { renderPopularCollection } from '../page-popular.js';
+// import { fetchPopularCollection } from '../fetch-popular.js';
+// import { renderPopularCollection } from '../page-popular.js';
 
-// import FilmsApiService from '../fetchMainCards';
-// import { addFilmsCardMarkup } from '../renderMainCards';
+import FilmsApiService from '../fetchMainCards';
+import { addFilmsCardMarkup } from '../renderMainCards';
 
-// const filmsApi = new FilmsApiService();
+const filmsApi = new FilmsApiService();
 
 export default function PaginationLink() {
   return (
@@ -23,10 +23,11 @@ export default function PaginationLink() {
 
           let value = document.getElementsByTagName('input')[0].value;
 
-          if (value === '') {
-            fetchPopularCollection(page).then(renderPopularCollection);
+          if (value != '') {
+            filmsApi.fetchCards(page, value).then(addFilmsCardMarkup);
+            // fetchPopularCollection(page).then(renderPopularCollection);
           } else {
-            //  filmsApi.fetchCards(page, value).then(addFilmsCardMarkup);
+            // filmsApi.fetchCards(page, value).then(addFilmsCardMarkup);
             return;
           }
 
