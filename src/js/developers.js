@@ -9,21 +9,15 @@ import '@fortawesome/fontawesome-free/js/fontawesome';
 const developersBoard = document.querySelector('.js-dev-set');
 developersBoard.innerHTML = personalTpl(developers);
 
-
 refs.openModalBtn.addEventListener('click', onOpenModal);
 refs.backdropTeam.addEventListener('click', onBackdropClick);
-
-
-
-
+refs.closeModalBtn.addEventListener('click', onCloseModal);
 
 function onOpenModal() {
   window.addEventListener('keydown', onEscKeyPress);
   refs.backdropTeam.classList.remove('is-hidden');
   refs.backdropTeam.classList.remove('show-modal');
   refs.body.classList.add('overhidden');
-
-    // refs.backdrop.classList.add('show-modal');
 }
 
   
@@ -32,8 +26,6 @@ function onCloseModal() {
   refs.backdropTeam.classList.remove('show-modal');
   refs.backdropTeam.classList.add('is-hidden');
   refs.body.classList.remove('overhidden');
-  // refs.backdropTeam.innerHTML = '';
-
 }
   
   function onBackdropClick(event) {
@@ -47,8 +39,6 @@ function onCloseModal() {
     const isEscKey = event.code === ESC_KEY_CODE;
   
     if (isEscKey) {
-
       onCloseModal();
-
     }
 }
