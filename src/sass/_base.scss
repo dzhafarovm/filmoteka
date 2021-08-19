@@ -54,3 +54,13 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: #ff6b08;
 }
+
+.message {
+  font-size: 20px;
+  text-align: center;
+}
+.message-congrats {
+  font-weight: bold;
+  margin: 20px 0;
+  color: #ff6b08;
+}
