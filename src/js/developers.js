@@ -31,6 +31,7 @@ function onCloseModal() {
   refs.backdrop.classList.remove('show-modal');
   refs.backdrop.classList.add('is-hidden');
   refs.body.classList.remove('overhidden');
+
 }
   
   function onBackdropClick(event) {
