@@ -62,6 +62,13 @@ export function filtersWatched() {
       refs.filmsContainer.insertAdjacentHTML('beforeend', collectionLibraryCardTpl(item));
     }
   });
+  const massage = `<div class="message"><p class="message-congrats">
+     Hi movie fan! <p/><p>
+      You haven't added movies yet. Please make your choise first
+    </p><div/>`;
+  if (refs.filmsContainer.firstChild === null) {
+    refs.filmsContainer.innerHTML = massage;
+  }
 }
 
 // Кнопка - Queue
@@ -84,4 +91,11 @@ export function filtersQueue() {
       refs.filmsContainer.insertAdjacentHTML('beforeend', collectionLibraryCardTpl(item));
     }
   });
+  const massage = `<div class="message"><p class="message-congrats">
+     Hi movie fan! <p/><p>
+      You haven't added movies yet. Please make your choise first
+    </p><div/>`;
+  if (refs.filmsContainer.firstChild === null) {
+    refs.filmsContainer.innerHTML = massage;
+  }
 }
