@@ -11,7 +11,7 @@ developersBoard.innerHTML = personalTpl(developers);
 
 
 refs.openModalBtn.addEventListener('click', onOpenModal);
-refs.backdrop.addEventListener('click', onBackdropClick);
+refs.backdropTeam.addEventListener('click', onBackdropClick);
 
 
 
@@ -19,7 +19,8 @@ refs.backdrop.addEventListener('click', onBackdropClick);
 
 function onOpenModal() {
   window.addEventListener('keydown', onEscKeyPress);
-  refs.backdrop.classList.remove('is-hidden');
+  refs.backdropTeam.classList.remove('is-hidden');
+  refs.backdropTeam.classList.remove('show-modal');
   refs.body.classList.add('overhidden');
 
     // refs.backdrop.classList.add('show-modal');
@@ -28,9 +29,10 @@ function onOpenModal() {
   
 function onCloseModal() {
   window.removeEventListener('keydown', onEscKeyPress);
-  refs.backdrop.classList.remove('show-modal');
-  refs.backdrop.classList.add('is-hidden');
+  refs.backdropTeam.classList.remove('show-modal');
+  refs.backdropTeam.classList.add('is-hidden');
   refs.body.classList.remove('overhidden');
+  // refs.backdropTeam.innerHTML = '';
 
 }
   
