@@ -15,7 +15,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 980px;
+  width: 780px;
   text-align: center;
   align-items: center;
 
@@ -46,7 +46,7 @@
   list-style: none;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   justify-content: space-between;
-  margin: 0 80px;
+  margin: 0 60px;
   flex-wrap: wrap;
   align-items: center;
 
@@ -71,6 +71,8 @@
 .devcont-img {
   border-radius: 50%;
   margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
   height: 134px;
   transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
@@ -85,11 +87,11 @@
   transform: scale(1.1);
   font-size: 14px;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin: 10px 0 15px;
 }
 
 .devcont-name {
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -97,7 +99,7 @@
 }
 
 .devcont-position {
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   font-size: 16px;
   font-weight: 700;
   color: #ff6b08;
