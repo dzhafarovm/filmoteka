@@ -34,9 +34,10 @@ export const refs = {
   //pagination
   pagination: document.querySelector('#root_futer'),
 
-   // team-modal
+  // team-modal
   openModalBtn: document.querySelector('[data-action="open-modal"]'),
   closeModalBtn: document.querySelector('[data-action="close-modal"]'),
   backdropTeam: document.querySelector('.js-backdrop'),
+
   team: document.querySelector('.dev-set'),
 };

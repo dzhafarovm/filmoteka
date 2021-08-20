@@ -2,12 +2,10 @@ import Notiflix from 'notiflix';
 import debounce from 'lodash/debounce';
 import FilmsApiService from './fetchMainCards';
 import { refs } from './refs.js';
-
 import filmsCardTpl from '../hbs/sample-1.hbs';
 import { genres } from '../js/genre';
 import { openModalListener } from './modalCard.js';
 import onTrailerClick from './trailer';
-
 import { pagiInp } from './pagination/start-pagination';
 import { pagination } from './pagination/start-pagination';
 

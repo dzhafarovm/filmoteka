@@ -62,32 +62,6 @@
               <li><button class="btn-watched" id="btn-watched">WATCHED</button></li>
               <li><button class="btn-queue" id="btn-queue">QUEUE</button></li>
             </ul>
-
-            <!-- Разметка переключателя темы -->
-            <!-- <div class="toolbar">
-              <div class="theme-switch">
-                <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
-                  <use href="./images/svg/theme-switcher.svg#sun"></use>
-                </svg>
-
-                <div class="theme-switch__control">
-                  <input
-                    class="theme-switch__toggle"
-                    type="checkbox"
-                    name="theme"
-                    id="theme-switch-toggle"
-                    aria-label="Переключить между тёмной и светлой темой"
-                  />
-                  <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle">
-                  </label>
-                  <div aria-hidden="true" class="theme-switch__marker"></div>
-                </div>
-
-                <svg class="theme-switch__icon" aria-label="Иконка луны">
-                  <use href="./images/svg/theme-switcher.svg#moon"></use>
-                </svg>
-              </div>
-            </div> -->
           </div>
         </header>
 
@@ -113,7 +87,6 @@
             <use href="../src/images/sprite.svg#upscrollarrow"></use>
           </svg>
         </a>
-
       </div>
     </div>
 
@@ -131,7 +104,11 @@
     <div class="backdrop is-hidden"></div>
     <div class="backdrop js-backdrop is-hidden">
       <div class="modal-team">
-        <button class="modal-team__close" data-action="close-modal"></button>
+        <button class="modal-team__close" data-action="close-modal">
+          <svg class="icon-close-btn-modal-stud" width="40" height="40">
+            <use href="./images/icons.svg#icon-close-btn-modal-stud"></use>
+          </svg>
+        </button>
         <div class="developer-container">
           <!-- <div class="team-cont"> -->
           <ul class="dev-set js-dev-set"></ul>

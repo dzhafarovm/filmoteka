@@ -143,22 +143,6 @@
   margin: 20px 20px 0 0;
   cursor: pointer;
 }
-.modal-team__close:hover:before {
-  color: #000000;
-}
-
-.modal-team__close:before {
-  content: '+';
-  color: #8c8c8c;
-  // position: absolute;
-  // z-index: 2;
-  transform: rotate(45deg);
-  font-size: 50px;
-  line-height: 1;
-  top: -374px;
-  right: -738px;
-  transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
-}
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .modal-team {
@@ -243,5 +227,28 @@
     &:hover {
       transform: scale(1.5);
     }
+  }
+}
+
+.icon-close-btn-modal-stud {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  background-color: transparent;
+  fill: rgba(202, 94, 22, 0.5);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    fill: #ff6b08;
   }
 }

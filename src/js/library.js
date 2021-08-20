@@ -36,7 +36,7 @@ export default function allStorage() {
 
 ///////////////////////////////////////////////
 //////Кнопки Библиотеки
-//CСлушатели
+//Cлушатели
 function listenerBtnLib() {
   refs.btnWatched.addEventListener('click', filtersWatched);
   refs.btnQueue.addEventListener('click', filtersQueue);
