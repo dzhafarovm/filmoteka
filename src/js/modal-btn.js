@@ -156,19 +156,3 @@ function deleteStoragData() {
     localStorage.removeItem(idCard);
   }
 }
-
-// Стилизация кнопок
-// export function modalButtonStyles() {
-//   const linsk = searchLinks();
-//   const linkTextWatched = linsk.btnWatched.textContent;
-//   const linkTextQueue = linsk.btnQueue.textContent;
-
-//   if (linkTextWatched === buttonLabelWatchedRemove || linkTextQueue === buttonLabelQueueRemove) {
-//     console.log(linkTextWatched === buttonLabelWatchedRemove);
-//     linsk.btnWatched.classList.add('js-btn-watched');
-//     linsk.btnQueue.classList.add('js-btn-watched');
-//   } else {
-//     linsk.btnWatched.classList.remove('js-btn-watched');
-//     linsk.btnQueue.classList.remove('js-btn-watched');
-//   }
-// }

@@ -17,13 +17,6 @@ function libPageOn() {
   refs.libList.classList.remove(Head.hidden);
   refs.btnLib.classList.add(Head.current);
   refs.btnHome.classList.remove(Head.current);
-  const massage = `<div class="message"><p class="message-congrats">
-     Hi movie fan! <p/><p>
-      You haven't added movies yet. Please make your choise first
-    </p><div/>`;
-  if (refs.filmsContainer.firstChild === null) {
-    refs.filmsContainer.innerHTML = massage;
-  }
 }
 
 function homePageOn() {

@@ -30,6 +30,16 @@ export const developers = [
   },
 
   {
+    name: 'Olena Avdiunina',
+    img: 'https://avatars.githubusercontent.com/u/76729809?v=4',
+    position: 'Developer',
+    telegram: 'https://t.me/olena_avdiunina',
+    instagram: 'https://www.instagram.com/avdiunina1503',
+    github: 'https://github.com/OlenaAwd',
+    linkedin: 'https://www.linkedin.com/',
+  },
+
+  {
     name: 'Anna Storozhuk',
     img: 'https://avatars.githubusercontent.com/u/76903556?v=4',
     position: 'Developer',
@@ -38,14 +48,4 @@ export const developers = [
     github: 'https://github.com/AnnaStorozhuk',
     linkedin: 'https://www.linkedin.com/AnnaStorozhuk',
   },
-
-  {
-    name: 'Olena Avdiunina',
-    img: 'https://avatars.githubusercontent.com/u/76729809?v=4',
-    position: 'Developer',
-    telegram: 'https://t.me/olena_avdiunina',
-    instagram: 'https://www.instagram.com/avdiunina1503',
-    github: 'https://github.com/OlenaAwd',
-    linkedin: 'https://www.linkedin.com/',
-  }
-]
+];

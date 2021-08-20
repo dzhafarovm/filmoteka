@@ -6,8 +6,6 @@
 
   width: calc(100vw - 12px);
   height: 100%;
-  // padding: 93px 15px;
-  // overflow-y: scroll;
 
   background-color: rgba(0, 0, 0, 0.2);
 
@@ -57,9 +55,6 @@
   @media (min-width: 1024px) {
     width: 882px;
   }
-  // @media screen and (min-width: 1024px) {
-  //   max-width: 528px;
-  // }
 }
 
 .modal-close-btn {
@@ -174,7 +169,7 @@
   padding-left: 10px;
   padding-right: 10px;
   color: #ffffff;
-  background-color: #ff6b01;
+  background-color: #ff6b08;
 
   border-radius: 5px;
 }
